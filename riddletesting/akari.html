@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.black {
+  			background-color: black;
+  			color: white;
+		}
+
+		.off {
+		 	background-color: grey;
+		}
+		
+		.on {
+		 	background-color: green;
+		}
+		
+		td {
+		 	width: 50px;
+		 	height: 50px;
+		 	border: solid 1px;
+		 	text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<table id="gameboard">
+		<tr>
+		  <td>.</td>
+		  <td>.</td>
+		  <td>.</td>
+		</tr>
+		<tr>
+		  <td>.</td>
+		  <td class="black">4</td>
+		  <td>.</td>
+		</tr>
+		<tr>
+		  <td>.</td>
+		  <td>.</td>
+		  <td>.</td>
+		</tr>
+	</table>
+	<div id="result"></div>
+
+	<script src="akari.js"></script> 
+</body>
+</html>
