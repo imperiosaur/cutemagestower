@@ -7,6 +7,8 @@ categories: MIT2023
 I love illegal puzzles, so I really loved the AI rounds, and I kinda want to dive into them. We’re going to start with Conjuri’s Quest. Not going to lie, this is my favorite of all four AIs. However, I'm also slightly biased because of my experience with this meta, which you’ll see at the end of the article.
 
 
+{% include aimenu.html article="conjuri" %}
+
 # Rogue-Like Progression
 
 This round is centered around the idea of making a meta out of a [rogue-like](https://en.wikipedia.org/wiki/Roguelike) game. The basic idea is that you’re playing a game with a procedurally generated dungeon where you learn and do better every time. You can map out the progression of the game.
