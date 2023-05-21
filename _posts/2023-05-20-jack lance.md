@@ -32,7 +32,7 @@ List of clues (because I am bad at coding and don’t know how to make the clues
 * 2009: This theme transported solvers to a brand new location that didn't exist in the 90s. Solvers had to collect resources from where they were so they could explore further.
 * 2008: This theme had teams asking questions of a dead guy to find where he hid the final item.
 * 2007: This theme had solvers traveling to the afterlife.
-* 2006: In this theme, sovlers contacted well-dressed but strange characters from a second world hidden in ours.
+* 2006: In this theme, solvers contacted well-dressed but strange characters from a second world hidden in ours.
 * 2005: During this time, strange things fell from the sky, causing problems for the infrastructure.
 * 2004: This theme involved a lot of characters that were smaller than the average human.
 * 2003: This theme involved people in trenchcoats working against each other.
