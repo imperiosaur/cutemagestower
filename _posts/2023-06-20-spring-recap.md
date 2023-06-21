@@ -72,7 +72,7 @@ I love hearing stories from the Microsoft Puzzle Hunt, but since I’m not in th
 
 Boy am I glad I did. This puzzle hunt was absolutely amazing. I’m sorry that it wasn’t in person and therefore the hunt runners didn’t get to do some of the plot interactions they wanted, but I’m glad that this puzzle hunt was available to the public at large. They were doing all sorts of weird things with the rounds that other puzzle hunts don’t get to do because of their scale, and it is very high up there compared to other non-MIT Mystery Hunt puzzle hunts.
 
-I hyperfocused really hard on this hunt. Part of the reason is the best round ever - [Sociology](https://puzzle.university/round/sociology.html. This is one of the most amazing rounds I have ever seen. Matching up the halves of the puzzles was so much fun, and it was something that I could bash away on while most of the people in the voice chat were solving the Classics Round. The meta was also a really cool and fitting capstone to the round.
+I hyperfocused really hard on this hunt. Part of the reason is the best round ever - [Sociology](https://puzzle.university/round/sociology.html). This is one of the most amazing rounds I have ever seen. Matching up the halves of the puzzles was so much fun, and it was something that I could bash away on while most of the people in the voice chat were solving the Classics Round. The meta was also a really cool and fitting capstone to the round.
 
 * Puzzles to Check Out: 
    * [PH8: Poker Table](https://puzzle.university/puzzle/ph8.html) - a nice small logic puzzle made significantly better by the interactivity.
