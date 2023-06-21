@@ -57,10 +57,7 @@ That being said, one thing that did stand out to me was the [final meta](https:/
    * [Spin Scooters](https://puzzlehunt.club.cc.cmu.edu/puzzle/22022/) - The puzzle was kinda finicky, and didn’t have a good answer. You don’t want that many repeated As in it, and it was a pain in the neck to interpret what direction the video was being shot. Also it seemed like everything was in a random order for no reason? Lastly, for a puzzle that could be very finicky, that answer is… not great.
 
 
-[^8]: “Hey, Jen. That’s funny. This puzzle (Cave Paintings) just solved to TWIRL. Shouldn’t that be the answer to your puzzle?”  
-“Give me a second and I can get you TWIRL as an answer. I have a bunch of data and I can extract anything I want from it.”  
-…  
-“Remember before when I was joking about TWIRL being the answer to this puzzle?”
+[^8]: “Hey, Jen. That’s funny. This puzzle (Cave Paintings) just solved to TWIRL. Shouldn’t that be the answer to your puzzle?”<br>“Give me a second and I can get you TWIRL as an answer. I have a bunch of data and I can extract anything I want from it.”<br>…<br>“Remember before when I was joking about TWIRL being the answer to this puzzle?”
 
 [^9]: Okay, funny story about this. When I was doing this hunt, my wife was on a different team and her team was in the house while I solved from somewhere else. We finished in four hours - her team needed most of the time on Sunday to finish. Therefore, I was in the kitchen minding my own business when my wife yells at me “It’s that stupid IKEA shark you like. I blame you!” I don’t even own a Blahaj.[^10]
 
