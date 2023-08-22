@@ -88,7 +88,7 @@ I said I was practicing writing letter webs, and once again I have another plain
 </div>
 
 <style>
-	.puzzle-entry {
+	.puzzle-entry table {
 		overflow-x: visible;
 		overflow-y: visible;
 	}
