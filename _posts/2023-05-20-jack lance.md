@@ -7,6 +7,8 @@ categories: Riddle
 Jack Lance died on May 1st, 2023. He was an absolutely brilliant man with an uncanny ability to just pull out puzzles from nowhere. I look up to him and admire him and he was taken from us too soon.
 
 
+{% include riddleverse.html %}
+
 I wrote a riddle. It wasn’t meant to be a tribute riddle - it’s not really about Jack itself - but I cannot deny the effect that he had on me while writing it. While I have solved lots of letter webs before, I was always really intimidated by doing the coding and the connections. I have lots of great riddle ideas, but creating letter webs was always a weak point in my skills. But his RT3 Search reminded me that letter webs don’t necessarily need to follow the ridiculousness of riddle letter webs - sometimes a plain-stock web can still have wonderful solving moments.
 
 So I made this letter web. It is a plain-stock web about an event that we both enjoyed - the Harvard Riddle Search. While it’s not actually a tribute to Jack - I’m sure that he’s looking down and smiling at what he’s inspired. This was super fun and I’m sure that you’ll see more letter webs out of me - maybe even with more shenanigans.
@@ -41,8 +43,3 @@ List of clues (because I am bad at coding and don’t know how to make the clues
 * 2000: This theme involved munchkins.
 
 
-<style>
-body {
-	background-color: plum;
-}
-</style
