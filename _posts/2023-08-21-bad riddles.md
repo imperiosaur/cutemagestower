@@ -71,7 +71,7 @@ I said I was practicing writing letter webs, and once again I have another plain
     <div class="puzzle-entry" data-text-advance-on-type="true" data-text="######|#####" data-extracts="50 51 52 4 32 39 17 53 44 48 26"></div>
     <div>9. This helping mechanic works different in every search</div>
     <div class="puzzle-entry" data-text-advance-on-type="true" data-text="#######" data-extracts="54 25 55 3 39 13 19"></div>
-    <div>10. A somewhat derogitory name for a riddle sequence with a large amount of interconnectivity</div>
+    <div>10. A somewhat derogatory name for a riddle sequence with a large amount of interconnectivity</div>
     <div class="puzzle-entry" data-text-advance-on-type="true" data-text="######|###" data-extracts="52 56 57 19 54 2 15 53 33"></div>
     <div>11. A country that has become an inside joke from a certain riddle from the Harvard Riddle Search</div>
     <div class="puzzle-entry" data-text-advance-on-type="true" data-text="######|##" data-extracts="9 30 58 59 60 57 55 47"></div>

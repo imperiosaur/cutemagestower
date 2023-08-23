@@ -76,7 +76,7 @@ I hyperfocused really hard on this hunt. Part of the reason is the best round ev
    * [Pyramid Schemes](https://puzzle.university/puzzle/pyramid-schemes.html) - I cannot believe that this puzzle even exists. It’s soooooo cool.
    * [Key Changes](https://puzzle.university/puzzle/key-changes.html) - I felt like this was another puzzle that fell at just the right rate. There are a couple really cool break-ins.
    * [How the Other Half Lives](https://puzzle.university/puzzle/how-the-other-half-lives.html) - pretty much the best puzzle in this hunt. The idea behind it is really simple but it led to some very funny situations.
-   * [Learning from Our Old Mistakes](https://puzzle.university/puzzle/learningfromouroldmistakes.html) - very funny, and caused me to submit the deranged guess `ABCEDFGHIJKLMNOPQRSTUVWXYZ` to a random first round puzzle.
+   * [Learning from Our Old Mistakes](https://puzzle.university/puzzle/learningfromouroldmistakes.html) - very funny, and caused me to submit the deranged guess `ABCDEFGHIJKLMNOPQRSTUVWXYZ` to a random first round puzzle.
    * [History Meta](https://puzzle.university/puzzle/history-meta.html) - the connection that all the answers have is really great, and this is a reasonable shell to use that aha.
    * [The entire Computer Science round](https://puzzle.university/round/computer-science.html) - honestly, this is an absolutely brilliant construction.
    * [The Lerneaean Hydra](https://puzzle.university/round/classics.html)[^13] - this is a completely normal puzzle that I did not use to troll my teammates at all.[^11]
