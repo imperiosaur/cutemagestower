@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>BAPHL 22</title>
+	<link rel="stylesheet" type="text/css" href="BAPHL%2022_files/BAPHLcss.css">
+	<script type="text/javascript" src="BAPHL%2022_files/md5.min.js"></script>
+	<script type="text/javascript" src="BAPHL%2022_files/baphl.js"></script>
+	
+</head>
+<body>
+<div id="header">
+
+	<div><img id="logo" src="BAPHL%2022_files/greendaleext-logo.png"></div>
+
+</div>
+
+<style>
+	.alphablock {
+		border-collapse: collapse;
+		width: 200px;
+		hight: 450px;
+	}
+
+	.alphablock td, th {
+		border: 1px solid;
+		padding: 5px;
+		text-align: center;
+	}
+
+	.one {
+		background-color: #fabed4;
+	}
+
+	.two {
+		background-color: #ffd8b1;
+	}
+
+	.three {
+		background-color: #aaffc3;
+	}
+
+	.four {
+		background-color: #dcbeff;
+	}
+
+	.extra {
+		background-color: #ffe119;
+	}
+
+	.category {
+		background-color: white;
+	}
+
+	.alphablock-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+</style>
+
+<div class="block" id="solution">
+	<h2>Alphablock Soup Solution</h2>
+	
+	<p>In each 4x4 small block, 4 food-related words from the same category can be found. Three of them are found by grabbing one box from each column and putting the letters together. The fourth one only uses three of the four remaining boxes, leaving one extra box in each block.</p>
+
+	<div class="alphablock-container">
+
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Squashes</th></tr>
+				<tr><td class="extra">A</td><td class="three">MP</td><td class="one">CA</td><td class="four">NI</td></tr>
+				<tr><td class="one">DE</td><td class="two">GO</td><td class="four">HI</td><td class="three">IN</td></tr>
+				<tr><td class="three">PU</td><td class="four">CC</td><td class="two">UR</td><td class="one">TA</td></tr>
+				<tr><td class="four">ZU</td><td class="one">LI</td><td class="three">K</td><td class="two">D</td></tr>
+				<tr><td class="one" colspan="4">DELICATA</td></tr>
+				<tr><td class="two" colspan="4">GOURD</td></tr>
+				<tr><td class="three" colspan="4">PUMPKIN</td></tr>
+				<tr><td class="four" colspan="4">ZUCCHINI</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Nuts</th></tr>
+				<tr><td class="one">AL</td><td class="two">S</td><td class="three">E</td><td class="four">AN</td></tr>
+				<tr><td class="extra">BU</td><td class="three">LB</td><td class="one">ON</td><td class="two">EW</td></tr>
+				<tr><td class="two">CA</td><td class="one">M</td><td class="four">EC</td><td class="three">RT</td></tr>
+				<tr><td class="three">FI</td><td class="four">P</td><td class="two">H</td><td class="one">D</td></tr>
+				<tr><td class="one" colspan="4">ALMOND</td></tr>
+				<tr><td class="two" colspan="4">CASHEW</td></tr>
+				<tr><td class="three" colspan="4">FILBERT</td></tr>
+				<tr><td class="four" colspan="4">PECAN</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Orange Fruit</th></tr>
+				<tr><td class="one">AP</td><td class="three">UM</td><td class="four">GE</td><td class="two">ON</td></tr>
+				<tr><td class="two">M</td><td class="four">N</td><td class="one">C</td><td class="three">AT</td></tr>
+				<tr><td class="three">K</td><td class="one">RI</td><td class="extra">E</td><td class="four">LO</td></tr>
+				<tr><td class="four">TA</td><td class="two">EL</td><td class="three">QU</td><td class="one">OT</td></tr>
+				<tr><td class="one" colspan="4">APRICOT</td></tr>
+				<tr><td class="two" colspan="4">MELON</td></tr>
+				<tr><td class="three" colspan="4">KUMQUAT</td></tr>
+				<tr><td class="four" colspan="4">TANGELO</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Yellow Fruit</th></tr>
+				<tr><td class="one">B</td><td class="three">A</td><td class="two">ON</td><td class="four">O</td></tr>
+				<tr><td class="two">L</td><td class="four">OM</td><td class="three">N</td><td class="one">NA</td></tr>
+				<tr><td class="three">M</td><td class="one">AN</td><td class="four">EL</td><td class="extra">ER</td></tr>
+				<tr><td class="four">P</td><td class="two">EM</td><td class="one">A</td><td class="three">GO</td></tr>
+				<tr><td class="one" colspan="4">BANANA</td></tr>
+				<tr><td class="two" colspan="4">LEMON</td></tr>
+				<tr><td class="three" colspan="4">MANGO</td></tr>
+				<tr><td class="four" colspan="4">POMELO</td></tr>
+			</table>
+		</div>
+
+
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Soups</th></tr>
+				<tr><td class="one">BI</td><td class="three">UM</td><td class="four">EW</td><td class="two">ER</td></tr>
+				<tr><td class="two">CH</td><td class="one">S</td><td class="three">B</td><td class="extra">H</td></tr>
+				<tr><td class="three">G</td><td class="four">T</td><td class="two">D</td><td class="one">E</td></tr>
+				<tr><td class="four">S</td><td class="two">OW</td><td class="one">QU</td><td class="three">O</td></tr>
+				<tr><td class="one" colspan="4">BISQUE</td></tr>
+				<tr><td class="two" colspan="4">CHOWDER</td></tr>
+				<tr><td class="three" colspan="4">GUMBO</td></tr>
+				<tr><td class="four" colspan="4">STEW</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Yellow Soup Veggies</th></tr>
+				<tr><td class="one">C</td><td class="two">A</td><td class="four">AT</td><td class="three">ON</td></tr>
+				<tr><td class="two">M</td><td class="four">OT</td><td class="three">I</td><td class="one">T</td></tr>
+				<tr><td class="extra">N</td><td class="one">AR</td><td class="two">IZ</td><td class="four">O</td></tr>
+				<tr><td class="four">P</td><td class="three">ON</td><td class="one">RO</td><td class="two">E</td></tr>
+				<tr><td class="one" colspan="4">CARROT</td></tr>
+				<tr><td class="two" colspan="4">MAIZE</td></tr>
+				<tr><td class="three" colspan="4">ONION</td></tr>
+				<tr><td class="four" colspan="4">POTATO</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Soda</th></tr>
+				<tr><td class="one">C</td><td class="two">E</td><td class="three">RI</td><td class="four">T</td></tr>
+				<tr><td class="two">P</td><td class="extra">NS</td><td class="four">IS</td><td class="one">E</td></tr>
+				<tr><td class="three">SP</td><td class="four">NK</td><td class="one">K</td><td class="two">I</td></tr>
+				<tr><td class="four">SU</td><td class="one">O</td><td class="two">PS</td><td class="three">TE</td></tr>
+				<tr><td class="one" colspan="4">COKE</td></tr>
+				<tr><td class="two" colspan="4">PEPSI</td></tr>
+				<tr><td class="three" colspan="4">SPRITE</td></tr>
+				<tr><td class="four" colspan="4">SUNKIST</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Bread</th></tr>
+				<tr><td class="one">CH</td><td class="three">I</td><td class="four">O</td><td class="two">IN</td></tr>
+				<tr><td class="two">M</td><td class="one">AL</td><td class="three">T</td><td class="four">LL</td></tr>
+				<tr><td class="three">P</td><td class="four">R</td><td class="two">FF</td><td class="one">H</td></tr>
+				<tr><td class="extra">Q</td><td class="two">U</td><td class="one">LA</td><td class="three">A</td></tr>
+				<tr><td class="one" colspan="4">CHALLAH</td></tr>
+				<tr><td class="two" colspan="4">MUFFIN</td></tr>
+				<tr><td class="three" colspan="4">PITA</td></tr>
+				<tr><td class="four" colspan="4">ROLL</td></tr>
+			</table>
+		</div>
+
+
+
+
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Eggs</th></tr>
+				<tr><td class="one">CH</td><td class="four">UR</td><td class="three">S</td><td class="extra">R</td></tr>
+				<tr><td class="two">D</td><td class="three">OO</td><td class="one">K</td><td class="four">Y</td></tr>
+				<tr><td class="three">G</td><td class="two">U</td><td class="four">KE</td><td class="one">EN</td></tr>
+				<tr><td class="four">T</td><td class="one">IC</td><td class="two">CK</td><td class="three">E</td></tr>
+				<tr><td class="one" colspan="4">CHICKEN</td></tr>
+				<tr><td class="two" colspan="4">DUCK</td></tr>
+				<tr><td class="three" colspan="4">GOOSE</td></tr>
+				<tr><td class="four" colspan="4">TURKEY</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Drink Mix</th></tr>
+				<tr><td class="one">CO</td><td class="three">EC</td><td class="extra">S</td><td class="four">P</td></tr>
+				<tr><td class="two">J</td><td class="four">YR</td><td class="one">I</td><td class="three">AR</td></tr>
+				<tr><td class="three">N</td><td class="one">RD</td><td class="four">U</td><td class="two">CE</td></tr>
+				<tr><td class="four">S</td><td class="two">UI</td><td class="three">T</td><td class="one">AL</td></tr>
+				<tr><td class="one" colspan="4">CORDIAL</td></tr>
+				<tr><td class="two" colspan="4">JUICE</td></tr>
+				<tr><td class="three" colspan="4">NECTAR</td></tr>
+				<tr><td class="four" colspan="4">SYRUP</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Dairy</th></tr>
+				<tr><td class="one">CR</td><td class="three">L</td><td class="four">UR</td><td class="two">R</td></tr>
+				<tr><td class="two">KE</td><td class="four">OG</td><td class="three">K</td><td class="one">M</td></tr>
+				<tr><td class="three">MI</td><td class="one">E</td><td class="two">I</td><td class="four">T</td></tr>
+				<tr><td class="four">Y</td><td class="two">F</td><td class="one">A</td><td class="extra">S</td></tr>
+				<tr><td class="one" colspan="4">CREAM</td></tr>
+				<tr><td class="two" colspan="4">KEFIR</td></tr>
+				<tr><td class="three" colspan="4">MILK</td></tr>
+				<tr><td class="four" colspan="4">YOGURT</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Yellow Spice</th></tr>
+				<tr><td class="one">CU</td><td class="three">AF</td><td class="two">E</td><td class="four">IC</td></tr>
+				<tr><td class="two">GI</td><td class="four">RM</td><td class="extra">T</td><td class="three">ON</td></tr>
+				<tr><td class="three">S</td><td class="one">M</td><td class="four">ER</td><td class="two">R</td></tr>
+				<tr><td class="four">TU</td><td class="two">NG</td><td class="three">FR</td><td class="one">IN</td></tr>
+				<tr><td class="one" colspan="4">CUMIN</td></tr>
+				<tr><td class="two" colspan="4">GINGER</td></tr>
+				<tr><td class="three" colspan="4">SAFFRON</td></tr>
+				<tr><td class="four" colspan="4">TURMERIC</td></tr>
+			</table>
+		</div>
+
+
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Dessert</th></tr>
+				<tr><td class="one">CU</td><td class="three">DD</td><td class="four">L</td><td class="two">N</td></tr>
+				<tr><td class="two">F</td><td class="four">IF</td><td class="one">AR</td><td class="three">G</td></tr>
+				<tr><td class="three">PU</td><td class="one">ST</td><td class="two">LA</td><td class="four">E</td></tr>
+				<tr><td class="four">TR</td><td class="extra">TT</td><td class="three">IN</td><td class="one">D</td></tr>
+				<tr><td class="one" colspan="4">CUSTARD</td></tr>
+				<tr><td class="two" colspan="4">FLAN</td></tr>
+				<tr><td class="three" colspan="4">PUDDING</td></tr>
+				<tr><td class="four" colspan="4">TRIFLE</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Baking Staples</th></tr>
+				<tr><td class="one">F</td><td class="extra">U</td><td class="three">LL</td><td class="four">T</td></tr>
+				<tr><td class="two">SU</td><td class="four">EA</td><td class="one">O</td><td class="three">A</td></tr>
+				<tr><td class="three">VA</td><td class="one">L</td><td class="four">S</td><td class="two">AR</td></tr>
+				<tr><td class="four">Y</td><td class="three">NI</td><td class="two">G</td><td class="one">UR</td></tr>
+				<tr><td class="one" colspan="4">FLOUR</td></tr>
+				<tr><td class="two" colspan="4">SUGAR</td></tr>
+				<tr><td class="three" colspan="4">VANILLA</td></tr>
+				<tr><td class="four" colspan="4">YEAST</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Fish</th></tr>
+				<tr><td class="one">HA</td><td class="two">E</td><td class="four">UN</td><td class="three">ON</td></tr>
+				<tr><td class="two">P</td><td class="one">LI</td><td class="three">M</td><td class="four">A</td></tr>
+				<tr><td class="three">S</td><td class="extra">UA</td><td class="two">R</td><td class="one">UT</td></tr>
+				<tr><td class="four">T</td><td class="three">AL</td><td class="one">B</td><td class="two">CH</td></tr>
+				<tr><td class="one" colspan="4">HALIBUT</td></tr>
+				<tr><td class="two" colspan="4">PERCH</td></tr>
+				<tr><td class="three" colspan="4">SALMON</td></tr>
+				<tr><td class="four" colspan="4">TUNA</td></tr>
+			</table>
+		</div>
+
+		<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Pasta</th></tr>
+				<tr><td class="one">LA</td><td class="two">Z</td><td class="three">N</td><td class="four">I</td></tr>
+				<tr><td class="two">OR</td><td class="four">I</td><td class="one">GN</td><td class="three">E</td></tr>
+				<tr><td class="three">P</td><td class="one">SA</td><td class="four">T</td><td class="two">O</td></tr>
+				<tr><td class="four">Z</td><td class="three">EN</td><td class="extra">W</td><td class="one">A</td></tr>
+				<tr><td class="one" colspan="4">LASAGNA</td></tr>
+				<tr><td class="two" colspan="4">ORZO</td></tr>
+				<tr><td class="three" colspan="4">PENNE</td></tr>
+				<tr><td class="four" colspan="4">ZITI</td></tr>
+			</table>
+		</div>
+	</div>
+
+	<p>Each of the extra squares in a different space in the alphablock. This means that they can be combined into one more alphablock which produces the answer <b>BUTTERNUT SQUASH</b>.</p>
+	<div>
+			<table class="alphablock">
+				<tr><th class="category" colspan="4">Final Alphablock</th></tr>
+				<tr><td class="one">A</td><td class="three">U</td><td class="four">S</td><td class="two">R</td></tr>
+				<tr><td class="two">BU</td><td class="one">NS</td><td class="three">T</td><td class="four">H</td></tr>
+				<tr><td class="three">N</td><td class="four">UA</td><td class="two">E</td><td class="one">ER</td></tr>
+				<tr><td class="four">Q</td><td class="two">TT</td><td class="one">W</td><td class="three">S</td></tr>
+				<tr><td class="one" colspan="4">ANSWER</td></tr>
+				<tr><td class="two" colspan="4">BUTTER</td></tr>
+				<tr><td class="three" colspan="4">NUTS</td></tr>
+				<tr><td class="four" colspan="4">QUASH</td></tr>
+			</table>
+		</div>
+
+
+</div>
+
+
+
+
+
+
+</body></html>
