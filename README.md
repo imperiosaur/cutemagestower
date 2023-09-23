@@ -26,6 +26,8 @@ Here are the things that I've written.
   - **[The Mlystery Hunt, as Told By a Thief of the Bases](http://puzzles.mit.edu/2022/puzzle/the-mlystery-hunt-as-told-by-a-thief-of-the-bases/)** with Steve Kaltenbaugh
   - **[Crow Facts 3000](http://puzzles.mit.edu/2022/puzzle/crow-facts-3000/)** with Ben Smith
   - **[Events 1 & 2](http://puzzles.mit.edu/2022/events/)**
+- **Wondercade** - This Neil Patrick Harris' newsletter. Ange and I write a bunch of things for it.
+  - **[Whodunit](https://www.wondercade.com/theatre-experiences/thinking-caps-on-its-the-wondercade-whodunit-challenge)** - We basically wrote the whole article into a murder mystery. This is free to view, but you will need an account.
 - **Audio Escape Rooms** - Each of these three rooms I wrote and then ran for the hosts of Escape this Podast.
   - **[Dimensional Analysis](https://www.escapethispodcast.com/e/season-9-episode-3-dimensional-analysis-ft-jen-mcteague/)** and **[Podcast this Escape](https://www.escapethispodcast.com/e/podcast-this-escape-dimensional-analysis/)**
   - **[It's Puzzles All the Way Down](https://www.escapethispodcast.com/e/season-7-episode-11-its-puzzles-all-the-way-down-ft-jen-mcteague/)** and **[Podcast this Escape](https://www.escapethispodcast.com/e/podcast-this-escape-its-puzzles-all-the-way-down/)**
@@ -64,7 +66,7 @@ Here are the things that I've written.
 ### Classroom Games
 
 - **2d10 Bingo** - This is a variant of Bingo designed to make it mathematically interesting. This is used in lessons about probability, and can tie into life lessons about how we make choices for events with random outcomes. Also, it's honestly a much more fun way to play Bingo than the standard method.
-- **Bad Settles of Catan** - This is a badly designed, stripped down version of Settlers of Catan with a terrible positive feedback loop. After a couple rounds of this, students usually identify the concept of positive feedback loops, and how where you are at the start of the game really determines where you are at the end. Then I hit them with a video about redlining.
+- **Bad Settlers of Catan** - This is a badly designed, stripped down version of Settlers of Catan with a terrible positive feedback loop. After a couple rounds of this, students usually identify the concept of positive feedback loops, and how where you are at the start of the game really determines where you are at the end. Then I hit them with a video about redlining.
 - **Steam Team** - This is an analog version of the app Space Team. It's great for when students just need to be loud. It is somewhat based off the 2015 MIT Mystery Hunt event of the same name, but with some changes to make it easier for kids.
 - **Pizza Shop/Strategy Games** - This was an elective for 4th and 5th graders. While in the past the elective was just presenting the kids with slightly more complicated than usual board games for them to play, I decided to use this as an opportunity to actually teach the kids strategy by using games that have been pared down to exemplify what strategy you needed. We played the following four games over the course of the elective term, and then they combined in the end into a big meta game about building pizzas. Kids were divided into teams and then played the four games to earn different ingredients for pizzas.
   - **Card Sharks** - This was a modified version of the Card Sharks TV Show, where students learned about probability, counting what's left in the deck, and how to wager properly.

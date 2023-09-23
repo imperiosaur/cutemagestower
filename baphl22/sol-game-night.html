@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>BAPHL 22</title>
+	<link rel="stylesheet" type="text/css" href="BAPHL%2022_files/BAPHLcss.css">
+	<script type="text/javascript" src="BAPHL%2022_files/md5.min.js"></script>
+	<script type="text/javascript" src="BAPHL%2022_files/baphl.js"></script>
+	
+</head>
+<body>
+<div id="header">
+
+	<div><img id="logo" src="BAPHL%2022_files/greendaleext-logo.png"></div>
+
+</div>
+
+<style>
+
+	.solutiontable td, th {
+		border: 1px solid;
+	}
+
+	.solutiontable {
+		border-collapse: collapse;
+		margin: auto;
+	}
+
+	.red {background-color: indianred; }
+	.orange {background-color: orange;}
+	.yellow {background-color: lemonchiffon;}
+	.green {background-color: lightgreen;}
+	.blue {background-color: lightblue;}
+	.gray {background-color: lightgray;}
+	.white {background-color: white;}
+
+	.right { text-align: right; }
+	.grayed { color: grey; }
+
+
+</style>
+
+<div class="block" id="solution">
+	<h2>Game Night Solution</h2>
+	<h3>by Ata Gurpinar</h3>
+	
+	<p>The flavortext explains that five of the seven possible teams are participating. This hints at the colors of the rainbow (red, orange, yellow, green, blue, indigo, violet), and as the fruits of particular color imply, the five teams participating are red, orange, yellow, green, and blue.</p>
+
+	<p>Each word in the grid of Codenames cards contains at most one of the letters from ROYGBIV and only once. As a check, the count of each color is provided in the grid of blanks below it (4 red, 2 orange, 4 yellow, 4 green, 4 blue, [and 7 bystanders]). The words without any of the letters are bystanders worth 0 points, and the words with one of the letters is worth a point value equal to the position of the letter:</p>
+
+	<table class="solutiontable">
+		<tr><td class="white">DUSK<br>0 - Bystander</td><td class="blue">A<b>B</b>UZZ<br>2 - Blue</td><td class="green"><b>G</b>LAZED<br>1 - Green</td><td class="orange">W<b>O</b>UNDED<br>2 - Orange</td><td class="red">C<b>R</b>ESCENT<br>2 - Red</td></tr>
+		<tr><td class="red">PE<b>R</b>K<br>3 - Red</td><td class="green">A<b>G</b>LET<br>2 - Green</td><td class="white">DUPLEX<br>0 - Bystander</td><td class="blue"><b>B</b>LUSHED<br>1 - Blue</td><td class="yellow"><b>Y</b>ACHTMAN<br>1 - Yellow</td></tr>
+		<tr><td class="blue"><b>B</b>EEF<br>1 - Blue</td><td class="white">THEFT<br>0 - Bystander</td><td class="yellow">KE<b>Y</b>PAD<br>3 - Yellow</td><td class="red"><b>R</b>ELAXED<br>1 - Red</td><td class="green">U<b>G</b>ANDANS<br>2 - Green</td></tr>
+		<tr><td class="white">SWAN<br>0 - Bystander</td><td class="yellow">PS<b>Y</b>CH<br>3 - Yellow</td><td class="red">C<b>R</b>UNCH<br>2 - Red</td><td class="white">SAWDUST<br>0 - Bystander</td><td class="blue"><b>B</b>ANQUETS<br>1 - Blue</td></tr>
+		<tr><td class="green">PA<b>G</b>E<br>3 - Green</td><td class="white">JAPAN<br>0 - Bystander</td><td class="white">EQUALS<br>0 - Bystander</td><td class="yellow">H<b>Y</b>PHENS<br>2 - Yellow</td><td class="orange"><b>O</b>UTFLANK<br>1 - Orange</td></tr>
+	</table>
+
+	<p>The blanks at the bottom indicate to evaluate the binary score for each team in each column, the twos digit and the ones digit separately. Then each row of the bottom grid of blanks form a five-digit binary string, with a value between 1 and 26, representing a letter of the alphabet:</p>
+
+	<table class="solutiontable">
+		<tr class="white"><td class="red">Red</td><td>&#x25AF; <span class="grayed">#</span></td><td>1<span class="grayed">1</span></td><td>0<span class="grayed">0</span></td><td>1<span class="grayed">0</span></td><td>0<span class="grayed">1</span></td><td>1<span class="grayed">0</span></td><td class="right">10101 = 21 = U</td></tr>
+		<tr class="gray"><td class="red">Red</td><td><span class="grayed">#</span> &#x25AF;</td><td><span class="grayed">1</span>1</td><td><span class="grayed">0</span>0</td><td><span class="grayed">1</span>0</td><td><span class="grayed">0</span>1</td><td><span class="grayed">1</span>0</td><td class="right">10010 = 18 = R</td></tr>
+		<tr class="white"><td class="orange">Orange</td><td>&#x25AF; <span class="grayed">#</span></td><td>0<span class="grayed">0</span></td><td>0<span class="grayed">0</span></td><td>0<span class="grayed">0</span></td><td>1<span class="grayed">0</span></td><td>0<span class="grayed">1</span></td><td class="right">00010 = 2 = B</td></tr>
+		<tr class="gray"><td class="orange">Orange</td><td><span class="grayed">#</span> &#x25AF;</td><td><span class="grayed">0</span>0</td><td><span class="grayed">0</span>0</td><td><span class="grayed">0</span>0</td><td><span class="grayed">1</span>0</td><td><span class="grayed">0</span>1</td><td class="right">00001 = 1 = A</td></tr>
+		<tr class="white"><td class="yellow">Yellow</td><td>&#x25AF; <span class="grayed">#</span></td><td>0<span class="grayed">0</span></td><td>1<span class="grayed">1</span></td><td>1<span class="grayed">1</span></td><td>1<span class="grayed">0</span></td><td>0<span class="grayed">1</span></td><td class="right">01110 = 14 = N</td></tr>
+		<tr class="gray"><td class="yellow">Yellow</td><td><span class="grayed">#</span> &#x25AF;</td><td><span class="grayed">0</span>0</td><td><span class="grayed">1</span>1</td><td><span class="grayed">1</span>1</td><td><span class="grayed">1</span>0</td><td><span class="grayed">0</span>1</td><td class="right">01101 = 13 = M</td></tr>
+		<tr class="white"><td class="green">Green</td><td>&#x25AF; <span class="grayed">#</span></td><td>1<span class="grayed">1</span></td><td>1<span class="grayed">0</span></td><td>0<span class="grayed">1</span></td><td>0<span class="grayed">0</span></td><td>1<span class="grayed">0</span></td><td class="right">11001 = 25 = Y</td></tr>
+		<tr class="gray"><td class="green">Green</td><td><span class="grayed">#</span> &#x25AF;</td><td><span class="grayed">1</span>1</td><td><span class="grayed">1</span>0</td><td><span class="grayed">0</span>1</td><td><span class="grayed">0</span>0</td><td><span class="grayed">1</span>0</td><td class="right">10100 = 20 = T</td></tr>
+		<tr class="white"><td class="blue">Blue</td><td>&#x25AF; <span class="grayed">#</span></td><td>0<span class="grayed">1</span></td><td>1<span class="grayed">0</span></td><td>0<span class="grayed">0</span></td><td>0<span class="grayed">1</span></td><td>0<span class="grayed">1</span></td><td class="right">01000 = 8 = H</td></tr>
+		<tr class="gray"><td class="blue">Blue</td><td><span class="grayed">#</span> &#x25AF;</td><td><span class="grayed">0</span>1</td><td><span class="grayed">1</span>0</td><td><span class="grayed">0</span>0</td><td><span class="grayed">0</span>1</td><td><span class="grayed">0</span>1</td><td class="right">10011 = 19 = S</td></tr>
+	</table>
+
+	<p>Reading downwards, the solution to the puzzle is <b>URBAN MYTHS</b>.</p>
+
+</div>
+
+
+
+
+
+
+</body></html>
