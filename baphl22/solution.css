@@ -1,0 +1,38 @@
+.solutiontable td, th {
+	border: 1px solid;
+}
+
+.solutiontable {
+	border-collapse: collapse;
+	margin: auto;
+}
+
+.monospaced {
+	font-family: monospace;
+}
+
+.literal {
+	font-family: monospace;
+	background: #f2f2f1;
+}
+
+.answer {
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: monospace;
+}
+.answer.spoiler {
+  display: inline-block;
+  min-width: 200px;
+}
+.spoiler:not(:hover) {
+  background-color: currentColor;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+

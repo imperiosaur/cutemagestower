@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>BAPHL 22</title>
+	<link rel="stylesheet" type="text/css" href="BAPHL%2022_files/BAPHLcss.css">
+	<script type="text/javascript" src="BAPHL%2022_files/md5.min.js"></script>
+	<script type="text/javascript" src="BAPHL%2022_files/baphl.js"></script>
+	
+</head>
+<body>
+<div id="header">
+
+	<div><img id="logo" src="BAPHL%2022_files/greendaleext-logo.png"></div>
+
+</div>
+
+<link rel="stylesheet" type="text/css" href="solution.css">
+<style>
+
+.mySlides {display: none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.captiontext {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  font-family: monospace;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  background-color: black;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+</style>
+
+<div class="block" id="solution">
+	<h2>Indigestion Solution</h2>
+	<h3>by Jen McTeague</h3>
+	
+	<p>This is a metapuzzle and uses the answers to the puzzles in this round.</p>
+
+	<table class="solutiontable">
+		<tr><th>Puzzle</th><th>Solution</th></tr>
+		<tr><td>Assembly Line</td><td class="answer spoiler">DODGE CHARGER</td></tr>
+		<tr><td>House Calls</td><td class="answer spoiler">DOCTOR OF MEDICINE</td></tr>
+		<tr><td>Stargazing</td><td class="answer spoiler">ANNIE JUMP CANNON</td></tr>
+		<tr><td>A Walk in the Park</td><td class="answer spoiler">PICKLE RELISH</td></tr>
+	</table>
+
+	<p>While the snake clearly has a grid, the answers cannot fit neatly in it. Instead, one word from each answer is a kind of ball, and that word needs to be replaced with that ball in the grid.</p>
+
+	<img src="imgind0.png" class="center">
+
+	<p>Now to read the code. The only ambiguous thing about the code is which verb goes with which. Each ball responds with the verb that does that action. (You fire a cannonball, carry a medicine ball, throw a dodgeball, and hit a pickleball.)</p>
+
+	<div class="slideshow-container">
+
+	<div class="mySlides">
+	  <div class="numbertext">Start</div>
+	  <img src="imgind0.png" style="width:100%">
+	  <div class="captiontext">Start of Program</div>
+	</div>
+	
+	<div class="mySlides">
+	  <div class="numbertext">01</div>
+	  <img src="imgind1.png" style="width:100%">
+	  <div class="captiontext">01 ball.fire(7, tail)<br># This will also push the medicine ball.</div>
+	</div>
+	
+	<div class="mySlides">
+	  <div class="numbertext">02</div>
+	  <img src="imgind2.png" style="width:100%">
+	  <div class="captiontext">02 ball.hit(4, head)<br># This will also push the dodgeball. (Don't ask how a pickleball pushes a dodgeball - just go with it.)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">03</div>
+	  <img src="imgind3.png" style="width:100%">
+	  <div class="captiontext">03 ball.throw(7, head)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">04</div>
+	  <img src="imgind4.png" style="width:100%">
+	  <div class="captiontext">04 ball.carry(5, tail)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">05</div>
+	  <img src="imgind5.png" style="width:100%">
+	  <div class="captiontext">05 read(carry, fire, throw, hit)<br># This will output JOIN.</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">06</div>
+	  <img src="imgind6.png" style="width:100%">
+	  <div class="captiontext">06 ball.hit(2, head)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">07</div>
+	  <img src="imgind7.png" style="width:100%">
+	  <div class="captiontext">07 ball.throw(2, head)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">08</div>
+	  <img src="imgind8.png" style="width:100%">
+	  <div class="captiontext">08 ball.carry(9, head)<br># This will push the cannonball back.</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">09</div>
+	  <img src="imgind9.png" style="width:100%">
+	  <div class="captiontext">09 ball.carry(5, tail)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">10</div>
+	  <img src="imgind10.png" style="width:100%">
+	  <div class="captiontext">10 read(hit, carry, throw, fire)<br># This will output CHAR.</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">11</div>
+	  <img src="imgind11.png" style="width:100%">
+	  <div class="captiontext"> </div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">12</div>
+	  <img src="imgind12.png" style="width:100%">
+	  <div class="captiontext">12 ball.throw(4, tail)<br># This will push the pickleball back.</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">13</div>
+	  <img src="imgind13.png" style="width:100%">
+	  <div class="captiontext">13 ball.carry(1, tail)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">14</div>
+	  <img src="imgind14.png" style="width:100%">
+	  <div class="captiontext">14 ball.fire(2, tail)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">15</div>
+	  <img src="imgind15.png" style="width:100%">
+	  <div class="captiontext">15 read(fire, carry, throw, hit)<br># This will output MSCH.</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">16</div>
+	  <img src="imgind16.png" style="width:100%">
+	  <div class="captiontext">16 ball.fire(26, tail)<br># This will push all the balls and cause the snake to... uh... expel the pickleball from its body.</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">17</div>
+	  <img src="imgind17.png" style="width:100%">
+	  <div class="captiontext">17 ball.throw(5, head)<br># This will push the two remaining balls.</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">18</div>
+	  <img src="imgind18.png" style="width:100%">
+	  <div class="captiontext">18 ball.carry(9, head)<br># This will push the cannonball.</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">19</div>
+	  <img src="imgind19.png" style="width:100%">
+	  <div class="captiontext">19 ball.fire(2, head)</div>
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">20</div>
+	  <img src="imgind20.png" style="width:100%">
+	  <div class="captiontext">20 read(fire, throw, carry)<br># This will output OOL.</div>
+	</div>
+	
+	<a class="prev" onclick="plusSlides(-1)">&#x2039;</a>
+	<a class="next" onclick="plusSlides(1)">&#x203a;</a>
+	
+	</div>
+	<br>
+	
+	<div style="text-align:center">
+	  <span class="dot" onclick="currentSlide(1)"></span> 
+	  <span class="dot" onclick="currentSlide(2)"></span> 
+	  <span class="dot" onclick="currentSlide(3)"></span> 
+	  <span class="dot" onclick="currentSlide(4)"></span> 
+	  <span class="dot" onclick="currentSlide(5)"></span> 
+	  <span class="dot" onclick="currentSlide(6)"></span> 
+	  <span class="dot" onclick="currentSlide(7)"></span> 
+	  <span class="dot" onclick="currentSlide(8)"></span> 
+	  <span class="dot" onclick="currentSlide(9)"></span> 
+	  <span class="dot" onclick="currentSlide(10)"></span> 
+	  <span class="dot" onclick="currentSlide(11)"></span> 
+	  <span class="dot" onclick="currentSlide(12)"></span> 
+	  <span class="dot" onclick="currentSlide(13)"></span> 
+	  <span class="dot" onclick="currentSlide(14)"></span> 
+	  <span class="dot" onclick="currentSlide(15)"></span> 
+	  <span class="dot" onclick="currentSlide(16)"></span> 
+	  <span class="dot" onclick="currentSlide(17)"></span> 
+	  <span class="dot" onclick="currentSlide(18)"></span> 
+	  <span class="dot" onclick="currentSlide(19)"></span> 
+	  <span class="dot" onclick="currentSlide(20)"></span> 
+	  <span class="dot" onclick="currentSlide(21)"></span> 
+	</div>
+
+
+	<p>When you read out all the letters from steps 5, 10, 15, and 20, you get the answer <span class="answer spoiler">JOIN CHARM SCHOOL</span>.</p>
+
+</div>
+
+
+
+
+
+<script>
+  let slideIndex = 1;
+	showSlides(slideIndex);
+	
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+	
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+	
+	function showSlides(n) {
+	  let i;
+	  let slides = document.getElementsByClassName("mySlides");
+	  let dots = document.getElementsByClassName("dot");
+	  if (n > slides.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+	    slides[i].style.display = "none";  
+	  }
+	  for (i = 0; i < dots.length; i++) {
+	    dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	}
+</script>
+
+</body></html>
