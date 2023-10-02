@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>BAPHL 22</title>
+	<link rel="stylesheet" type="text/css" href="BAPHL%2022_files/BAPHLcss.css">
+	<script type="text/javascript" src="BAPHL%2022_files/md5.min.js"></script>
+	<script type="text/javascript" src="BAPHL%2022_files/baphl.js"></script>
+	
+</head>
+<body>
+<div id="header">
+
+	<div><img id="logo" src="BAPHL%2022_files/greendaleext-logo.png"></div>
+
+</div>
+
+<link rel="stylesheet" type="text/css" href="solution.css">
+<style>
+	.delete {
+		color: red;
+		font-weight: bold;
+	}
+</style>
+
+<div class="block" id="solution">
+	<h2>Garbage Day Solution</h2>
+	<h3>by Ata Gurpinar and Diana Tortolini</h3>
+	
+	<p>This is a metapuzzle and uses the answers to the puzzles in this round.</p>
+
+	<table class="solutiontable">
+		<tr><th>Puzzle</th><th>Solution</th></tr>
+		<tr><td>Game Night</td><td class="answer spoiler">URBAN MYTHS</td></tr>
+		<tr><td>Nature Tour</td><td class="answer spoiler">FLOW CHARTS</td></tr>
+		<tr><td>Out for Delivery</td><td class="answer spoiler">DISPATCHER</td></tr>
+	</table>
+
+	<p>The puzzles in the round, in addition to their answers, provide 5x5 grids of information. Nature Tour provides a grid of directions (used to follow the path through through the forest); Game Night provides a grid of numbers (the point values of the spies and bystanders); Tracking Number provides a grid of letters (from the tenants' names). They can be overlaid to form the following grid</p>
+
+	<table class="solutiontable" style="text-align:center;">
+		<tr><td>X<br>0 &ShortRightArrow;</td><td>K<br>2 &LowerLeftArrow;</td><td>U<br>1 &ShortRightArrow;</td><td>S<br>2 &LowerRightArrow;</td><td>O<br>2 &LowerLeftArrow;</td></tr>
+		<tr><td>L<br>3 &LowerRightArrow;</td><td>P<br>2 &ShortRightArrow;</td><td>G<br>0 &ShortUpArrow;</td><td>B<br>1 &ShortDownArrow;</td><td>C<br>1 &ShortUpArrow;</td></tr>
+		<tr><td>W<br>1 &ShortDownArrow;</td><td>Z<br>0 &ShortLeftArrow;</td><td>A<br>3 &UpperLeftArrow;</td><td>Y<br>1 &ShortRightArrow;</td><td>I<br>2 &ShortDownArrow;</td></tr>
+		<tr><td>N<br>0 &LowerRightArrow;</td><td>T<br>3 &ShortRightArrow;</td><td>D<br>2 &ShortUpArrow;</td><td>J<br>0 &LowerRightArrow;</td><td>M<br>1 &LowerLeftArrow;</td></tr>
+		<tr><td>F<br>3 &UpperRightArrow;</td><td>R<br>0 &ShortLeftArrow;</td><td>V<br>0 &UpperRightArrow;</td><td>E<br>2 &ShortLeftArrow;</td><td>H<br>1 &ShortRightArrow;</td></tr>
+	</table>
+
+	<p>As hinted by the flavor text, the TRASH needs to be removed from the three puzzle answers in the round, and in the order implied by the three grids on this meta puzzle (compass (directions), id tag (numbers), and then envelopes (letters)):</p>
+
+	<ul>
+		<li>FLOW C<span class="delete">HARTS</span> &ShortRightArrow; FLOWC</li>
+		<li>U<span class="delete">R</span>B<span class="delete">A</span>N MY<span class="delete">THS</span> &ShortRightArrow; UBNMY</li>
+		<li>DI<span class="delete">S</span>P<span class="delete">AT</span>C<span class="delete">H</span>E<span class="delete">R</span> &ShortRightArrow; DIPCE</li>
+	</ul>
+
+	<p>For each letter in the resulting string, navigate from it in the grid above in the direction indicated, by the number of steps indicated:</p>
+
+	<table class="solutiontable" style="text-align:center;">
+		<tr><td>F<br>3 &UpperRightArrow;</td><td>B</td><td>U<br>1 &ShortRightArrow;</td><td>S</td><td>D<br>2 &ShortUpArrow;</td><td>G</td></tr>
+		<tr><td>L<br>3 &LowerRightArrow;</td><td>E</td><td>B<br>1 &ShortDownArrow;</td><td>Y</td><td>I<br>2 &ShortDownArrow;</td><td>H</td></tr>
+		<tr><td>O<br>2 &LowerLeftArrow;</td><td>A</td><td>N<br>0 &LowerRightArrow;</td><td>N</td><td>P<br>2 &ShortRightArrow;</td><td>B</td></tr>
+		<tr><td>W<br>1 &ShortDownArrow;</td><td>N</td><td>M<br>1 &LowerLeftArrow;</td><td>E</td><td>C<br>1 &ShortUpArrow;</td><td>O</td></tr>
+		<tr><td>C<br>1 &ShortUpArrow;</td><td>O</td><td>Y<br>1 &ShortRightArrow;</td><td>I</td><td>E<br>2 &ShortLeftArrow;</td><td>R</td></tr>
+	</table>
+
+	<p>The resulting letters spell the solution <span class="answer spoiler">BE A NOSY NEIGHBOR</span>.</p>
+
+</div>
+
+
+
+
+</body></html>
