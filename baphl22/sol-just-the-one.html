@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>BAPHL 22</title>
+	<link rel="stylesheet" type="text/css" href="BAPHL%2022_files/BAPHLcss.css">
+	<script type="text/javascript" src="BAPHL%2022_files/md5.min.js"></script>
+	<script type="text/javascript" src="BAPHL%2022_files/baphl.js"></script>
+	
+</head>
+<body>
+<div id="header">
+
+	<div><img id="logo" src="BAPHL%2022_files/greendaleext-logo.png"></div>
+
+</div>
+
+<link rel="stylesheet" type="text/css" href="solution.css">
+<style>
+
+th.rotate {
+  /* Something you can count on */
+  height: 140px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    translate(15px, 51px)
+    /* 45 is really 360 - 45 */
+    rotate(315deg);
+  width: 30px;
+}
+.logictable th.rotate > div > span {
+  border-bottom: 1px solid #000;
+  padding: 2px 5px;
+}
+
+.logictable {
+	border-collapse: collapse;
+	margin: auto;
+}
+
+.logictable td {
+	border: 1px solid;
+}
+
+.logictable th {
+	border: 0px;
+}
+
+.ex {
+	text-align: center;
+}
+
+.green {
+	background-color: lightgreen;
+}
+
+</style>
+
+<div class="block" id="solution">
+	<h2>Just the One Solution</h2>
+	<h3>by Christopher Cotton</h3>
+	
+	<p>Each of the people has a rule about what they like and what they don't like. Start by finding the rule for each person. Their name is also a clue for the rule.</p>
+
+	<table class="solutiontable">
+		<tr><th>Person</th><th>Likes</th><th>Like Rule</th><th>Dislikes</th><th>Dislike Rule</th></tr>
+		<tr><td>1. Alice</td><td>Beachhead, Magical</td><td>Only uses the first half of the alphabet</td><td>Provost, Topsy-Turvy</td><td>Only uses the second half of the alphabet</td></tr>
+		<tr><td>2. Bob</td><td>Breadcrumb, Classic</td><td>Starts and ends with the same letter</td><td>Mealtime, Thousandth</td><td>Repeated bigram at the beginning and end</td></tr>
+		<tr><td>3. Briella</td><td>Cheerleader, Summer</td><td>Double letters</td><td>Cockerel, Photometer</td><td>3 letter palindromic substring</td></tr>
+		<tr><td>4. Buzz</td><td>Clink, Gurgle</td><td>Onomatopoeias</td><td>Eureka, Hurray</td><td>Interjections</td></tr>
+		<tr><td>5. Langston</td><td>Schmidt, Twelfth</td><td>6 consonants</td><td>Kauai, Queue</td><td>4 vowels</td></tr>
+		<tr><td>6. London</td><td>Criticism, Western</td><td>One repeated vowel</td><td>Dialogue, Euphoria</td><td>Supervocalic</td></tr>
+		<tr><td>7. Margot</td><td>Debt, Salmon</td><td>Silent letter</td><td>Evident, Vivid</td><td>All letters are pronounced</td></tr>
+		<tr><td>8. Ronda</td><td>Deal, Noir</td><td>Anagram of a chemical element</td><td>Heart, Rife</td><td>Anagram of a classical element</td></tr>
+		<tr><td>9. Samara</td><td>Capricorn, Decoy</td><td>Contains the first three letters of a month</td><td>Beryl, Frills</td><td>Contains the last three letters of a month</td></tr>
+		<tr><td>10. Stuart</td><td>Hijinks, Wurst</td><td>3 consecutive letters in the alphabet in order</td><td>Coupons, Fedora</td><td>3 consecutive letters in the alphabet backwards</td></tr>
+	</table>
+
+	<p>Each of the words from the top of the circle fits into one or more of the 10 rules. There is only one way to assign one word to one person such that every word fits in that person's rule.</p>
+
+	<table class="logictable">
+		<tr><th style="vertical-align: bottom;">Person</th><th style="vertical-align: bottom;">Rule</th><th class="rotate"><div><span>SMASH</span></div></th><th class="rotate"><div><span>RINGTONE</span></div></th><th class="rotate"><div><span>UNSTUFF</span></div></th><th class="rotate"><div><span>TALENT</span></div></th><th class="rotate"><div><span>CALMNESS</span></div></th><th class="rotate"><div><span>ALABAMA</span></div></th><th class="rotate"><div><span>KNIGHTS</span></div></th><th class="rotate"><div><span>SCISSORS</span></div></th><th class="rotate"><div><span>MOONBEAMS</span></div></th><th class="rotate"><div><span>LAUGHTER</span></div></th></tr>
+		<tr><td>1. Alice</td><td>Only uses the first half of the alphabet</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td class="ex green">X</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td></tr>
+		<tr><td>2. Bob</td><td>Starts and ends with the same letter</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td class="ex green">X</td><td> &nbsp; </td><td class="ex">X</td><td> &nbsp; </td><td class="ex">X</td><td> &nbsp; </td><td> &nbsp; </td></tr>
+		<tr><td>3. Briella</td><td>Double letters</td><td> &nbsp; </td><td> &nbsp; </td><td class="ex">X</td><td> &nbsp; </td><td class="ex">X</td><td> &nbsp; </td><td> &nbsp; </td><td class="ex">X</td><td class="ex green">X</td><td> &nbsp; </td></tr>
+		<tr><td>4. Buzz</td><td>Onomatopoeias</td><td class="ex green">X</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td></tr>
+		<tr><td>5. Langston</td><td>6 consonants</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td class="ex">X</td><td> &nbsp; </td><td class="ex green">X</td><td class="ex">X</td><td> &nbsp; </td><td> &nbsp; </td></tr>
+		<tr><td>6. London</td><td>One repeated vowel</td><td class="ex">X</td><td> &nbsp; </td><td class="ex green">X</td><td> &nbsp; </td><td> &nbsp; </td><td class="ex">X</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td></tr>
+		<tr><td>7. Margot</td><td>Silent letter</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td class="ex">X</td><td class="ex green">X</td><td> &nbsp; </td><td class="ex">X</td></tr>
+		<tr><td>8. Ronda</td><td>Anagram of a chemical element</td><td> &nbsp; </td><td class="ex green">X</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td></tr>
+		<tr><td>9. Samara</td><td>Contains the first three letters of a month</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td class="ex green">X</td></tr>
+		<tr><td>10. Stuart</td><td>3 consecutive letters in the alphabet in order</td><td> &nbsp; </td><td> &nbsp; </td><td class="ex">X</td><td> &nbsp; </td><td class="ex green">X</td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td></tr>
+	</table>
+	
+	<p>Now that each name is associated with one word from the circle, draw lines between each pair on the big circle.</p>
+	<div style="margin: auto;"><img src="imgjto.png"></div>
+
+	<p>The uncrossed letters spell <span class="answer">READ XS UP</span>. Reading all the places where two lines cross over a letter from the bottom up gives the phrase <span class="answer spoiler">LOOSE LEAF BINDER</span>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body></html>
