@@ -25,11 +25,17 @@ puzzleModes["default"] = {
 
     // paths
     "data-paths": null,
+    "data-path-max-directions": 2,
     "data-path-style": "straight",
 
     // edges
     "data-edges": null,
     "data-edge-style": "box",
+
+    // spokes
+    "data-spokes": null,
+    "data-spoke-max-directions": null,
+    "data-spoke-style": "solid",
 
     // clues
     "data-clue-locations": null,
@@ -43,11 +49,14 @@ puzzleModes["default"] = {
     "data-drag-paint-fill": true,
     "data-drag-draw-path": false,
     "data-drag-draw-edge": false,
+    "data-drag-draw-spoke": false,
     "data-unselectable-givens": false,
     "data-extracts": null,
     "data-no-input": false,
     "data-show-commands": false,
-    "data-state-key": null
+    "data-puzzle-id": null,
+    "data-team-id": null,
+    "data-player-id": null
 };
 
 puzzleModes["linear"] = {
@@ -93,6 +102,15 @@ puzzleModes["solution"] = {
     "data-no-input": true
 }
 
+puzzleModes["wordsearch"] = {
+    "data-drag-draw-spoke": true,
+    "data-spoke-only-straight": true
+}
+
+puzzleModes["spokes"] = {
+    "data-drag-draw-spoke": true
+}
+
 // Parse string as raw JS objects. e.g. "false" -> false
 // (if ("false") is truthy in JS)
 function parseFalseStrings(s) {
@@ -114,29 +132,18 @@ function UndoManager() {
     this.redoStack = [];
     this.activeGroup = null;
 
-    // undo/redo support
-    this.redoUnit = function(unit) {
-        var extractId = unit.elem.getAttribute("data-extract-id");
-        var elems = extractId ? document.querySelectorAll("." + extractId) : [unit.elem];
-
-        elems.forEach(elem =>{
-            if (unit.adds) { unit.adds.forEach((a) => { elem.classList.add(a); }); }
-            if (unit.removes) { unit.removes.forEach((a) => { elem.classList.remove(a); }); }
-            if (unit.attribute) { elem.setAttribute(unit.attribute, unit.newValue); }
-            if (unit.oldText || unit.newText) { elem.innerText = unit.newText; }
-        });
+    this.undoUnits = function(puzzle, units) {
+        var changes = [];
+        units.forEach(u => { changes.push({puzzleId: puzzle.puzzleId, teamId: puzzle.container.getAttribute("data-team-id"), locationKey: u.elem.id, propertyKey: u.propertyKey, value: u.oldValue, playerId: puzzle.container.getAttribute("data-player-id")}); });
+        puzzle.changeWithoutUndo(changes);
+        puzzle.container.dispatchEvent(new CustomEvent("puzzlechanged", { detail: changes, bubbles: true }));
     }
 
-    this.undoUnit = function(unit) {
-        var extractId = unit.elem.getAttribute("data-extract-id");
-        var elems = extractId ? document.querySelectorAll("." + extractId) : [unit.elem];
-
-        elems.forEach(elem =>{
-            if (unit.adds) { unit.adds.forEach((a) => { elem.classList.remove(a); }); }
-            if (unit.removes) { unit.removes.forEach((a) => { elem.classList.add(a); }); }
-            if (unit.attribute) { elem.setAttribute(unit.attribute, unit.oldValue); }
-            if (unit.oldText || unit.newText) { elem.innerText = unit.oldText; }
-        });
+    this.redoUnits = function(puzzle, units) {
+        var changes = [];
+        units.forEach(u => { changes.push({puzzleId: puzzle.puzzleId, teamId: puzzle.container.getAttribute("data-team-id"), locationKey: u.elem.id, propertyKey: u.propertyKey, value: u.newValue, playerId: puzzle.container.getAttribute("data-player-id")}); });
+        puzzle.changeWithoutUndo(changes);
+        puzzle.container.dispatchEvent(new CustomEvent("puzzlechanged", { detail: changes, bubbles: true }));
     }
 
     this.undo = function() {
@@ -144,9 +151,8 @@ function UndoManager() {
         if (this.undoStack.length == 0) { return; }
 
         var group = this.undoStack.pop();
-        group.units.forEach((unit) => { this.undoUnit(unit); });
+        this.undoUnits(group.puzzleEntry, group.units);
         this.redoStack.push(group);
-        this.notify(group);
     }
 
     this.redo = function() {
@@ -154,9 +160,8 @@ function UndoManager() {
         if (this.redoStack.length == 0) { return; }
 
         var group = this.redoStack.pop();
-        group.units.forEach((unit) => { this.redoUnit(unit); });
+        this.redoUnits(group.puzzleEntry, group.units);
         this.undoStack.push(group);
-        this.notify(group);
     }
 
     this.startGroup = function(puzzleEntry) {
@@ -168,55 +173,24 @@ function UndoManager() {
         var retVal = false;
 
         if (this.activeGroup && this.activeGroup.units.length) {
-            this.undoStack.push(this.activeGroup);
-            this.redoStack = [];
-            this.notify(this.activeGroup);
-            retVal = true;
+            try {
+                this.redoUnits(this.activeGroup.puzzleEntry, this.activeGroup.units);
+                this.undoStack.push(this.activeGroup);
+                this.redoStack = [];
+                retVal = true;
+            }
+            catch { }
         }
 
         this.activeGroup = null;
         return retVal;
     }
 
-    this.modifyClass = function(elem, adds, removes) {
-        var trueAdds = [];
-        var trueRemoves = [];
+    this.addUnit = function(element, propertyKey, oldValue, newValue) {
+        if (oldValue == newValue) return;
 
-        adds.forEach((a) => { if (a && !elem.classList.contains(a)) { trueAdds.push(a); }});
-        removes.forEach((r) => { if (r && elem.classList.contains(r)) { trueRemoves.push(r); }});
-
-        if (trueAdds.length == 0 && trueRemoves.length == 0) { return; }
-
-        var unit = { "elem": elem };
-        if (trueAdds.length > 0) { unit.adds = trueAdds; }
-        if (trueRemoves.length > 0) { unit.removes = trueRemoves; }
-
-        this.redoUnit(unit);
+        var unit = { "elem": element, "propertyKey": propertyKey, "oldValue": oldValue, "newValue" : newValue };
         this.activeGroup.units.push(unit);
-    }
-
-    this.modifyAttribute = function(elem, attribute, newValue) {
-        var oldValue = elem.getAttribute(attribute);
-        if (oldValue == newValue) { return; }
-
-        var unit = { "elem": elem, "attribute": attribute, "oldValue": oldValue, "newValue": newValue };
-
-        this.redoUnit(unit);
-        this.activeGroup.units.push(unit);
-    }
-
-    this.modifyText = function(elem, newText) {
-        var oldText = elem.innerText;
-        if (oldText == newText) { return; }
-
-        var unit = { "elem": elem, "oldText": oldText, "newText": newText };
-
-        this.redoUnit(unit);
-        this.activeGroup.units.push(unit);
-    }
-
-    this.notify = function(group) {
-        group.puzzleEntry.onUndoRedo(group.units);
     }
 }
 
@@ -249,10 +223,12 @@ function PuzzleEntry(p, index) {
     this.pointerIsDown = false;
     this.lastCell = null;
     this.currentFill = null;
-    this.stateKey = this.options["data-state-key"];
-    if (!this.stateKey) { this.stateKey = window.location.href + "|" + index; }
+    this.puzzleId = this.options["data-puzzle-id"];
+    if (!this.puzzleId) { this.puzzleId = window.location.pathname + "|" + index; }
     this.inhibitSave = false;
     this.xKeyMode = false;
+    this.tilt = 0;
+    this.reticleXMode = false;
 
     this.locateScope = function(scopeId) {
         var ancestor = this.container;
@@ -278,12 +254,12 @@ function PuzzleEntry(p, index) {
         var col = dcol + Array.prototype.indexOf.call(td.parentElement.children, td) - this.leftClueDepth;
         var row = drow + Array.prototype.indexOf.call(td.parentElement.parentElement.children, td.parentElement) - this.topClueDepth;
 
-        if (this.fShift && this.options["data-drag-draw-path"]) {
+        if (this.fShift && (this.options["data-drag-draw-path"] || this.options["data-drag-draw-spoke"])) {
             var tdTo = this.table.querySelector("tr:nth-child(" + (row + this.topClueDepth + 1) + ") td:nth-child(" + (col + this.leftClueDepth + 1) + ")");
             if (tdTo && tdTo.classList.contains("inner-cell")) {
                 this.lastCell = td;
                 this.currentFill = this.findClassInList(td, this.fillClasses);
-                this.dragPaintAndPath(tdTo);
+                this.dragBetweenCells(tdTo, false);
             }
         }
 
@@ -346,22 +322,22 @@ function PuzzleEntry(p, index) {
         return cls;
     }
 
-    this.cycleClasses = function(td, classes, reverse) {
+    this.cycleClasses = function(td, propertyKey, classes, reverse) {
         var cls = this.findClassInList(td, classes);
 
         if (cls) {
             this.undoManager.startGroup(this);
             cls = classes[(classes.indexOf(cls) + classes.length + (reverse ? -1 : 1)) % classes.length];
-            this.setClassInCycle(td, classes, cls);
+            this.setClassInCycle(td, propertyKey, classes, cls);
             this.undoManager.endGroup();
         }
 
         return cls;
     }
 
-    this.setClassInCycle = function(td, classes, cls) {
+    this.setClassInCycle = function(td, propertyKey, classes, cls) {
         if (classes && !td.classList.contains(cls)) {
-            this.undoManager.modifyClass(td, [cls], classes);
+            this.undoManager.addUnit(td, propertyKey, this.findClassInList(td, classes), cls);
         }
     }
 
@@ -371,9 +347,9 @@ function PuzzleEntry(p, index) {
             if (this.options["data-text-shift-key"] == "rebus" || !val.includes(ch)) { val = val + ch; }
             else { val = val.replace(ch, ""); }
 
-            this.setText(e.target, ["small-text"], [], val);
+            this.setText(e.target, val, true);
         } else {
-            this.setText(e.target, [], ["small-text"], ch);
+            this.setText(e.target, ch, false);
             if (this.options["data-text-advance-on-type"]) { this.move(e.target, this.dy, this.dx); }
         }
     }
@@ -390,9 +366,9 @@ function PuzzleEntry(p, index) {
         }
 
         if (newVal) {
-            this.setText(e.target, [], [], newVal);
+            this.setText(e.target, newVal, e.target.classList.contains("small-text"));
         } else {
-            this.setText(e.target, [], ["small-text"], "");
+            this.setText(e.target, "", false);
             if (this.options["data-text-advance-on-type"]) { this.move(e.target, -this.dy, -this.dx); }
         }
     }
@@ -400,6 +376,16 @@ function PuzzleEntry(p, index) {
     this.beforeInput = function(e) {
         e.target.dispatchEvent(new KeyboardEvent("keydown", { keyCode: (e.data ? e.data.toUpperCase().charCodeAt(0) : 46) }));
         e.preventDefault();
+    }
+
+    this.setTilt = function(e, tilt) {
+        this.tilt = (this.tilt == tilt) ? 0 : tilt;
+        this.updateSvg(e.target);
+    }
+
+    this.toggleReticle = function(e) {
+        this.reticleXMode = !this.reticleXMode;
+        this.updateSvg(e.target);
     }
 
     this.keyDown = function(e) {
@@ -412,10 +398,14 @@ function PuzzleEntry(p, index) {
         
         if (e.ctrlKey && e.keyCode == 90) { this.undoManager.undo(); } // Ctrl-Z
         else if (e.ctrlKey && e.keyCode == 89) { this.undoManager.redo(); } // Ctrl-Y
-        else if (e.keyCode == 37) { this.move(e.target, 0, -1); } // left
-        else if (e.keyCode == 38) { this.move(e.target, -1, 0); } // up
-        else if (e.keyCode == 39) { this.move(e.target, 0, 1); } // right
-        else if (e.keyCode == 40) { this.move(e.target, 1, 0); } // down
+        else if (e.keyCode == 37) { this.move(e.target, -this.tilt, -1); } // left
+        else if (e.keyCode == 38) { this.move(e.target, -1, this.tilt); } // up
+        else if (e.keyCode == 39) { this.move(e.target, this.tilt, 1); } // right
+        else if (e.keyCode == 40) { this.move(e.target, 1, -this.tilt); } // down
+        else if (e.keyCode == 191 && this.options["data-drag-draw-spoke"]) { this.setTilt(e, 1); } // /
+        else if (e.keyCode == 220 && this.options["data-drag-draw-spoke"]) { this.setTilt(e, -1); } // \
+        else if (e.keyCode == 187 && this.fShift && this.options["data-drag-draw-spoke"]) { this.toggleReticle(e); } // +
+        else if (e.keyCode == 88 && this.options["data-drag-draw-spoke"] && !this.options["data-text-characters"].includes("X")) { this.toggleReticle(e); } // x
         else if (e.keyCode == 190 && this.canHaveCornerFocus) { this.setCornerFocusMode(); } // period
         else if (e.keyCode == 32) { // space
             if (e.ctrlKey) {
@@ -426,12 +416,12 @@ function PuzzleEntry(p, index) {
                 if (this.options["data-text-advance-on-type"] && this.numCols > 1 && this.numRows > 1) { this.dx = 1 - this.dx; this.dy = 1 - this.dy; }
                 if (this.options["data-clue-locations"]) { this.unmark(e.target); this.mark(e.target); }
                 if (e.currentTarget.classList.contains("given-fill")) return;
-                if (this.options["data-fill-cycle"]) { this.currentFill = this.cycleClasses(e.target, this.fillClasses, e.shiftKey); }
+                if (this.options["data-fill-cycle"]) { this.currentFill = this.cycleClasses(e.target, "class-fill", this.fillClasses, e.shiftKey); }
             }
         } else if (e.keyCode == 8) { // backspace
             this.handleBackspaceChar(e);
         } else if (e.keyCode == 46) { // delete
-            this.setText(e.target, [], [], "");
+            this.setText(e.target, "", e.target.classList.contains("small-text"));
         } else {
             var code = e.keyCode;
             if (code >= 96 && code <= 105) { code -= 48; }
@@ -461,12 +451,13 @@ function PuzzleEntry(p, index) {
         else if (e.keyCode == 88) { this.xKeyMode = !this.xKeyMode; this.cornerFocus.classList.toggle("x-mode"); } // toggle "x" mode
     }
 
-    this.setText = function(target, adds, removes, text) {
+    this.setText = function(target, text, smalltext) {
         var textElement = target.querySelector(".text span");
         if (textElement.innerText != text && !target.classList.contains("given-text")) {
+            var wasSmalltext = target.classList.contains("small-text");
             this.undoManager.startGroup(this);
-            this.undoManager.modifyClass(target, adds, removes);
-            this.undoManager.modifyText(textElement, text);
+            if (wasSmalltext != smalltext) { this.undoManager.addUnit(target, "class-small-text", wasSmalltext ? "small-text" : null, smalltext ? "small-text" : null); }
+            this.undoManager.addUnit(target, "text", textElement.innerText, text);
             this.undoManager.endGroup();
         }
     }
@@ -475,26 +466,56 @@ function PuzzleEntry(p, index) {
         return target.querySelector(".text span").innerText;
     }
 
-    this.onUndoRedo = function(units) {
-        units.forEach((u) => {
-            if (u.attribute == "data-path-code" || u.attribute == "data-edge-code" || u.attribute == "data-x-edge-code") {
-                this.updateSvg(u.elem);
-            }
-            if (u.elem instanceof HTMLTableCellElement) {
-                this.processTdForCopyjack(u.elem);
-            } else if (u.elem.parentElement.parentElement instanceof HTMLTableCellElement) {
-                this.processTdForCopyjack(u.elem.parentElement.parentElement);
-            }
+    this.changeWithoutUndo = function(changes) {
+        var changedElems = [];
+        var svgChangedElems = [];
+
+        changes.forEach(c => {
+            var primary = this.lookup[c.locationKey];
+
+            var extractId = primary.getAttribute("data-extract-id");
+            var elems = extractId ? document.querySelectorAll("table:not(.copy-only) ." + extractId) : [primary];
+
+            elems.forEach(elem => {
+                if (!changedElems.includes(elem)) { changedElems.push(elem); }
+
+                if (c.playerId) { elem.setAttribute("data-coop-" + c.propertyKey.replace("data-", "") + "-playerId", c.playerId); }
+
+                switch(c.propertyKey) {
+                    case "text":
+                        var textElement = elem.querySelector(".text span");
+                        textElement.innerText = c.value;
+                        break;
+                    case "class-small-text":
+                        if (c.value) { elem.classList.add("small-text"); }
+                        else { elem.classList.remove("small-text"); }
+                        break;
+                    case "class-fill":
+                        this.fillClasses.forEach(fc => elem.classList.remove(fc));
+                        if (c.value) { elem.classList.add(c.value); }
+                        break;
+                    default:
+                        if (c.propertyKey.endsWith("-code") && !svgChangedElems.includes(elem)) { svgChangedElems.push(elem); }
+                        elem.setAttribute(c.propertyKey, c.value);
+                        break;
+                }
+            });
         });
+
+        svgChangedElems.forEach(el => { this.updateSvg(el); });
+        changedElems.forEach(el => { this.processTdForCopyjack(el); });
     }
 
-    this.getEventEdgeState = function(e) {
-        var tolerance = e.currentTarget.offsetWidth/5;
-        var cell = e.currentTarget;
-        var closeTop = (e.offsetY <= tolerance);
-        var closeBottom = (e.offsetY >= e.currentTarget.offsetHeight - tolerance);
-        var closeLeft = (e.offsetX <= tolerance);
-        var closeRight = (e.offsetX >= e.currentTarget.offsetWidth - tolerance);
+    this.getEventEdgeState = function(cell, clientX, clientY) {
+        var cellClientRect = cell.getBoundingClientRect();
+        var offsetX = clientX - cellClientRect.x;
+        var offsetY = clientY - cellClientRect.y;
+
+        var tolerance = cell.offsetWidth/5;
+        var closeTop = (offsetY <= tolerance);
+        var closeBottom = (offsetY >= cell.offsetHeight - tolerance);
+        var closeLeft = (offsetX <= tolerance);
+        var closeRight = (offsetX >= cell.offsetWidth - tolerance);
 
         if (closeBottom || closeRight) {
             var col = Array.prototype.indexOf.call(cell.parentElement.children, cell) - this.leftClueDepth;
@@ -558,8 +579,8 @@ function PuzzleEntry(p, index) {
         if (curEdgeVal != this.fromEdgeVal) return;
 
         this.undoManager.startGroup(this);
-        if (this.fromEdgeVal == 1 || this.toEdgeVal == 1) this.undoManager.modifyAttribute(edgeState.cell, "data-edge-code", curEdgeCode ^ edgeState.edgeCode);
-        if (this.fromEdgeVal == -1 || this.toEdgeVal == -1) this.undoManager.modifyAttribute(edgeState.cell, "data-x-edge-code", curXEdgeCode ^ edgeState.edgeCode);
+        if (this.fromEdgeVal == 1 || this.toEdgeVal == 1) this.undoManager.addUnit(edgeState.cell, "data-edge-code", curEdgeCode, curEdgeCode ^ edgeState.edgeCode);
+        if (this.fromEdgeVal == -1 || this.toEdgeVal == -1) this.undoManager.addUnit(edgeState.cell, "data-x-edge-code", curXEdgeCode, curXEdgeCode ^ edgeState.edgeCode);
         this.undoManager.endGroup();
         this.updateSvg(edgeState.cell);
     }
@@ -585,7 +606,7 @@ function PuzzleEntry(p, index) {
         }
 
         if (this.canDrawOnEdges) {
-            var edgeState = this.getEventEdgeState(e);
+            var edgeState = this.getEventEdgeState(e.currentTarget, e.clientX, e.clientY);
             this.lastEdgeState = null;
             this.setEdgeState(edgeState, (e.button > 0 || e.shiftKey) ? "cycle-back" : "cycle-front");
             if (edgeState.any) {
@@ -594,7 +615,7 @@ function PuzzleEntry(p, index) {
             }
         }
         
-        if (this.options["data-fill-cycle"] && !e.currentTarget.classList.contains("given-fill")) { this.currentFill = this.cycleClasses(e.currentTarget, this.fillClasses, e.button > 0 || e.shiftKey); }
+        if (this.options["data-fill-cycle"] && !e.currentTarget.classList.contains("given-fill")) { this.currentFill = this.cycleClasses(e.currentTarget, "class-fill", this.fillClasses, e.button > 0 || e.shiftKey); }
         else { this.currentFill = this.findClassInList(e.currentTarget, this.fillClasses); }
         
         if (this.canHaveCenterFocus) {
@@ -609,8 +630,16 @@ function PuzzleEntry(p, index) {
 
         e.preventDefault();
 
+        var cellClientRect = e.currentTarget.getBoundingClientRect();
+        var centerOffsetX = e.clientX - cellClientRect.x - e.currentTarget.offsetWidth/2;
+        var centerOffsetY = e.clientY - cellClientRect.y - e.currentTarget.offsetHeight/2;
+
+        if ((centerOffsetX * centerOffsetX + centerOffsetY * centerOffsetY) * 4 < e.currentTarget.offsetWidth * e.currentTarget.offsetHeight) {
+            this.dragBetweenCells(e.currentTarget, e.buttons > 1);
+        }
+
         if (this.canDrawOnEdges && !this.currentFill) {
-            var edgeState = this.getEventEdgeState(e);
+            var edgeState = this.getEventEdgeState(e.currentTarget, e.clientX, e.clientY);
             this.setEdgeState(edgeState, (e.button > 0 || e.shiftKey) ? "cycle-back" : "cycle-front");
         }
     }
@@ -619,25 +648,34 @@ function PuzzleEntry(p, index) {
         this.pointerIsDown = false;
     }
 
-    this.dragPaintAndPath = function(to) {
+    this.dragBetweenCells = function(to, rightMouse) {
+        if (this.lastCell === to) return;
+
         var wantPaint = this.options["data-drag-paint-fill"] && !!this.currentFill;
         var canPaint = wantPaint;
 
         this.undoManager.startGroup(this);
 
-        if (this.options["data-drag-draw-path"]) {
+        if (wantPaint && (this.options["data-drag-draw-path"] || this.options["data-drag-draw-spoke"])) {
             var targetFill = this.findClassInList(to, this.fillClasses);
             var setLast = false; 
             if (wantPaint && this.currentFill == this.fillClasses[0]) { this.currentFill = targetFill; setLast = true; }
             if (wantPaint && targetFill != this.fillClasses[0] && targetFill != this.currentFill) { canPaint = false; }
-            else { canPaint &= this.LinkCells(this.lastCell, to); }
+        }
+
+        if (this.options["data-drag-draw-spoke"] && (!wantPaint || canPaint)) {
+            canPaint &= this.LinkCellsSpoke(this.lastCell, to, rightMouse);
+        }
+
+        if (this.options["data-drag-draw-path"] && (!wantPaint || canPaint)) {
+            canPaint &= this.LinkCellsPath(this.lastCell, to);
         }
 
         if (canPaint && !to.classList.contains("given-fill")) {
-            this.setClassInCycle(to, this.fillClasses, this.currentFill);
+            this.setClassInCycle(to, "class-fill", this.fillClasses, this.currentFill);
         }
 
-        if (canPaint && setLast) { this.setClassInCycle(this.lastCell, this.fillClasses, this.currentFill); }
+        if (canPaint && setLast) { this.setClassInCycle(this.lastCell, "class-fill", this.fillClasses, this.currentFill); }
 
         var didWork = this.undoManager.endGroup();
 
@@ -645,13 +683,6 @@ function PuzzleEntry(p, index) {
             this.lastCell = to;
             if (didWork) { this.updateCenterFocus(to); }
         }
-    }
-
-    this.pointerEnter = function(e) {
-        if (!this.pointerIsDown) return;
-        if (this.lastCell === e.currentTarget) return;
-
-        this.dragPaintAndPath(e.currentTarget);
     }
 
     this.getOptionArray = function(option, splitchar, special) {
@@ -759,11 +790,40 @@ function PuzzleEntry(p, index) {
         svg.appendChild(use);
     }
 
+    this.addSpokesToSvg = function(svg, spokeCode, spokePrefix) {
+        for (var i = 0; i < 8; i++) {
+            if (!(spokeCode & (1 << i))) continue;
+
+            var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+            use.classList.add(spokePrefix + "spoke");
+            var spokePath = this.options["data-spoke-style"];
+            if (!spokePath.endsWith(".svg")) { spokePath = puzzleJsFolderPath + "spoke-" + spokePath + ".svg"; }
+            use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", spokePath + "#" + spokePrefix + "spoke-n" + ((i & 1) ? "e" : ""));
+            if (i > 1) { use.setAttributeNS(null, "transform", "rotate(" + ((i >> 1) * 90) + ")"); }
+            svg.appendChild(use);
+        }
+    }
+
+    this.addReticleLayer = function(svg, cls) {
+        var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+        use.classList.add(cls);
+        var spokePath = this.options["data-spoke-style"];
+        if (!spokePath.endsWith(".svg")) { spokePath = puzzleJsFolderPath + "spoke-" + spokePath + ".svg"; }
+        use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", spokePath + "#" + (this.reticleXMode ? "x-" : "") + "reticle");
+        if (this.tilt != 0) { use.setAttributeNS(null, "transform", "rotate(" + ((this.tilt) * 45) + ")"); }
+        svg.appendChild(use);
+    }
+
     this.pathTranslate = ["o0", "i2", "i0", "l0", "i1", "r2", "r1", "t1", "i3", "r3", "r0", "t3", "l1", "t2", "t0", "x0"];
     this.pathCopyjack = [" ", "╵", "╷", "│", "╴", "┘", "┐", "┤", "╶", "└", "┌", "├", "─", "┴", "┬", "┼"];
     this.updateSvg = function(td) {
         var svg = td.querySelector("svg");
-        if (!svg) { svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.setAttribute("viewBox", "-15 -15 30 30"); td.appendChild(svg); }
+        if (!svg) {
+            svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("viewBox", "-15 -15 30 30");
+            if (!this.canDrawOnEdges) { svg.classList.add("nopointer"); }
+            td.appendChild(svg);
+        }
 
         var pathCode = td.getAttribute("data-path-code");
         if (pathCode) { pathCode = parseInt(pathCode); } else { pathCode = 0; }
@@ -794,38 +854,58 @@ function PuzzleEntry(p, index) {
         if (edgeCode & 2) { this.addEdgeToSvg(svg, "x-edge-bottom"); }
         if (edgeCode & 4) { this.addEdgeToSvg(svg, "x-edge-left"); }
         if (edgeCode & 8) { this.addEdgeToSvg(svg, "x-edge-right"); }
+
+        this.addSpokesToSvg(svg, td.getAttribute("data-spoke-code"), "");
+        this.addSpokesToSvg(svg, td.getAttribute("data-x-spoke-code"), "x-");
+        if (this.options["data-drag-draw-spoke"] && td === this.currentCenterFocus) {
+            this.addReticleLayer(svg, "reticle-back");
+            this.addReticleLayer(svg, "reticle-front");
+        }
     }
 
-    this.IsFullyLinked = function(code) {
+    this.IsFullyLinked = function(code, maxLinks) {
+        if (!maxLinks) return false;
+
+        code = parseInt(code);
+        maxLinks = parseInt(maxLinks);
+
         var linkCount = 0;
         while (code) { linkCount++; code &= (code - 1); }
-        return (linkCount >= 2);
+        return (linkCount >= maxLinks);
     }
 
-    this.LinkCellsDirectional = function(cellFrom, directionFrom, cellTo, directionTo) {
-        var codeFrom = cellFrom.getAttribute("data-path-code");
-        var codeTo = cellTo.getAttribute("data-path-code");
+    this.LinkCellsDirectional = function(attributeNameBase, maxLinks, cellFrom, directionFrom, cellTo, directionTo) {
+        var attributeName = "data-" + attributeNameBase + "-code";
+        var codeFrom = cellFrom.getAttribute(attributeName);
+        var codeTo = cellTo.getAttribute(attributeName);
         if (!codeFrom) { codeFrom = 0; }
         if (!codeTo) { codeTo = 0; }
 
-        if (!(codeFrom & directionFrom) && !(codeTo & directionTo) && !this.IsFullyLinked(codeFrom) && !this.IsFullyLinked(codeTo)) {
-            this.undoManager.modifyAttribute(cellFrom, "data-path-code", codeFrom | directionFrom);
-            this.undoManager.modifyAttribute(cellTo, "data-path-code", codeTo | directionTo);
+        if (!(codeFrom & directionFrom) && !(codeTo & directionTo) && (attributeNameBase.startsWith("x-") || (!this.IsFullyLinked(codeFrom, maxLinks) && !this.IsFullyLinked(codeTo, maxLinks)))) {
+            this.undoManager.addUnit(cellFrom, attributeName, codeFrom, codeFrom | directionFrom);
+            this.undoManager.addUnit(cellTo, attributeName, codeTo, codeTo | directionTo);
+
+            var otherAttributeName = (attributeNameBase.startsWith("x-") ? attributeName.replace(attributeNameBase, attributeNameBase.substring(2)) : attributeName.replace(attributeNameBase, "x-" + attributeNameBase));
+            var otherFrom = cellFrom.getAttribute(otherAttributeName);
+            var otherTo = cellTo.getAttribute(otherAttributeName);
+            if (otherFrom) { this.undoManager.addUnit(cellFrom, otherAttributeName, otherFrom, otherFrom & ~directionFrom); }
+            if (otherTo) { this.undoManager.addUnit(cellTo, otherAttributeName, otherTo, otherTo & ~directionTo); }
             return true;
         }
         else if ((codeFrom & directionFrom) && (codeTo & directionTo)) {
-            var givenCodeFrom = cellFrom.getAttribute("data-given-path-code");
-            var givenCodeTo = cellTo.getAttribute("data-given-path-code");
+            var givenAttributeName = "data-given-" + attributeNameBase + "-code";
+            var givenCodeFrom = cellFrom.getAttribute(givenAttributeName);
+            var givenCodeTo = cellTo.getAttribute(givenAttributeName);
             if (!(givenCodeFrom & directionFrom) && !(givenCodeTo & directionTo)) {
-                this.undoManager.modifyAttribute(cellFrom, "data-path-code", codeFrom & ~directionFrom);
-                this.undoManager.modifyAttribute(cellTo, "data-path-code", codeTo & ~directionTo);
+                this.undoManager.addUnit(cellFrom, attributeName, codeFrom, codeFrom & ~directionFrom);
+                this.undoManager.addUnit(cellTo, attributeName, codeTo, codeTo & ~directionTo);
 
                 if (this.options["data-drag-paint-fill"]) {
-                    if (cellFrom.getAttribute("data-path-code") == 0 && !cellFrom.classList.contains("given-fill")) {
-                        this.setClassInCycle(cellFrom, this.fillClasses, this.fillClasses[0]);
+                    if ((codeFrom & ~directionFrom) == 0 && !attributeNameBase.startsWith("x-") && !cellFrom.classList.contains("given-fill")) {
+                        this.setClassInCycle(cellFrom, "class-fill", this.fillClasses, this.fillClasses ? this.fillClasses[0] : null);
                     }
-                    if (cellTo.getAttribute("data-path-code") == 0 && !cellTo.classList.contains("given-fill")) {
-                        this.setClassInCycle(cellTo, this.fillClasses, this.fillClasses[0]);
+                    if ((codeTo & ~directionTo) == 0 && !attributeNameBase.startsWith("x-") && !cellTo.classList.contains("given-fill")) {
+                        this.setClassInCycle(cellTo, "class-fill", this.fillClasses, this.fillClasses ? this.fillClasses[0] : null);
                     }
                 }
                 return true;
@@ -835,23 +915,39 @@ function PuzzleEntry(p, index) {
         return false;
     }
 
-    this.LinkCells = function(cellFrom, cellTo)
+    this.LinkCellsPath = function(cellFrom, cellTo)
+    {
+        var colFrom = Array.prototype.indexOf.call(cellFrom.parentElement.children, cellFrom) - this.leftClueDepth;
+        var rowFrom = Array.prototype.indexOf.call(cellFrom.parentElement.parentElement.children, cellFrom.parentElement) - this.topClueDepth;
+        var colTo = Array.prototype.indexOf.call(cellTo.parentElement.children, cellTo) - this.leftClueDepth;
+        var rowTo = Array.prototype.indexOf.call(cellTo.parentElement.parentElement.children, cellTo.parentElement) - this.topClueDepth;
+        var maxDirections = this.options["data-path-max-directions"];
+
+        if (colFrom === colTo) {
+            if (rowFrom === rowTo - 1) { return this.LinkCellsDirectional("path", maxDirections, cellFrom, 2, cellTo, 1); }
+            else if (rowFrom === rowTo + 1) { return this.LinkCellsDirectional("path", maxDirections, cellFrom, 1, cellTo, 2); }
+        }
+        else if (rowFrom === rowTo) {
+            if (colFrom === colTo - 1) { return this.LinkCellsDirectional("path", maxDirections, cellFrom, 8, cellTo, 4); }
+            else if (colFrom === colTo + 1) { return this.LinkCellsDirectional("path", maxDirections, cellFrom, 4, cellTo, 8); }
+        }
+
+        return false;
+    }
+
+    this.LinkCellsSpoke = function(cellFrom, cellTo, rightMouse)
     {
         var colFrom = Array.prototype.indexOf.call(cellFrom.parentElement.children, cellFrom) - this.leftClueDepth;
         var rowFrom = Array.prototype.indexOf.call(cellFrom.parentElement.parentElement.children, cellFrom.parentElement) - this.topClueDepth;
         var colTo = Array.prototype.indexOf.call(cellTo.parentElement.children, cellTo) - this.leftClueDepth;
         var rowTo = Array.prototype.indexOf.call(cellTo.parentElement.parentElement.children, cellTo.parentElement) - this.topClueDepth;
 
-        if (colFrom === colTo) {
-            if (rowFrom === rowTo - 1) { return this.LinkCellsDirectional(cellFrom, 2, cellTo, 1); }
-            else if (rowFrom === rowTo + 1) { return this.LinkCellsDirectional(cellFrom, 1, cellTo, 2); }
-        }
-        else if (rowFrom === rowTo) {
-            if (colFrom === colTo - 1) { return this.LinkCellsDirectional(cellFrom, 8, cellTo, 4); }
-            else if (colFrom === colTo + 1) { return this.LinkCellsDirectional(cellFrom, 4, cellTo, 8); }
-        }
+        if ((colFrom === colTo && rowFrom === rowTo) || Math.abs(colFrom - colTo) > 1 || Math.abs(rowFrom - rowTo) > 1) return false;
 
-        return false;
+        const fromVals = [128, 1, 2, 64, 0, 4, 32, 16, 8];
+
+        var index = (rowTo - rowFrom + 1) * 3 + (colTo - colFrom + 1);
+        return this.LinkCellsDirectional((rightMouse ^ this.reticleXMode) ? "x-spoke" : "spoke", this.options["data-spoke-max-directions"], cellFrom, fromVals[index], cellTo, fromVals[8 - index]);
     }
 
     this.parseOuterClues = function(clues) {
@@ -897,7 +993,7 @@ function PuzzleEntry(p, index) {
         // Reset the font size to avoid row overflow.
         copyTd.style.fontSize = '1em';
         // Copy any text inside the td. This includes text inside divs within the td.
-        copyTd.innerText = inputTd.innerText;
+        copyTd.innerHTML = inputTd.innerHTML;
         // If the td has a "value", overwrite the innertext.
         const text = inputTd.querySelector('.text span');
         if (text && text.innerText) {
@@ -920,7 +1016,7 @@ function PuzzleEntry(p, index) {
     }
 
     this.prepareToReset = function() {
-        localStorage.removeItem(this.stateKey);
+        localStorage.removeItem(this.puzzleId);
 
         this.table.querySelectorAll(".inner-cell.extract .text span").forEach(s => {
             var extractId = s.getAttribute("data-extract-id");
@@ -955,20 +1051,26 @@ function PuzzleEntry(p, index) {
             if (!givenPathCode) givenPathCode = 0;
             var pathCodeDelta = pathCode ^ givenPathCode;
 
+            var spokeCode = td.getAttribute("data-spoke-code");
+            var givenSpokeCode = td.getAttribute("data-given-spoke-code");
+            if (!spokeCode) spokeCode = 0;
+            if (!givenSpokeCode) givenSpokeCode = 0;
+            var spokeCodeDelta = spokeCode ^ givenSpokeCode;
+
             var text = td.classList.contains("given-text") ? "" : td.querySelector(".text").innerText.trim();
 
             var cellState = "";
-            if (fillIndex || edgeCodeDelta || pathCodeDelta || text) {
+            if (fillIndex || edgeCodeDelta || pathCodeDelta || spokeCodeDelta || text) {
                 hasState = true;
-                cellState = fillIndex.toString(36) + edgeCodeDelta.toString(16) + pathCodeDelta.toString(16);
+                cellState = fillIndex.toString(36) + edgeCodeDelta.toString(16) + pathCodeDelta.toString(16) + (spokeCodeDelta >> 4).toString(16) + (spokeCodeDelta % 16).toString(16);
                 if (text) { cellState += "," + text; }
             }
 
             stateArray.push(cellState);
         });
 
-        if (hasState) { localStorage.setItem(this.stateKey, stateArray.join("|")); }
-        else { localStorage.removeItem(this.stateKey); }
+        if (hasState) { localStorage.setItem(this.puzzleId, stateArray.join("|")); }
+        else { localStorage.removeItem(this.puzzleId); }
     }
 
     this.setCornerFocusMode = function(notyet) {
@@ -1002,8 +1104,15 @@ function PuzzleEntry(p, index) {
     }
 
     this.updateCenterFocus = function(center) {
+        var oldCenter = this.currentCenterFocus;
+
         this.currentCenterFocus = center;
         this.currentCenterFocus.focus();
+
+        if (this.options["data-drag-draw-spoke"]) {
+            if (oldCenter) this.updateSvg(oldCenter);
+            if (center) this.updateSvg(center);
+        }
     }
 
     this.closeAbout = function() {
@@ -1036,13 +1145,20 @@ function PuzzleEntry(p, index) {
             }
         }
         if (this.canHaveCenterFocus) {
-            lines.push("<tr><td>Navigate between cells</td><td>Arrow keys</td><td>Click a cell</td></tr>");
+            if (this.options["data-drag-draw-spoke"]) {
+                lines.push("<tr><td>Navigate between cells (8 directions)</td><td>Arrow keys, plus / or \\ to toggle axis tilt</td><td>Click a cell</td></tr>");
+            } else {
+                lines.push("<tr><td>Navigate between cells (4 directions)</td><td>Arrow keys</td><td>Click a cell</td></tr>");
+            }
         }
         if (this.fillClasses && this.fillClasses.length > 0 && this.options["data-fill-cycle"]) {
             lines.push("<tr><td>Change cell background (forwards or backwards)</td><td>Space or Shift-Space</td><td>Click/Left-Click or Right/Shift-Click</td></tr>");
         }
         if (this.options["data-drag-draw-path"]) {
-            lines.push("<tr><td>Draw a path between cells</td><td>Shift-arrow keys</td><td>Click one cell, drag to others</td></tr>");
+            lines.push("<tr><td>Draw lines between cells (4 directions)</td><td>Shift-arrow keys</td><td>Click one cell, drag to others</td></tr>");
+        }
+        if (this.options["data-drag-draw-spoke"]) {
+            lines.push("<tr><td>Draw lines between cells (8 directions)</td><td>Shift-arrow keys, plus / or \\ to toggle axis tilt</td><td>Click one cell, drag to others</td></tr>");
         }
         if (this.options["data-drag-draw-edge"]) {
             if (this.canHaveCenterFocus) {
@@ -1070,6 +1186,7 @@ function PuzzleEntry(p, index) {
     }
 
     // --- Construct the interactive player. ---
+    this.lookup = {};
     this.fillClasses = this.getOptionArray("data-fill-classes", " ");
 
     var clueIndicators = this.getOptionArray("data-clue-indicators", " ", "auto");
@@ -1079,6 +1196,7 @@ function PuzzleEntry(p, index) {
     var solution = this.getOptionArray("data-text-solution", "|");
     var edges = this.getOptionArray("data-edges", "|");
     var paths = this.getOptionArray("data-paths", "|");
+    var spokes = this.getOptionArray("data-spokes", "|");
     var extracts = this.getOptionArray("data-extracts", " ");
     var unselectableGivens = this.options["data-unselectable-givens"];
     var topClues = this.getOptionArray("data-top-clues", "|");
@@ -1105,7 +1223,7 @@ function PuzzleEntry(p, index) {
 
     this.canDrawOnEdges = this.options["data-drag-draw-edge"] && !this.options["data-no-input"];
 
-    this.canHaveCenterFocus = this.options["data-text-characters"] || (fills && this.options["data-fill-cycle"]) || this.options["data-drag-draw-path"];
+    this.canHaveCenterFocus = this.options["data-text-characters"] || (fills && this.options["data-fill-cycle"]) || this.options["data-drag-draw-path"] || this.options["data-drag-draw-spoke"];
     this.canHaveCornerFocus = this.canDrawOnEdges;
     this.keyboardFocusModel = this.options["data-no-input"] ? "none" : (this.canHaveCornerFocus ? "corner" : "center");
     this.cornerFocus = null;
@@ -1114,7 +1232,7 @@ function PuzzleEntry(p, index) {
     var regularRowBorder = 0;
     var regularColBorder = 0;
 
-    var savedState = localStorage.getItem(this.stateKey);
+    var savedState = localStorage.getItem(this.puzzleId);
     if (savedState) { savedState = savedState.split("|"); }
 
     if (!allowInput) {
@@ -1159,11 +1277,13 @@ function PuzzleEntry(p, index) {
         this.numCols = Math.max(this.numCols, textLines[r].length);
         for (var c = 0; c < textLines[r].length; c++) {
             var cellSavedState = null;
-            if (savedState) { cellSavedState = savedState[stateIndex++]; }
+            if (savedState) { cellSavedState = savedState[stateIndex++]; console.log(cellSavedState); }
 
             var td = document.createElement("td");
             td.classList.add("cell");
             td.classList.add("inner-cell");
+            td.id = "cell-" + r + "-" + c;
+            this.lookup[td.id] = td;
             var ch = textLines[r][c];
             
             var textwrapper = document.createElement("div");
@@ -1184,8 +1304,8 @@ function PuzzleEntry(p, index) {
                 if (extracts) {
                     var code = extracts[extractNum++];
                     var id = "extract-id-" + code;
-                    text.setAttribute("data-extract-id", id);
-                    text.classList.add(id);
+                    td.setAttribute("data-extract-id", id);
+                    td.classList.add(id);
 
                     var extractCode = document.createElement("div");
                     extractCode.contentEditable = false;
@@ -1218,7 +1338,6 @@ function PuzzleEntry(p, index) {
                     td.addEventListener("beforeinput", e => { this.beforeInput(e); });
                     td.addEventListener("pointerdown",  e => { this.pointerDown(e); });
                     td.addEventListener("pointermove",  e => { this.pointerMove(e); });
-                    td.addEventListener("pointerenter",  e => { this.pointerEnter(e); });
                     td.addEventListener("pointercancel",  e => { this.pointerCancel(e); });
                     td.addEventListener("contextmenu",  e => { e.preventDefault(); });
                     if (this.options["data-clue-locations"] === "crossword") {
@@ -1288,6 +1407,35 @@ function PuzzleEntry(p, index) {
             }
             if (cellSavedState) { pathCode ^= parseInt(cellSavedState[2], 16); }
             if (pathCode) { td.setAttribute("data-path-code", pathCode); }
+
+            var spokeCode = 0;
+            if (spokes) {
+                var topRow = spokes[r * 2];
+                var midRow = spokes[r * 2 + 1];
+                var botRow = spokes[r * 2 + 2];
+                var chN = topRow[c * 2 + 1];
+                var chNE = topRow[c * 2 + 2];
+                var chE = midRow[c * 2 + 2];
+                var chSE = botRow[c * 2 + 2];
+                var chS = botRow[c * 2 + 1];
+                var chSW = botRow[c * 2];
+                var chW = midRow[c * 2];
+                var chNW = topRow[c * 2];
+                if (chN != " " && chN != ".") { spokeCode |= 1; }
+                if (chNE == "/" || chNE == "'" || chNE == "X" || chNE == "x") { spokeCode |= 2; }
+                if (chE != " " && chE != ".") { spokeCode |= 4; }
+                if (chSE == "\\" || chSE == "`" || chSE == "X" || chSE == "x") { spokeCode |= 8; }
+                if (chS != " " && chS != ".") { spokeCode |= 16; }
+                if (chSW == "/" || chSW == "'" || chSW == "X" || chSW == "x") { spokeCode |= 32; }
+                if (chW != " " && chW != ".") { spokeCode |= 64; }
+                if (chNW == "\\" || chNW == "`" || chNW == "X" || chNW == "x") { spokeCode |= 128; }
+
+                if (spokeCode) { td.setAttribute("data-spoke-code", spokeCode); td.setAttribute("data-given-spoke-code", spokeCode); }
+            }
+            if (cellSavedState && cellSavedState.length > 4 && (cellSavedState.indexOf(",") > 4 || cellSavedState.indexOf(",") < 0)) {
+                spokeCode ^= (parseInt(cellSavedState[3], 16) * 16 + parseInt(cellSavedState[4], 16));
+            }
+            if (spokeCode) { td.setAttribute("data-spoke-code", spokeCode); }
 
             if (this.options["data-clue-locations"] && textLines[r][c] != '@') {
                 var acrossClue = (c == 0 || textLines[r][c-1] == '@' || (edgeCode & 4)) && c < textLines[r].length - 1 && textLines[r][c+1] != '@' && !(edgeCode & 8); // block/edge left, letter right
@@ -1381,7 +1529,9 @@ function PuzzleEntry(p, index) {
         row.classList.add("commands");
         for (var i = 0; i < this.leftClueDepth; i++) { row.insertCell(-1); }
         var cell = row.insertCell(-1);
-        cell.style.maxWidth = table.offsetWidth;
+        cell.style.maxWidth = table.offsetWidth * this.numCols / (this.numCols + this.leftClueDepth + this.rightClueDepth);
+        cell.style.margin = "0px auto";
+        cell.style.display = "block";
         cell.colSpan = this.numCols;
         cell.insertBefore(this.commands, null);
         for (var i = 0; i < this.rightClueDepth; i++) { row.insertCell(-1); }
@@ -1405,10 +1555,12 @@ function PuzzleEntry(p, index) {
         this.container.insertBefore(this.copyjackVersion, this.table);
         // Populate the copy-only table.
         for (const [i, tr] of Array.from(table.getElementsByTagName('tr')).entries()) {
+            if (tr.classList.contains('no-copy')) continue;
             const copyTr = document.createElement('tr');
             copyTr.style.userSelect = 'auto';
             this.copyjackVersion.appendChild(copyTr);
             for (const [j, td] of Array.from(tr.getElementsByTagName('td')).entries()) {
+                if (td.classList.contains('no-copy')) continue;
                 td.dataset.coord = [i, j];
                 const copyTd = document.createElement('td');
                 copyTd.style.userSelect = 'auto';

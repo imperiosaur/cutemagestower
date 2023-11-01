@@ -13,6 +13,7 @@
 	<div><img id="logo" src="BAPHL%2022_files/greendaleext-logo.png"></div>
 
 </div>
+<link rel="stylesheet" type="text/css" href="solution.css">
 <div class="block" id="solution">
 	<h2>Chess and Ladders Solution</h2>
 	
@@ -29,81 +30,80 @@
 		<li>The remaining moves are 50 and the 9-31 ladder.</li>
 	</ul>
 	<p>Here is the pawn's path on the board:</p>
-	<img src="imgcal1.png">
+	<img class="center" src="imgcal1.png">
 	<p>Here is the updated table:</p>
-	<table>
+	<table class="solutiontable">
 		<tr><th>Move #</th><th>Pawn</th><th>Knight</th><th>Bishop</th><th>Aphorisms</th></tr>
-		<tr><td>1</td><td><b>9-31!</b></td><td><b>Enter!</b></td><td><b>Enter!</b></td><td>REUSE YOUR TABLESPOONS AS TEASPOONS FOR EVEN BIGGER TEACUPS</td></tr>
-		<tr><td>2</td><td>50</td><td><b>Move!</b></td><td><b>Move!</b></td><td>OVERTHROWING YOUR OWN GOVERNMENT MEANS YOU NOW CREATE ONE</td></tr>
-		<tr><td>3</td><td><b>51-67!</b></td><td>Move</td><td>Move</td><td>A SNAKE IN THE BABY'S NURSERY IS NEVER STARVING</td></tr>
-		<tr><td>4</td><td>74</td><td><b>Move!</b></td><td><b>Move!</b></td><td>SNACK FOOD AT FIVE WILL SPOIL DINNER AT SIX.</td></tr>
-		<tr><td>5</td><td><b>87-24!</b></td><td>Move</td><td>Move</td><td>YOUR ASCENT COULD BE WORSE. IT COULD BE SNOWING.</td></tr>
-		<tr><td>6</td><td>37</td><td><b>Move!</b></td><td><b>Move!</b></td><td>DON'T SAY "OK BOOMER", SAY "OF CORPSE" TO THEM</td></tr>
-		<tr><td>7</td><td>44</td><td>Move</td><td><b>Move!</b></td><td>DATING A TEACHER LEADS TO SOME VERY CHALKY LAUNDRY</td></tr>
-		<tr><td>8</td><td>57</td><td><b>Move!</b></td><td>Move</td><td>IF YOU ARE IN STALEMATE, INTRODUCE SOME NEW PIECES</td></tr>
-		<tr><td>9</td><td><b>64-61!</b></td><td>Move</td><td><b>Move!</b></td><td>OLD CAMCORDERS MAY WORK, BUT NEVER WIN CINEMATOGRAPHY OSCARS</td></tr>
-		<tr><td>10</td><td><b>80-100!</b></td><td><b>Move!</b></td><td>Move</td><td>AVOID PLAYING CHESS WITH PIGEONS. THEY WILL POOP EVERYWHERE.</td></tr>
-		<tr><td>11</td><td></td><td><b>Move!</b></td><td><b>Move!</b></td><td>SOLID HORSESHOES MAKE A THUD, HOLLOW HORSESHOES ECHO LOUDLY</td></tr>
-		<tr><td>12</td><td></td><td>Move</td><td>Move</td><td>ALWAYS MARK THE 100TH THING WITH AN EXCLAMATION POINT</td></tr>
-		<tr><td>13</td><td></td><td>Move</td><td></td><td>WALKING BACKWARDS CAN HELP YOU GET TO YOUR DESTINATION</td></tr>
+		<tr><td>1</td><td><b>9-31!</b></td><td><b>Enter!</b></td><td><b>Enter!</b></td><td class="literal">REUSE YOUR TABLESPOONS AS TEASPOONS FOR EVEN BIGGER TEACUPS</td></tr>
+		<tr><td>2</td><td>50</td><td><b>Move!</b></td><td><b>Move!</b></td><td class="literal">OVERTHROWING YOUR OWN GOVERNMENT MEANS YOU NOW CREATE ONE</td></tr>
+		<tr><td>3</td><td><b>51-67!</b></td><td>37</td><td>Move</td><td class="literal">A SNAKE IN THE BABY'S NURSERY IS NEVER STARVING</td></tr>
+		<tr><td>4</td><td>74</td><td><b>Move!</b></td><td><b>Move!</b></td><td class="literal">SNACK FOOD AT FIVE WILL SPOIL DINNER AT SIX.</td></tr>
+		<tr><td>5</td><td><b>87-24!</b></td><td>Move</td><td>Move</td><td class="literal">YOUR ASCENT COULD BE WORSE. IT COULD BE SNOWING.</td></tr>
+		<tr><td>6</td><td>37</td><td><b>Move!</b></td><td><b>Move!</b></td><td class="literal">DON'T SAY "OK BOOMER", SAY "OF CORPSE" TO THEM</td></tr>
+		<tr><td>7</td><td>44</td><td>63</td><td><b>Move!</b></td><td class="literal">DATING A TEACHER LEADS TO SOME VERY CHALKY LAUNDRY</td></tr>
+		<tr><td>8</td><td>57</td><td><b>Move!</b></td><td>77</td><td class="literal">IF YOU ARE IN STALEMATE, INTRODUCE SOME NEW PIECES</td></tr>
+		<tr><td>9</td><td><b>64-61!</b></td><td>70</td><td><b>Move!</b></td><td class="literal">OLD CAMCORDERS MAY WORK, BUT NEVER WIN CINEMATOGRAPHY OSCARS</td></tr>
+		<tr><td>10</td><td><b>80-100!</b></td><td><b>Move!</b></td><td>Move</td><td class="literal">AVOID PLAYING CHESS WITH PIGEONS. THEY WILL POOP EVERYWHERE.</td></tr>
+		<tr><td>11</td><td></td><td><b>Move!</b></td><td><b>Move!</b></td><td class="literal">SOLID HORSESHOES MAKE A THUD, HOLLOW HORSESHOES ECHO LOUDLY</td></tr>
+		<tr><td>12</td><td></td><td>Move</td><td>Move</td><td class="literal">ALL OF THESE PHRASES ARE SUSPICIOUSLY NINE WORDS LONG.</td></tr>
+		<tr><td>13</td><td></td><td>Move</td><td></td><td class="literal">WALKING BACKWARDS CAN HELP YOU GET TO YOUR DESTINATION</td></tr>
 	</table>
 	<p></p>
 
 	<h3>Knight</h3>
 	<p>We can then remove the arrows that the pawn used to see what is left.</p>
-	<img src="imgcal2.png">
-	<p>Next, take a look at the start of the knight path. It must enter, travel on an arrow, then immediately move again and travel on another arrow. If the knight enters on the 1, it travels to 38, and then can move to 19, 21, 41, 59, 57, 45, 25, or 17. Of those, 21 is the beginning of an arrow. If the knight enters on 4, it travels to 14, and then can move to 5, 25, 35, 33, 29, or 9. None of those spaces are the beginning of an arrow. This means that the first two moves must be 1-38 and then 21-42.</p>
+	<img class="center" src="imgcal2.png">
+	<p>Next, take a look at the start of the knight path. It must enter, travel on an arrow, then immediately move again and travel on another arrow, then move to space 37. If the knight enters on the 1, it travels to 38, and then can move to 19, 21, 41, 59, 57, 45, 25, or 17. Of those, 21 is the beginning of an arrow. If the knight enters on 4, it travels to 14, and then can move to 5, 25, 35, 33, 29, or 9. None of those spaces are the beginning of an arrow. This means that the first two moves must be 1-38 and then 21-42. This is confirmed by the fact that the next move of 37 is legal from 42.</p>
 
-	<p>Let's also look at the back of the knight path. The last move must be to 100 and the knight must come from an arrow that is two moves away. The only remaining arrow that can do this is the 28-84 arrow. The move to 28 must also come from the end of an arrow, which means that it must come from the 49-11 arrow.</p>
-	<img src="imgcal3.png">
+	<p>Let's also look at the back of the knight path. The last move must be to 100 and the knight must come from an arrow that is two moves away. The only remaining arrow that can do this is the 28-84 arrow. The move to 28 must also come from the end of an arrow, which means that it must come from the 49-11 arrow. This is confirmed by the fact that we know move 9 lands the knight on space 70, and the knight can move from 70 to 49.</p>
+	<img class="center" src="imgcal3.png">
 
 	<p>Let's now take a look at the knight's moves so far:</p>
 	<ol>
 		<li><b>1-38!</b></li>
 		<li><b>21-42!</b></li>
-		<li>Move</li>
+		<li>37</li>
 		<li><b>Move!</b></li>
 		<li>Move</li>
 		<li><b>Move!</b></li>
-		<li>Move</li>
+		<li>63</li>
 		<li><b>Move!</b></li>
-		<li>Move</li>
+		<li>70</li>
 		<li><b>49-11!</b></li>
 		<li><b>28-84!</b></li>
 		<li>79</li>
 		<li>100</li>
 	</ol>
 
-	<p>At this point, we need to connect these two paths with three chutes, each one two knight moves away from each other. The beginning of the path can reach 62-19, 56-53, 36-44, and 16-12. The end of the path can reach 93-73 and 56-53. The only way we can use one chute to connect one from each set is to use the 36-44 chute to connect 16-12 to 56-53. This gives the following path:</p>
-	<img src="imgcal4.png">
+	<p>Move 8 is fairly straightforward. The knight has to go from 63 to 70 using an arrow, and the only arrow that does this is the 56-53 one. This means that the 56-53 arrow will not be available to the knight on move 4, so the only other arrow that the knight can move onto is 16-12. Move 6 is also an arrow, and the only arrowhead that can reach 63 is 44. Move 5 connects the 16-12 arrow to the 36-44 arrow, which means that the knight needs to move to 27. This gives the following path:</p>
+	<img class="center" src="imgcal4.png">
 
 	<p>Here is the updated table:</p>
-	<table>
+	<table class="solutiontable">
 		<tr><th>Move #</th><th>Pawn</th><th>Knight</th><th>Bishop</th><th>Aphorisms</th></tr>
-		<tr><td>1</td><td><b>9-31!</b></td><td><b>1-38!</b></td><td><b>Enter!</b></td><td>REUSE YOUR TABLESPOONS AS TEASPOONS FOR EVEN BIGGER TEACUPS</td></tr>
-		<tr><td>2</td><td>50</td><td><b>21-42!</b></td><td><b>Move!</b></td><td>OVERTHROWING YOUR OWN GOVERNMENT MEANS YOU NOW CREATE ONE</td></tr>
-		<tr><td>3</td><td><b>51-67!</b></td><td>37/23*</td><td>Move</td><td>A SNAKE IN THE BABY'S NURSERY IS NEVER STARVING</td></tr>
-		<tr><td>4</td><td>74</td><td><b>16-12!</b></td><td><b>Move!</b></td><td>SNACK FOOD AT FIVE WILL SPOIL DINNER AT SIX.</td></tr>
-		<tr><td>5</td><td><b>87-24!</b></td><td>27</td><td>Move</td><td>YOUR ASCENT COULD BE WORSE. IT COULD BE SNOWING.</td></tr>
-		<tr><td>6</td><td>37</td><td><b>36-44!</b></td><td><b>Move!</b></td><td>DON'T SAY "OK BOOMER", SAY "OF CORPSE" TO THEM</td></tr>
-		<tr><td>7</td><td>44</td><td>63/35*</td><td><b>Move!</b></td><td>DATING A TEACHER LEADS TO SOME VERY CHALKY LAUNDRY</td></tr>
-		<tr><td>8</td><td>57</td><td><b>56-53!</b></td><td>Move</td><td>IF YOU ARE IN STALEMATE, INTRODUCE SOME NEW PIECES</td></tr>
-		<tr><td>9</td><td><b>64-61!</b></td><td>70/34*</td><td><b>Move!</b></td><td>OLD CAMCORDERS MAY WORK, BUT NEVER WIN CINEMATOGRAPHY OSCARS</td></tr>
-		<tr><td>10</td><td><b>80-100!</b></td><td><b>49-11!</b></td><td>Move</td><td>AVOID PLAYING CHESS WITH PIGEONS. THEY WILL POOP EVERYWHERE.</td></tr>
-		<tr><td>11</td><td></td><td><b>28-84!</b></td><td><b>Move!</b></td><td>SOLID HORSESHOES MAKE A THUD, HOLLOW HORSESHOES ECHO LOUDLY</td></tr>
-		<tr><td>12</td><td></td><td>79</td><td>Move</td><td>ALWAYS MARK THE 100TH THING WITH AN EXCLAMATION POINT</td></tr>
-		<tr><td>13</td><td></td><td>100</td><td></td><td>WALKING BACKWARDS CAN HELP YOU GET TO YOUR DESTINATION</td></tr>
+		<tr><td>1</td><td><b>9-31!</b></td><td><b>1-38!</b></td><td><b>Enter!</b></td><td class="literal">REUSE YOUR TABLESPOONS AS TEASPOONS FOR EVEN BIGGER TEACUPS</td></tr>
+		<tr><td>2</td><td>50</td><td><b>21-42!</b></td><td><b>Move!</b></td><td class="literal">OVERTHROWING YOUR OWN GOVERNMENT MEANS YOU NOW CREATE ONE</td></tr>
+		<tr><td>3</td><td><b>51-67!</b></td><td>37</td><td>Move</td><td class="literal">A SNAKE IN THE BABY'S NURSERY IS NEVER STARVING</td></tr>
+		<tr><td>4</td><td>74</td><td><b>16-12!</b></td><td><b>Move!</b></td><td class="literal">SNACK FOOD AT FIVE WILL SPOIL DINNER AT SIX.</td></tr>
+		<tr><td>5</td><td><b>87-24!</b></td><td>27</td><td>Move</td><td class="literal">YOUR ASCENT COULD BE WORSE. IT COULD BE SNOWING.</td></tr>
+		<tr><td>6</td><td>37</td><td><b>36-44!</b></td><td><b>Move!</b></td><td class="literal">DON'T SAY "OK BOOMER", SAY "OF CORPSE" TO THEM</td></tr>
+		<tr><td>7</td><td>44</td><td>63</td><td><b>Move!</b></td><td class="literal">DATING A TEACHER LEADS TO SOME VERY CHALKY LAUNDRY</td></tr>
+		<tr><td>8</td><td>57</td><td><b>56-53!</b></td><td>Move</td><td class="literal">IF YOU ARE IN STALEMATE, INTRODUCE SOME NEW PIECES</td></tr>
+		<tr><td>9</td><td><b>64-61!</b></td><td>70</td><td><b>Move!</b></td><td class="literal">OLD CAMCORDERS MAY WORK, BUT NEVER WIN CINEMATOGRAPHY OSCARS</td></tr>
+		<tr><td>10</td><td><b>80-100!</b></td><td><b>49-11!</b></td><td>Move</td><td class="literal">AVOID PLAYING CHESS WITH PIGEONS. THEY WILL POOP EVERYWHERE.</td></tr>
+		<tr><td>11</td><td></td><td><b>28-84!</b></td><td><b>Move!</b></td><td class="literal">SOLID HORSESHOES MAKE A THUD, HOLLOW HORSESHOES ECHO LOUDLY</td></tr>
+		<tr><td>12</td><td></td><td>79</td><td>Move</td><td class="literal">ALL OF THESE PHRASES ARE SUSPICIOUSLY NINE WORDS LONG.</td></tr>
+		<tr><td>13</td><td></td><td>100</td><td></td><td class="literal">WALKING BACKWARDS CAN HELP YOU GET TO YOUR DESTINATION</td></tr>
 	</table>
-	<p>Starred clues are not unique, but either option will work for the puzzle.</p>
 	<p></p>
 
 	<h3>Bishop</h3>
 	<p>Now, remove the arrows that the knight used to see what the bishop has to use.</p>
-	<img src="imgcal5.png">
+	<img class="center" src="imgcal5.png">
 	<p>The first two moves are pretty easily forced. The bishop is forced to enter on the 4-14 arrow since it is the only one left on the first row, and from there the only arrow it can travel to in one move is 62-19. In addition, the last two moves are forced. It must travel to 100 from the end of an arrow, and the only arrow that can work for that is the 98-78 arrow. This can give us a partial board that looks like this:</p>
-	<img src="imgcal6.png">
+	<img class="center" src="imgcal6.png">
 	<p>One important observation at this point is that the even/odd numbers form a checkerboard, which means that the only way that the bishop can travel from an even number to an odd number or vice versa is by an arrow. The forward part of the path is on an odd number, while the reverse part of the path is on an even number. Of the four arrows we have left, only one takes an odd number to an even number. This means that going forwards, we must use all three odd-odd arrows before using the odd-even, then connect with the reverse path. We can therefore fill out a little more of the board.</p>
-	<img src="imgcal7.png">
+	<img class="center" src="imgcal7.png">
 	<p>The remaining moves to stitch the two halves together are:</p>
 	<ul>
 		<li>Move</li>
@@ -111,50 +111,50 @@
 		<li>Move</li>
 		<li><b>Move!</b></li>
 		<li><b>Move!</b></li>
-		<li>Move</li>
+		<li>77</li>
 	</ul>
-	<p>The only way we can move from the end of one arrow to the front of another arrow is by going from 93-73 to 95-85. This forces the other Move! to be 71-91, and the remaining moves are needed to stitch the moves together.</p>
-	<img src="imgcal8.png">	
+	<p>The only way we can move from the end of one arrow to the front of another arrow is by going from 93-73 to 95-85. This forces the other Move! to be 71-91, and the remaining moves are needed to stitch the moves together. The 77 move at the end serves as a confirmer (and helps with the backwards logic if solvers are stuck).</p>
+	<img class="center" src="imgcal8.png">	
 	<p>Here is the updated table:</p>
-	<table>
+	<table class="solutiontable">
 		<tr><th>Move #</th><th>Pawn</th><th>Knight</th><th>Bishop</th><th>Aphorisms</th></tr>
-		<tr><td>1</td><td><b>9-31!</b></td><td><b>1-38!</b></td><td><b>4-14!</b></td><td>REUSE YOUR TABLESPOONS AS TEASPOONS FOR EVEN BIGGER TEACUPS</td></tr>
-		<tr><td>2</td><td>50</td><td><b>21-42!</b></td><td><b>62-19!</b></td><td>OVERTHROWING YOUR OWN GOVERNMENT MEANS YOU NOW CREATE ONE</td></tr>
-		<tr><td>3</td><td><b>51-67!</b></td><td>37/23*</td><td>3</td><td>A SNAKE IN THE BABY'S NURSERY IS NEVER STARVING</td></tr>
-		<tr><td>4</td><td>74</td><td><b>16-12!</b></td><td><b>71-91!</b></td><td>SNACK FOOD AT FIVE WILL SPOIL DINNER AT SIX.</td></tr>
-		<tr><td>5</td><td><b>87-24!</b></td><td>27</td><td>89</td><td>YOUR ASCENT COULD BE WORSE. IT COULD BE SNOWING.</td></tr>
-		<tr><td>6</td><td>37</td><td><b>36-44!</b></td><td><b>93-73!</b></td><td>DON'T SAY "OK BOOMER", SAY "OF CORPSE" TO THEM</td></tr>
-		<tr><td>7</td><td>44</td><td>63/35*</td><td><b>95-85!</b></td><td>DATING A TEACHER LEADS TO SOME VERY CHALKY LAUNDRY</td></tr>
-		<tr><td>8</td><td>57</td><td><b>56-53!</b></td><td>77/53*</td><td>IF YOU ARE IN STALEMATE, INTRODUCE SOME NEW PIECES</td></tr>
-		<tr><td>9</td><td><b>64-61!</b></td><td>70/34*</td><td><b>45-26!</b></td><td>OLD CAMCORDERS MAY WORK, BUT NEVER WIN CINEMATOGRAPHY OSCARS</td></tr>
-		<tr><td>10</td><td><b>80-100!</b></td><td><b>49-11!</b></td><td>48/80*</td><td>AVOID PLAYING CHESS WITH PIGEONS. THEY WILL POOP EVERYWHERE.</td></tr>
-		<tr><td>11</td><td></td><td><b>28-84!</b></td><td><b>98-78!</b></td><td>SOLID HORSESHOES MAKE A THUD, HOLLOW HORSESHOES ECHO LOUDLY</td></tr>
-		<tr><td>12</td><td></td><td>79</td><td>100</td><td>ALWAYS MARK THE 100TH THING WITH AN EXCLAMATION POINT</td></tr>
-		<tr><td>13</td><td></td><td>100</td><td></td><td>WALKING BACKWARDS CAN HELP YOU GET TO YOUR DESTINATION</td></tr>
+		<tr><td>1</td><td><b>9-31!</b></td><td><b>1-38!</b></td><td><b>4-14!</b></td><td class="literal">REUSE YOUR TABLESPOONS AS TEASPOONS FOR EVEN BIGGER TEACUPS</td></tr>
+		<tr><td>2</td><td>50</td><td><b>21-42!</b></td><td><b>62-19!</b></td><td class="literal">OVERTHROWING YOUR OWN GOVERNMENT MEANS YOU NOW CREATE ONE</td></tr>
+		<tr><td>3</td><td><b>51-67!</b></td><td>37</td><td>3</td><td class="literal">A SNAKE IN THE BABY'S NURSERY IS NEVER STARVING</td></tr>
+		<tr><td>4</td><td>74</td><td><b>16-12!</b></td><td><b>71-91!</b></td><td class="literal">SNACK FOOD AT FIVE WILL SPOIL DINNER AT SIX.</td></tr>
+		<tr><td>5</td><td><b>87-24!</b></td><td>27</td><td>89</td><td class="literal">YOUR ASCENT COULD BE WORSE. IT COULD BE SNOWING.</td></tr>
+		<tr><td>6</td><td>37</td><td><b>36-44!</b></td><td><b>93-73!</b></td><td class="literal">DON'T SAY "OK BOOMER", SAY "OF CORPSE" TO THEM</td></tr>
+		<tr><td>7</td><td>44</td><td>63</td><td><b>95-85!</b></td><td class="literal">DATING A TEACHER LEADS TO SOME VERY CHALKY LAUNDRY</td></tr>
+		<tr><td>8</td><td>57</td><td><b>56-53!</b></td><td>77</td><td class="literal">IF YOU ARE IN STALEMATE, INTRODUCE SOME NEW PIECES</td></tr>
+		<tr><td>9</td><td><b>64-61!</b></td><td>70</td><td><b>45-26!</b></td><td class="literal">OLD CAMCORDERS MAY WORK, BUT NEVER WIN CINEMATOGRAPHY OSCARS</td></tr>
+		<tr><td>10</td><td><b>80-100!</b></td><td><b>49-11!</b></td><td>48/80*</td><td class="literal">AVOID PLAYING CHESS WITH PIGEONS. THEY WILL POOP EVERYWHERE.</td></tr>
+		<tr><td>11</td><td></td><td><b>28-84!</b></td><td><b>98-78!</b></td><td class="literal">SOLID HORSESHOES MAKE A THUD, HOLLOW HORSESHOES ECHO LOUDLY</td></tr>
+		<tr><td>12</td><td></td><td>79</td><td>100</td><td class="literal">ALL OF THESE PHRASES ARE SUSPICIOUSLY NINE WORDS LONG.</td></tr>
+		<tr><td>13</td><td></td><td>100</td><td></td><td class="literal">WALKING BACKWARDS CAN HELP YOU GET TO YOUR DESTINATION</td></tr>
 	</table>
-	<p>Starred clues are not unique, but either option will work for the puzzle.</p>
+	<p>The starred move is not unique, but either option will work for the puzzle.</p>
 	<p></p>
 
 	<h3>Extraction</h3>
-	<p>At this point, we need to address the aphorisms. The players are told to mark something on the ground in front of them whenever they use an arrow. Each arrow ends on a 2-digit number and each aphorism is exactly 9 words long. Treat the 2 digit number as a way to indicate word/character, get the appropriate letter from the aphorism and write it on the board in the indicated square. Reading the board in number order gives the string ANSWER TOO MANY ROOKS!</p>
+	<p>At this point, we need to address the aphorisms. The players are told to mark something on the ground in front of them whenever they use an arrow. Each arrow ends on a 2-digit number and each aphorism is exactly 9 words long. Treat the 2 digit number as a way to indicate word/character, get the appropriate letter from the aphorism and write it on the board in the indicated square. Reading the board in number order gives the string ANSWER <span class="answer spoiler">TOO MANY ROOKS!</span></p>
 
-	<table>
+	<table class="solutiontable">
 		<tr><th>Move #</th><th>Pawn</th><th>Knight</th><th>Bishop</th><th>Aphorisms</th></tr>
-		<tr><td>1</td><td><b>9-31! - T</b></td><td><b>1-38! - O</b></td><td><b>4-14! - S</b></td><td>REU<b>S</b>E YOUR <b>T</b>ABLESP<b>O</b>ONS AS TEASPOONS FOR EVEN BIGGER TEACUPS</td></tr>
-		<tr><td>2</td><td>50</td><td><b>21-42! - O</b></td><td><b>62-19! - W</b></td><td>OVERTHRO<b>W</b>ING YOUR OWN G<b>O</b>VERNMENT MEANS YOU NOW CREATE ONE</td></tr>
-		<tr><td>3</td><td><b>51-67! - Y</b></td><td>37/23*</td><td>3</td><td>A SNAKE IN THE BAB<b>Y</b>'S NURSERY IS NEVER STARVING</td></tr>
-		<tr><td>4</td><td>74</td><td><b>16-12! - N</b></td><td><b>71-91! - S</b></td><td>S<b>N</b>ACK FOOD AT FIVE WILL SPOIL DINNER AT <b>S</b>IX.</td></tr>
-		<tr><td>5</td><td><b>87-24! - E</b></td><td>27</td><td>89</td><td>YOUR ASC<b>E</b>NT COULD BE WORSE. IT COULD BE SNOWING.</td></tr>
-		<tr><td>6</td><td>37</td><td><b>36-44! - M</b></td><td><b>93-73! - R</b></td><td>DON'T SAY "OK BOO<b>M</b>ER", SAY "OF CO<b>R</b>PSE" TO THEM</td></tr>
-		<tr><td>7</td><td>44</td><td>63/35*</td><td><b>95-85! - K</b></td><td>DATING A TEACHER LEADS TO SOME VERY CHAL<b>K</b>Y LAUNDRY</td></tr>
-		<tr><td>8</td><td>57</td><td><b>56-53! - A</b></td><td>77/53*</td><td>IF YOU ARE IN ST<b>A</b>LEMATE, INTRODUCE SOME NEW PIECES</td></tr>
-		<tr><td>9</td><td><b>64-61! - N</b></td><td>70/34*</td><td><b>45-26! - R</b></td><td>OLD CAMCO<b>R</b>DERS MAY WORK, BUT <b>N</b>EVER WIN CINEMATOGRAPHY OSCARS</td></tr>
-		<tr><td>10</td><td><b>80-100! - !</b></td><td><b>49-11! - A</b></td><td>48/80*</td><td><b>A</b>VOID PLAYING CHESS WITH PIGEONS. THEY WILL POOP EVERYWHERE.</td></tr>
-		<tr><td>11</td><td></td><td><b>28-84! - O</b></td><td><b>98-78! - O</b></td><td>SOLID HORSESHOES MAKE A THUD, HOLLOW HORSESH<b>O</b>ES ECH<b>O</b> LOUDLY</td></tr>
-		<tr><td>12</td><td></td><td>79</td><td>100</td><td>ALWAYS MARK THE 100TH THING WITH AN EXCLAMATION POINT</td></tr>
-		<tr><td>13</td><td></td><td>100</td><td></td><td>WALKING BACKWARDS CAN HELP YOU GET TO YOUR DESTINATION</td></tr>
+		<tr><td>1</td><td><b>9-31! - T</b></td><td><b>1-38! - O</b></td><td><b>4-14! - S</b></td><td class="literal">REU<b>S</b>E YOUR <b>T</b>ABLESP<b>O</b>ONS AS TEASPOONS FOR EVEN BIGGER TEACUPS</td></tr>
+		<tr><td>2</td><td>50</td><td><b>21-42! - O</b></td><td><b>62-19! - W</b></td><td class="literal">OVERTHRO<b>W</b>ING YOUR OWN G<b>O</b>VERNMENT MEANS YOU NOW CREATE ONE</td></tr>
+		<tr><td>3</td><td><b>51-67! - Y</b></td><td>37</td><td>3</td><td class="literal">A SNAKE IN THE BAB<b>Y</b>'S NURSERY IS NEVER STARVING</td></tr>
+		<tr><td>4</td><td>74</td><td><b>16-12! - N</b></td><td><b>71-91! - S</b></td><td class="literal">S<b>N</b>ACK FOOD AT FIVE WILL SPOIL DINNER AT <b>S</b>IX.</td></tr>
+		<tr><td>5</td><td><b>87-24! - E</b></td><td>27</td><td>89</td><td class="literal">YOUR ASC<b>E</b>NT COULD BE WORSE. IT COULD BE SNOWING.</td></tr>
+		<tr><td>6</td><td>37</td><td><b>36-44! - M</b></td><td><b>93-73! - R</b></td><td class="literal">DON'T SAY "OK BOO<b>M</b>ER", SAY "OF CO<b>R</b>PSE" TO THEM</td></tr>
+		<tr><td>7</td><td>44</td><td>63</td><td><b>95-85! - K</b></td><td class="literal">DATING A TEACHER LEADS TO SOME VERY CHAL<b>K</b>Y LAUNDRY</td></tr>
+		<tr><td>8</td><td>57</td><td><b>56-53! - A</b></td><td>77</td><td class="literal">IF YOU ARE IN ST<b>A</b>LEMATE, INTRODUCE SOME NEW PIECES</td></tr>
+		<tr><td>9</td><td><b>64-61! - N</b></td><td>70</td><td><b>45-26! - R</b></td><td class="literal">OLD CAMCO<b>R</b>DERS MAY WORK, BUT <b>N</b>EVER WIN CINEMATOGRAPHY OSCARS</td></tr>
+		<tr><td>10</td><td><b>80-100! - !</b></td><td><b>49-11! - A</b></td><td>48/80*</td><td class="literal"><b>A</b>VOID PLAYING CHESS WITH PIGEONS. THEY WILL POOP EVERYWHERE.</td></tr>
+		<tr><td>11</td><td></td><td><b>28-84! - O</b></td><td><b>98-78! - O</b></td><td class="literal">SOLID HORSESHOES MAKE A THUD, HOLLOW HORSESH<b>O</b>ES ECH<b>O</b> LOUDLY</td></tr>
+		<tr><td>12</td><td></td><td>79</td><td>100</td><td class="literal">ALL OF THESE PHRASES ARE SUSPICIOUSLY NINE WORDS LONG.</td></tr>
+		<tr><td>13</td><td></td><td>100</td><td></td><td class="literal">WALKING BACKWARDS CAN HELP YOU GET TO YOUR DESTINATION</td></tr>
 	</table>
-	<img src="imgcal9.png">	
+	<img class="center" src="imgcal9.png">	
 
 
 
