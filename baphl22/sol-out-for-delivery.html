@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>BAPHL 22</title>
+	<link rel="stylesheet" type="text/css" href="BAPHL%2022_files/BAPHLcss.css">
+	<script type="text/javascript" src="BAPHL%2022_files/md5.min.js"></script>
+	<script type="text/javascript" src="BAPHL%2022_files/baphl.js"></script>
+	
+</head>
+<body>
+<div id="header">
+
+	<div><img id="logo" src="BAPHL%2022_files/greendaleext-logo.png"></div>
+
+</div>
+
+<link rel="stylesheet" type="text/css" href="solution.css">
+<style>
+	.no { background-color: lightgray; }
+	.incorrect {background-color: salmon;}
+	.correct {background-color: palegreen;}
+</style>
+
+<div class="block" id="solution">
+	<h2>Out for Delivery Solution</h2>
+	<h3>by Diana Tortolini</h3>
+	
+	<p>Step 2 tells us that Cliff delivered the most packages on the first floor and the least packages on the fifth floor. Step 1 tells us that Cliff delivered at least one package to every floor. This means that the minimum number of packages delivered to the fifth floor is one and every other floor must have at least two packages. This accounts for nine of the ten packages already. The only unaccounted for package must go to the first floor to make it greater than all the other floors. This means we now know that the packages were delivered in the distribution 3/2/2/2/1.</p>
+
+	<p>A couple of the steps tell us information directly. Step 3 tells us that Kovac was an incorrect delivery (although not what package). Step 4 tells us that Cliff delivered an incorrect delivery to Drake, and then delivered that package correctly to Stone. Step 5 tells us that Tucci was a correct delivery. Step 9 tells us that Cliff that never visited an apartment with a welcome mat, removing Akers, Hamby, Welby, Boehm, and Rivas. Step 14 tells us that Young didn't get anything. Step 15 tells us that Price is the correct recipient for the fifth package. These can be placed in a grid.</p>
+
+	<table class="solutiontable">
+		<tr><td>5-01<br>Xiang<br>&nbsp;</td><td class="no">5-02<br>Akers<br>-----</td><td class="no">5-03<br>Young<br>-----</td><td>5-04<br>Walsh<br>&nbsp;</td><td>5-05<br>Russo<br>&nbsp;</td></tr>
+		<tr><td>4-01<br>Lautz<br>&nbsp;</td><td>4-02<br>Speer<br>&nbsp;</td><td>4-03<br>Nagao<br>&nbsp;</td><td class="no">4-04<br>Hamby<br>-----</td><td class="incorrect">4-05<br>Kovac<br>?&#10060;</td></tr>
+		<tr><td class="no">3-01<br>Welby<br>-----</td><td>3-02<br>Czaja<br>&nbsp;</td><td class="incorrect">3-03<br>Drake<br>?&#10060;</td><td>3-04<br>Irzyk<br>&nbsp;</td><td class="correct">3-05<br>Tucci<br>?&#9989;</td></tr>
+		<tr><td>2-01<br>Nolan<br>&nbsp;</td><td class="correct">2-02<br>Stone<br>?&#9989;</td><td>2-03<br>Padro<br>&nbsp;</td><td>2-04<br>Viejo<br>&nbsp;</td><td class="no">2-05<br>Boehm<br>-----</td></tr>
+		<tr><td>1-01<br>Floyd<br>&nbsp;</td><td class="correct">1-02<br>Price<br>5&#9989;</td><td class="no">1-03<br>Rivas<br>-----</td><td>1-04<br>McGee<br>&nbsp;</td><td>1-05<br>Smith<br>&nbsp;</td></tr>
+	</table>
+
+	<p>Looking at step 12, we know that the incorrect delivery for package five was two doors down from the correct delivery. The only apartment two doors down from Price is McGee. We also know from our floor/package distribution that there are only 2 deliveries on floor 3. Since we know they have to be Drake and Tucci, this eliminates Czaja and Irzyk.</p>
+
+	<table class="solutiontable">
+		<tr><td>5-01<br>Xiang<br>&nbsp;</td><td class="no">5-02<br>Akers<br>-----</td><td class="no">5-03<br>Young<br>-----</td><td>5-04<br>Walsh<br>&nbsp;</td><td>5-05<br>Russo<br>&nbsp;</td></tr>
+		<tr><td>4-01<br>Lautz<br>&nbsp;</td><td>4-02<br>Speer<br>&nbsp;</td><td>4-03<br>Nagao<br>&nbsp;</td><td class="no">4-04<br>Hamby<br>-----</td><td class="incorrect">4-05<br>Kovac<br>?&#10060;</td></tr>
+		<tr><td class="no">3-01<br>Welby<br>-----</td><td class="no">3-02<br>Czaja<br>-----</td><td class="incorrect">3-03<br>Drake<br>?&#10060;</td><td class="no">3-04<br>Irzyk<br>-----</td><td class="correct">3-05<br>Tucci<br>?&#9989;</td></tr>
+		<tr><td>2-01<br>Nolan<br>&nbsp;</td><td class="correct">2-02<br>Stone<br>?&#9989;</td><td>2-03<br>Padro<br>&nbsp;</td><td>2-04<br>Viejo<br>&nbsp;</td><td class="no">2-05<br>Boehm<br>-----</td></tr>
+		<tr><td>1-01<br>Floyd<br>&nbsp;</td><td class="correct">1-02<br>Price<br>5&#9989;</td><td class="no">1-03<br>Rivas<br>-----</td><td class="incorrect">1-04<br>McGee<br>5&#10060;</td><td>1-05<br>Smith<br>&nbsp;</td></tr>
+	</table>
+
+	<p>We know from step 4 that one package went from Drake->Stone. This can't be package 1 because Drake doesn't have a mail slot (step 6). This can't be package 2 because Stone doesn't have a knocker (step 13). This can't be package 4 because these aren't on the first and fourth floors (step 10). This can't be package 5 because we already know that one. That means that this must be package 3.</p>
+
+	<table class="solutiontable">
+		<tr><td>5-01<br>Xiang<br>&nbsp;</td><td class="no">5-02<br>Akers<br>-----</td><td class="no">5-03<br>Young<br>-----</td><td>5-04<br>Walsh<br>&nbsp;</td><td>5-05<br>Russo<br>&nbsp;</td></tr>
+		<tr><td>4-01<br>Lautz<br>&nbsp;</td><td>4-02<br>Speer<br>&nbsp;</td><td>4-03<br>Nagao<br>&nbsp;</td><td class="no">4-04<br>Hamby<br>-----</td><td class="incorrect">4-05<br>Kovac<br>?&#10060;</td></tr>
+		<tr><td class="no">3-01<br>Welby<br>-----</td><td class="no">3-02<br>Czaja<br>-----</td><td class="incorrect">3-03<br>Drake<br>3&#10060;</td><td class="no">3-04<br>Irzyk<br>-----</td><td class="correct">3-05<br>Tucci<br>?&#9989;</td></tr>
+		<tr><td>2-01<br>Nolan<br>&nbsp;</td><td class="correct">2-02<br>Stone<br>3&#9989;</td><td>2-03<br>Padro<br>&nbsp;</td><td>2-04<br>Viejo<br>&nbsp;</td><td class="no">2-05<br>Boehm<br>-----</td></tr>
+		<tr><td>1-01<br>Floyd<br>&nbsp;</td><td class="correct">1-02<br>Price<br>5&#9989;</td><td class="no">1-03<br>Rivas<br>-----</td><td class="incorrect">1-04<br>McGee<br>5&#10060;</td><td>1-05<br>Smith<br>&nbsp;</td></tr>
+	</table>
+
+	<p>Step 8 tells us that three apartments Cliff visited were next to the elevator. Since we know that Kovac and Tucci are deliveries and Boehm is not, one of Russo and Smith must be a delivery. Take a look at Russo for a moment. Russo cannot be an incorrect delivery (step 11), which means we just need to check conditions for correct deliveries. Russo can't be the correct delivery for package 1 because they do not have a mail slot (step 6). Russo can't be the correct delivery for package 2 because they don't have a door knocker (step 13). Russo can't be the correct delivery for package 4 because they aren't on the first floor. Since Russo can't be any packages, Smith must be a delivery. Smith can't be either package for package 1 (no mail slot, on the first floor) or either package for package 2 (on the first floor, no knocker), which means they must be package 4. Package 4 was correctly delivered to the first floor, so this must be Smith's package. In addition, now that we have three deliveries on the first floor, we can eliminate Floyd.</p>
+
+	<table class="solutiontable">
+		<tr><td>5-01<br>Xiang<br>&nbsp;</td><td class="no">5-02<br>Akers<br>-----</td><td class="no">5-03<br>Young<br>-----</td><td>5-04<br>Walsh<br>&nbsp;</td><td class="no">5-05<br>Russo<br>-----</td></tr>
+		<tr><td>4-01<br>Lautz<br>&nbsp;</td><td>4-02<br>Speer<br>&nbsp;</td><td>4-03<br>Nagao<br>&nbsp;</td><td class="no">4-04<br>Hamby<br>-----</td><td class="incorrect">4-05<br>Kovac<br>?&#10060;</td></tr>
+		<tr><td class="no">3-01<br>Welby<br>-----</td><td class="no">3-02<br>Czaja<br>-----</td><td class="incorrect">3-03<br>Drake<br>3&#10060;</td><td class="no">3-04<br>Irzyk<br>-----</td><td class="correct">3-05<br>Tucci<br>?&#9989;</td></tr>
+		<tr><td>2-01<br>Nolan<br>&nbsp;</td><td class="correct">2-02<br>Stone<br>3&#9989;</td><td>2-03<br>Padro<br>&nbsp;</td><td>2-04<br>Viejo<br>&nbsp;</td><td class="no">2-05<br>Boehm<br>-----</td></tr>
+		<tr><td class="no">1-01<br>Floyd<br>-----</td><td class="correct">1-02<br>Price<br>5&#9989;</td><td class="no">1-03<br>Rivas<br>-----</td><td class="incorrect">1-04<br>McGee<br>5&#10060;</td><td class="correct">1-05<br>Smith<br>4&#9989;</td></tr>
+	</table>
+
+	<p>Package 1 has to be delivered on two adjacent floors. There are only two ways this is possible with what we have remaining. Either the incorrect was on 2 (Padro) and the correct was on 3 (Tucci), or the incorrect was on 4 (Lautz) and the correct was on 5 (one of Xiang/Walsh). Let's assume for a moment that the 4/5 situation is correct. We now have nine of the ten delivery locations, with only the 2nd floor missing one. We now know from step 10 that Kovac is the incorrect delivery for package 4. This means that the last pair must be Tucci and someone on the second floor, and they must be package 2. However, package 2 must have the incorrect delivery be above the correct delivery, but we know Tucci must be the correct delivery. This contradiction means that package 1 can't be delivered to floors 4/5, which means it must be delivered to 2/3 (Pedro/Tucci). This allows us to eliminate the remaining people on floor 2.</p>
+
+	<table class="solutiontable">
+		<tr><td>5-01<br>Xiang<br>&nbsp;</td><td class="no">5-02<br>Akers<br>-----</td><td class="no">5-03<br>Young<br>-----</td><td>5-04<br>Walsh<br>&nbsp;</td><td class="no">5-05<br>Russo<br>-----</td></tr>
+		<tr><td>4-01<br>Lautz<br>&nbsp;</td><td>4-02<br>Speer<br>&nbsp;</td><td>4-03<br>Nagao<br>&nbsp;</td><td class="no">4-04<br>Hamby<br>-----</td><td class="incorrect">4-05<br>Kovac<br>?&#10060;</td></tr>
+		<tr><td class="no">3-01<br>Welby<br>-----</td><td class="no">3-02<br>Czaja<br>-----</td><td class="incorrect">3-03<br>Drake<br>3&#10060;</td><td class="no">3-04<br>Irzyk<br>-----</td><td class="correct">3-05<br>Tucci<br>1&#9989;</td></tr>
+		<tr><td class="no">2-01<br>Nolan<br>-----</td><td class="correct">2-02<br>Stone<br>3&#9989;</td><td class="incorrect">2-03<br>Padro<br>1&#10060;</td><td class="no">2-04<br>Viejo<br>-----</td><td class="no">2-05<br>Boehm<br>-----</td></tr>
+		<tr><td class="no">1-01<br>Floyd<br>-----</td><td class="correct">1-02<br>Price<br>5&#9989;</td><td class="no">1-03<br>Rivas<br>-----</td><td class="incorrect">1-04<br>McGee<br>5&#10060;</td><td class="correct">1-05<br>Smith<br>4&#9989;</td></tr>
+	</table>
+
+	<p>With the only floors left over, package 2 must be have its incorrect package delivered to floor 5 and its correct package delivered to floor 4 (step 13). Xiang can't have an incorrect package (step 11), forcing Walsh to get the incorrect package. The correct package needed to get delivered to an apartment with a knocker, forcing it to be Speer. The only package remaining is the incorrect package for 4, which must be the package delivered to Kovac.</p>
+
+	<table class="solutiontable">
+		<tr><td class="no">5-01<br>Xiang<br>-----</td><td class="no">5-02<br>Akers<br>-----</td><td class="no">5-03<br>Young<br>-----</td><td class="incorrect">5-04<br>Walsh<br>2&#10060;</td><td class="no">5-05<br>Russo<br>-----</td></tr>
+		<tr><td class="no">4-01<br>Lautz<br>-----</td><td class="correct">4-02<br>Speer<br>2&#9989;</td><td class="no">4-03<br>Nagao<br>-----</td><td class="no">4-04<br>Hamby<br>-----</td><td class="incorrect">4-05<br>Kovac<br>4&#10060;</td></tr>
+		<tr><td class="no">3-01<br>Welby<br>-----</td><td class="no">3-02<br>Czaja<br>-----</td><td class="incorrect">3-03<br>Drake<br>3&#10060;</td><td class="no">3-04<br>Irzyk<br>-----</td><td class="correct">3-05<br>Tucci<br>1&#9989;</td></tr>
+		<tr><td class="no">2-01<br>Nolan<br>-----</td><td class="correct">2-02<br>Stone<br>3&#9989;</td><td class="incorrect">2-03<br>Padro<br>1&#10060;</td><td class="no">2-04<br>Viejo<br>-----</td><td class="no">2-05<br>Boehm<br>-----</td></tr>
+		<tr><td class="no">1-01<br>Floyd<br>-----</td><td class="correct">1-02<br>Price<br>5&#9989;</td><td class="no">1-03<br>Rivas<br>-----</td><td class="incorrect">1-04<br>McGee<br>5&#10060;</td><td class="correct">1-05<br>Smith<br>4&#9989;</td></tr>
+	</table>
+
+	<p>Now for extraction. Put the deliveries in the order they happened. Index into each name using the room number. In order, this spells the answer <span class="answer spoiler">DISPATCHER</span>.</p>
+
+	<ul>
+		<li>1&#10060; - 2-03 Padro - D</li>
+		<li>1&#9989; - 3-05 Tucci - I</li>
+		<li>2&#10060; - 5-04 Walsh - S</li>
+		<li>2&#9989; - 4-02 Speer - P</li>
+		<li>3&#10060; - 3-03 Drake - A</li>
+		<li>3&#9989; - 2-02 Stone - T</li>
+		<li>4&#10060; - 4-05 Kovac - C</li>
+		<li>4&#9989; - 1-05 Smith - H</li>
+		<li>5&#10060; - 1-04 McGee - E</li>
+		<li>5&#9989; - 1-02 Price - R</li>
+	</ul>
+
+</div>
+
+
+
+
+
+
+</body></html>
