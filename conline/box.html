@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<title>Bad AI</title>
+</head>
+
+<body>
+	<link rel="stylesheet" href="angle.css">
+	
+	<h1 class="title">Bad AI</h1>
+
+	<div class="flavor">Ansley is yelling at her computer. When you walk up to her and ask what's wrong, she says "It's <span class="redletters">mission critical</span> that I get this r&#233;sum&#233; AI working so I can process lots of people to figure out who are the best people to recruit to the company. However, it's not working and I can't figure out why." Once you look at it, you're pretty sure you'll know when you have found the answer to this puzzle.</div>
+
+	<div id="puzzle">
+  		<label for="boxinput">Input:</label>
+  		<input type="text" id="boxinput" name="boxinput"><button onclick="update()">
+  		Submit </button><br>
+  		Output: <span id="boxoutput"></span>
+	</div>
+
+	<script>
+		 let output = [
+ 			["I HAVE", "YOUR NEPHEW HAS", "LINCOLN HAS", "THE LAST PERSON ON EARTH HAS", "A PERSON IN A CHICKEN SUIT HAS", "TOM HANKS HAS", "THE IRS HAS", "YOU HAVE", "A BARBERSHOP QUARTET HAS", "A CYCLOPS HAS", "A SUPER-INTELLIGENT SHADE OF BLUE HAS", "A WIZARD HAS", "YOUR FRIEND WHO IS REALLY INTO STAR WARS HAS", "YOUR FRIEND WHO IS REALLY INTO STAR TREK HAS", "THE PEOPLE IN LINE TO CHECKOUT AT THE GROCERY STORE HAVE", "A HORDE OF RAMPAGING GOBLINS HAVE", "A PIZZA GIVEN HUMAN INTELLIGENCE HAS", "THE NUMBER 9 HAS", "YOUR BEST FRIEND HAS", "THE MONSTER UNDER YOUR BED HAS", "THE ALGORITHM HAS", "THAT PERSON YOU ACCIDENTALLY WAVED TO HAS", "BUFFALO HAS", "THE SECRET CABAL OF PUZZLE WRITERS HAVE", "A RANDOM PERSON HAS", "ZAPPY HAS"],
+  			["SIMPLIFIED", "ATTACKED", "DOUBLED", "FLIPPED", "WATCHED", "DISCARDED", "SHUFFLED", "TIMED", "COOKED", "ADVERTISED", "YELLED", "ERASED", "LOST", "NUMBERED", "DESTROYED", "DISPROVEN", "QUESTIONED", "DEFENDED", "TICKLED", "FOUND", "ACCESSED", "RE-ENCRYPTED", "MICROWAVED", "BURNED", "TWISTED", "REMOVED"],
+  			["FRONT DOOR OF", "GIF OF", "DIRECTIONS TO", "NAME OF", "ALTERNATE IDENTITY OF", "BEGINNING OF", "MIDDLE OF", "SOUL OF", "UNICODE SEQUENCE FOR", "VOLUME OF", "SURFACE AREA OF", "MAGIC SPELL FOR", "ANSWER TO", "SERIAL NUMBER FOR", "OTHER HALF OF", "DEED TO", "RECIPE TO", "VIDEO OF", "PASSWORD TO", "TRUTH OF", "UNDERSIDE OF", "ASCII ART FOR", "PERIMETER OF", "TIME REMAINING UNTIL", "SCREENSHOT OF", "BACK DOOR OF"],
+  			["THE IPOD SUBMARINE", "THE INTERNET!", "MORSE CODE", "BEES!!!!!!!!", "THE CONCEPT OF TIME", "MAGNETS", "EMPEROR XUANZONG", "CONGENITAL SENSORINEURAL DEAFNESS IN CATS", "A YURT", "CASHEWS", "YOUR TRASH CAN", "THIS PUZZLE", "THE WI-FI PASSWORD", "THIS SENTENCE", "BUFFALO'S BUFFALO", "THAT ONE SCHOOL ASSIGNMENT YOU WERE VERY PROUD OF", "YOUR FAVORITE ICE CREAM FLAVOR", "THE YEAR 2020", "A DILBERT CARTOON NOT WRITTEN BY SCOTT ADAMS", "UTOPIA", "THE GOOD PAIR OF SCISSORS", "HOW TO PROPERLY USE SEMICOLONS", "THE NUMBER 42", "A PURSE", "BAD KNOCK-KNOCK JOKES", "TOFU"]
+ 		];
+ 
+ 		function update() {
+ 			let outputBox = document.getElementById('boxoutput');
+ 			let inputString = document.getElementById('boxinput').value;
+ 			inputString = inputString.replace(/[^A-Za-z]/g, '').toUpperCase().substring(0,4);
+ 			let outputString = "";
+ 			outputString = outputString.concat(output[0][inputString.charCodeAt(0)-65], " ", output[1][inputString.charCodeAt(1)-65], " THE ", output[2][inputString.charCodeAt(2)-65], " ", output[3][inputString.charCodeAt(3)-65]);
+ 			outputBox.innerHTML = outputString;
+ 		}
+	</script>
+
+	
+
+</body>
+
+</html>
