@@ -692,6 +692,9 @@ Bubble: the box that expands below an expandable, containing a Nutshell Section
                 // Hi
                 ex.isOpen = true;
 
+                //oh god cute mage code
+                ex.parentNode.style.textAlign = "left";
+
                 // Insert a bubble
                 //debugger;
                 let clickX = mouseEvent.clientX - ex.parentNode.getBoundingClientRect().x; // relative to parent, I guess???
@@ -703,6 +706,8 @@ Bubble: the box that expands below an expandable, containing a Nutshell Section
                 // One more
                 Nutshell._nutshellsOpen++;
                 Nutshell._updateCloseAllNutshells();
+
+
 
             };
             ex.close = ()=>{
@@ -719,6 +724,9 @@ Bubble: the box that expands below an expandable, containing a Nutshell Section
                 // One less
                 Nutshell._nutshellsOpen--;
                 Nutshell._updateCloseAllNutshells();
+
+                //oh god cute mage code
+                ex.parentNode.style.textAlign = "justify";
 
             };
             // ON CLICK: toggle open/closed
