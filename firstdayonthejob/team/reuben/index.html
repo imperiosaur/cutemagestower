@@ -209,9 +209,9 @@
 	  		  <div class="initial">
 	  		    <table id="initial5">
 	  		      <tr><td>Sloop</td><td>Sun</td><td>????</td><td>Jib</td></tr>
-	  		      <tr><td>Yawl</td><td>Centaur</td><td>Rabbit</td><td>????l</td></tr>
-	  		      <tr><td>Monkey</td><td>Times</td><td>????????</td><td>Lion</td></tr>
-	  		      <tr><td>Daily Mail</td><td>????r</td><td>Fish</td><td>Dog</td></tr>
+	  		      <tr><td>Yawl</td><td>Queen</td><td>Rabbit</td><td>????l</td></tr>
+	  		      <tr><td>Monkey</td><td>Times</td><td>????????</td><td>King</td></tr>
+	  		      <tr><td>Daily Mail</td><td>????r</td><td>Full</td><td>Dog</td></tr>
 	  		    </table>
 	  		    <button onclick="checkGroup(5)">Submit</button>
 	  		  </div>
@@ -256,7 +256,7 @@
   <li>N→<span class="purple">P</span>10</li>
   <li>N←<span class="green">G</span>2</li>
   <li>N→<span class="yellow">Y</span>8</li>
-  <li>A⏺<span class="yellow">Y</span>8</li>
+  <li>A⏺<span class="green">G</span>11</li>
   <li>N←<span class="purple">P</span>2</li>
   <li>N←<span class="blue">B</span>2</li>
   <li>A→<span class="blue">B</span>2</li>
@@ -267,16 +267,16 @@
   <li>N→<span class="blue">B</span>2</li>
   <li>A⏺<span class="purple">P</span>2</li>
   <li>A⏺<span class="blue">B</span>3</li>
-  <li>A⏺<span class="green">G</span>13</li>
+  <li>A⏺<span class="yellow">Y</span>13</li>
   <li>A→<span class="green">G</span>7</li>
   <li>N→<span class="yellow">Y</span>12</li>
   <li>N⏺<span class="purple">P</span>17</li>
   <li>A→<span class="green">G</span>6</li>
   <li>A←<span class="blue">B</span>2</li>
-  <li>A→<span class="yellow">Y</span>3</li>
+  <li>A⏺<span class="green">G</span>5</li>
   <li>N←<span class="purple">P</span>12</li>
   <li>A←<span class="green">G</span>5</li>
-  <li>A⏺<span class="green">G</span>10</li>
+  <li>A→<span class="yellow">Y</span>4</li>
 </ul>
 
 <script type="text/javascript">
@@ -288,7 +288,7 @@
 			["??bKitJoeyWhelp", "PickpocketYegg??????Biblioklept", "Coral??dPeruSnow", "MainTop????????Prime"], 
 			["HugeBigGreat????t", "GarterCorn???????????Sunbeam", "Father????eVicarCleric", "AppalachianAdirondackOlympic????y"],
 			["Teal?r????RobinTern", "SegmentLinePoint???", "DipsyGoogleFlap?a????", "Bird BoxNew Year\'s Eve???? ???Carol"],
-			["RabbitMonkey????rDog", "????CentaurLionFish", "SunTimes????????Daily Mail", "SloopJibYawl????l"],
+			["RabbitMonkey????rDog", "????QueenKingFill", "SunTimes????????Daily Mail", "SloopJibYawl????l"],
 			["Randi????lPennCopperfield", "TarSalt???????Jack", "????oAutoEcoGastro", "HorseSoft????????Gum"]
 			]; 
 		
@@ -612,10 +612,10 @@
 			break;
 			case '5Green':
 				solutionTable.rows[1].cells[0].innerHTML = '????';
-		      	solutionTable.rows[1].cells[1].innerHTML = 'Centaur';
-		      	solutionTable.rows[1].cells[2].innerHTML = 'Fish';
-		      	solutionTable.rows[1].cells[3].innerHTML = 'Lion';
-		      	solutionTable.rows[1].cells[4].innerHTML = 'W?????? Z????? S????';
+		      	solutionTable.rows[1].cells[1].innerHTML = 'Full';
+		      	solutionTable.rows[1].cells[2].innerHTML = 'Queen';
+		      	solutionTable.rows[1].cells[3].innerHTML = 'King';
+		      	solutionTable.rows[1].cells[4].innerHTML = 'M??????? S????';
 		      	solutionTable.rows[1].cells[0].classList.add('green');
 		      	solutionTable.rows[1].cells[1].classList.add('green');
 		      	solutionTable.rows[1].cells[2].classList.add('green');
