@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Org Chart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/fourthdayorgchart/images/favicon-32x32.svg">
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Self host font -->
+  <!-- <link rel="preload" href="/fourthdayorgchart/assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin> -->
+  <link href="/fourthdayorgchart/assets/css/style.css" rel="stylesheet">
+  
+  
+  <meta property="og:title" content="Org Chart"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content=""/>
+  
+  
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:site" content=""/>
+  <meta name="twitter:creator" content=""/>
+
+</head>
+
+<body class='page page-team'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  
+  <ul>
+    
+    <li class="">
+      <a href="/fourthdayorgchart/chat/">Chat</a>
+    </li>
+    
+    <li class="">
+      <a href="/fourthdayorgchart/team/">Team</a>
+    </li>
+    
+    <li class="">
+      <a href="/fourthdayorgchart/about/">About</a>
+    </li>
+    
+    <li class="">
+      <a href="/fourthdayorgchart/contact/">Contact</a>
+    </li>
+    
+  </ul>
+</div>
+
+  <div id="wrapper" class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="/fourthdayorgchart/"><img width="120px" height="32px" alt="Angle Corp" src="/fourthdayorgchart/images/logo/logo.png" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="/fourthdayorgchart/"><img width="120px" height="32px" alt="Angle Corp" src="/fourthdayorgchart/images/logo/logo.png" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  
+  <ul>
+    
+    <li class="">
+      <a href="/fourthdayorgchart/chat/">Chat</a>
+    </li>
+    
+    <li class="">
+      <a href="/fourthdayorgchart/team/">Team</a>
+    </li>
+    
+    <li class="">
+      <a href="/fourthdayorgchart/about/">About</a>
+    </li>
+    
+    <li class="">
+      <a href="/fourthdayorgchart/contact/">Contact</a>
+    </li>
+    
+  </ul>
+</div>
+
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Mobile Menu">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+    <div class="container pb-6 pt-6 pt-md-12 pb-md-12">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-12">
+      <div class="team team-single clipboard-container">
+        <h1 class="title">Org Chart</h1>
+        <h2 class="puzzletitle"> </h2>
+        <div class="flavor">Flipping over the paper with the company structure, you find the mission statement. Weird. Al the other companies you had ever seen didn't need to write everything <span class="redletters">this way</span>.</div><br>
+        <div class="content"><script type="text/javascript" src="../../puzzlejs/copyjack.js"></script>
+
+<link rel="stylesheet" href="../../puzzlejs/copyjack.css" />
+
+<p><button class="clipboard-button"></button></p>
+
+<canvas id="myCanvas" width="1000" height="600"></canvas>
+
+<div>
+	<ul>
+		<li id="madison">A????????</li>
+		<li id="jayden">B??? N????</li>
+		<li id="reuben">C?? B?????</li>
+		<li id="nora">D?????</li>
+		<li id="ansley">M????? L????????</li>
+		<li id="bernhard">M?????? I??????????</li>
+		<li id="karen">N??? L??????</li>
+		<li id="kathleen">N???????? C?????</li>
+		<li id="norris">O?? L????? O?? G???</li>
+		<li id="amanda">P?????????</li>
+	</ul>
+	<label for="boxinput">Guess:</label>
+			<input type="text" id="boxinput" name="boxinput" /><button onclick="update()">Submit </button><br />
+			Output: <span id="boxoutput"></span>
+</div>
+
+<script>
+  			
+	let success = [false, false, false, false, false, false, false, false, false, false];
+ 	makeCanvas();
+
+	function update() {
+		let outputBox = document.getElementById('boxoutput');
+		let inputString = document.getElementById('boxinput').value;
+		inputString = inputString.replace(/[^A-Za-z]/g, '').toUpperCase();
+		let updating = document.getElementById('boxinput');
+		switch(inputString) {
+		case 'MUSICALINSTRUMENTS':
+			updating = document.getElementById('bernhard');
+			updating.innerHTML = "MUSICAL INSTRUMENTS (2)<ul><li>Bernhard used his musical talent to help with <span class=\"redletters\">networking</span>.</li></ul>";
+ 			outputBox.innerHTML = "MUSICAL INSTRUMENTS is correct!";
+ 			success[0] = true;
+ 		break;
+ 		case 'BOYSNAMES':
+ 			updating = document.getElementById('jayden');
+ 			updating.innerHTML = "BOYS NAMES (7)<ul><li>Jayden deals with recruitment, so he comes across a lot of names. What else would you <span class=\"redletters\">think</span>?</li></ul>";
+ 			outputBox.innerHTML = "BOYS NAMES is correct!";
+ 			success[1] = true;
+ 		break;
+ 		case 'DRINKS':
+ 			updating = document.getElementById('nora');
+ 			updating.innerHTML = "DRINKS (2)<ul><li>Nora knows that the best way to <span class=\"redletters\">administrate</span> a business is with some drinks.</li></ul>";
+ 			outputBox.innerHTML = "DRINKS is correct!";
+ 			success[2] = true;
+ 		break;
+ 		case 'MARKUPLANGUAGES':
+ 			updating = document.getElementById('ansley');
+ 			updating.innerHTML = "MARKUP LANGUAGES (5)<ul><li>Ansley knows the right languages to use when <span class=\"redletters\">transitioning</span> from human-powered to AI-powered workflows.</li></ul>";
+ 			outputBox.innerHTML = "MARKUP LANGUAGES is correct!";
+ 			success[3] = true;
+ 		break;
+ 		case 'ONELETTEROFFGEMS':
+ 			updating = document.getElementById('norris');
+ 			updating.innerHTML = "ONE LETTER OFF GEMS (4)<ul><li>Norris is just slightly off of finding the <span class=\"redletters\">next generation</span> gems.</li></ul>";
+ 			outputBox.innerHTML = "ONE LETTER OFF GEMS is correct!";
+ 			success[4] = true;
+ 		break;
+ 		case 'NATOLETTERS':
+ 			updating = document.getElementById('karen');
+ 			updating.innerHTML = "NATO LETTERS (1)<ul><li>Karen uses <span class=\"redletters\">proven methodology</span> to clearly tell people how to spell things over the phone.</li></ul>";
+ 			outputBox.innerHTML = "NATO LETTERS is correct!";
+ 			success[5] = true;
+ 		break;
+ 		case 'ALLERGENS':
+ 			updating = document.getElementById('madison');
+ 			updating.innerHTML = "ALLERGENS (2)<ul><li>Madison finds that her <span class=\"redletters\">functionality</span> drops when she's not watching out for her allergens.</li></ul>";
+ 			outputBox.innerHTML = "ALLERGENS is correct!";
+ 			success[6] = true;
+ 		break;
+ 		case 'CARBRANDS':
+ 			updating = document.getElementById('reuben');
+ 			updating.innerHTML = "CAR BRANDS (1)<ul><li>Rueben pays attention to any high-value <span class=\"redletters\">marketplace</span>.</li></ul>";
+ 			outputBox.innerHTML = "CAR BRANDS is correct!";
+ 			success[7] = true;
+ 		break;
+ 		case 'NEWSPAPERCOMICS':
+ 			updating = document.getElementById('kathleen');
+ 			updating.innerHTML = "NEWSPAPER COMICS (2)<ul><li>Kathleen is <span class=\"redletters\">incentivized</span> to finish her work early so that she can read the comics.</li></ul>";
+ 			outputBox.innerHTML = "NEWSPAPER COMICS is correct!";
+ 			success[8] = true;
+ 		break;
+ 		case 'PRESIDENTS':
+ 			updating = document.getElementById('amanda');
+ 			updating.innerHTML = "PRESIDENTS (5)<ul><li>Amanda views herself <span class=\"redletters\">vis-a-vis</span> other important leaders.</li></ul>";
+ 			outputBox.innerHTML = "PRESIDENTS is correct!";
+ 			success[9] = true;
+ 		break;
+ 		default:
+ 			outputBox.innerHTML = inputString + " is not correct.";
+ 		break;
+ 		}
+ 		makeCanvas();
+  	}
+
+	function makeCanvas() {
+		const canvas = document.getElementById("myCanvas");
+		const ctx = canvas.getContext("2d");
+		ctx.font = "30px Arial";
+		
+		//#1 INSTRUMENTS
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(175, 475, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[0]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("1", 200, 510);}
+		//#2 NAMES
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(375, 475, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[1]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("3", 400, 510);}
+		//#3 DRINKS
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(575, 475, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[2]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("6", 600, 510);}
+		//#4 MARKUP
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(775, 475, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[3]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("1", 800, 510);}
+		//#5 GEMS
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(275, 325, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[4]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("4", 300, 360);}
+		//#6 NATO LETTERS
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(475, 325, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[5]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("4", 500, 360);}
+		//#7 ALLERGENS
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(675, 325, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[6]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("2", 700, 360);}
+		//#8 CAR BRANDS
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(375, 175, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[7]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("3", 400, 210);}
+		//#9 NEWSPAPER COMICS
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(575, 175, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[8]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("1", 600, 210);}
+		//#10 PRESIDENTS
+		ctx.beginPath();
+		ctx.fillStyle = "#00FFFF";
+		ctx.rect(475, 25, 50, 50);
+		ctx.fill();
+		ctx.stroke();
+		if(success[9]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("5", 500, 60);}
+		//#1/5 INSTRUMENTS/GEMS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(250, 425, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[0] && success[4]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("3", 250, 435);}
+		//#2/5 NAMES/GEMS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(350, 425, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[1] && success[4]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("4", 350, 435);}
+		//#2/6 NAMES/NATO
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(450, 425, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[1] && success[5]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("1", 450, 435);}
+		//#3/6 DRINKS/NATO
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(550, 425, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[2] && success[5]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("7", 550, 435);}
+		//#3/7 DRINKS/ALLERGENS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(650, 425, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[2] && success[6]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("3", 650, 435);}
+		//#4/7 MARKUP/ALLERGENS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(750, 425, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[3] && success[6]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("4", 750, 435);}
+		//#5/8 GEMS/CAR BRANDS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(350, 275, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[4] && success[7]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("2", 350, 285);}
+		//#6/8 NATO LETTERS/CAR BRANDS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(450, 275, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[5] && success[7]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("2", 450, 285);}
+		//#6/9 NATO LETTERS/NEWSPAPER COMICS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(550, 275, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[5] && success[8]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("7", 550, 285);}
+		//#7/9 ALLERGENS/NEWSPAPER COMICS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(650, 275, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[6] && success[8]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("4", 650, 285);}
+		//#8/10 CAR BRANDS/PRESIDENTS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(450, 125, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[7] && success[9]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("2", 450, 135);}
+		//#9/10 NEWSPAPER COMICS/PRESIDENTS
+		ctx.beginPath();
+		ctx.fillStyle = "#FFFF00";
+		ctx.arc(550, 125, 25, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if(success[8] && success[9]) {ctx.fillStyle = "#000000"; ctx.textAlign = "center"; ctx.fillText("6", 550, 135);}
+	}
+
+</script>
+
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .flavor {
+    font-style: italic;
+  }
+
+  .redletters  {
+    color: #e5261f;
+    font-weight: bold;
+  }
+</style>
+  </div>
+  <div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-inner">
+          <h2 class="footer-title">Angle Corp</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+            <div class="social">
+  🧙‍♀️
+</div>
+
+          
+          
+          <div class="copyright"></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="/fourthdayorgchart/assets/js/scripts.js"></script>
+  
+</body>
+</html>
