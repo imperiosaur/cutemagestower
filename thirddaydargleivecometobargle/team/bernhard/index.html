@@ -97,7 +97,12 @@
         <h1 class="title">Bernhard Vance</h1>
         <h2 class="puzzletitle"> Staring at the Clocks</h2>
         <div class="flavor">You come across Bernhard staring at the clocks on his wall. "Our recent push towards <span class="redletters">globalization</span> means that I need to keep track of time zones everywhere if I'm going to get any good recruits." You're not sure that he's going to be able to do that with these clocks.</div><br>
-        <div class="content"><div style="border-radius: 5px; border: 5px solid darkgreen; background-color: darkseagreen; padding: 2px;">The bottom 16 squares are a map. The second hand is the only part of the clocks that are relevant to the answer.</div>
+        <div class="content"><script type="text/javascript" src="../../puzzlejs/puzzle.js"></script>
+
+        <link rel="stylesheet" href="../../puzzlejs/puzzle.css" />
+
+        <link rel="stylesheet" href="../../puzzlejs/puzzle-basic-colors.css" />
+        <div style="border-radius: 5px; border: 5px solid darkgreen; background-color: darkseagreen; padding: 2px;">The bottom 16 squares are a map. The second hand is the only part of the clocks that are relevant to the answer.</div>
 
 <style>
 	.container { display: flex; }
@@ -118,12 +123,11 @@
 <div id="clock3"></div>
 <div id="clock4"></div>
 
-<table id="seats">
-	<tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-	<tr><td>5</td><td>6</td><td>7</td><td>8</td></tr>
-	<tr><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-	<tr><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-</table>
+<div class="puzzle-entry" data-mode="wordsearch" data-text="1234|5678|9ABC|DEFG" data-show-commands="true">
+  { "data-text-replacements":
+        { "A": "10", "B": "11", "C": "12", "D": "13", "E": "14", "F": "15", "G": "16" }
+  }
+</div>
 
 <script>
 	let mainClock = new Date(1991, 0, 21, 9, 0, 0);
