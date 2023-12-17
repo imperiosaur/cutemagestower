@@ -250,7 +250,7 @@
 <ul>
   <li>A←<span class="green">G</span>2</li>
   <li>A←<span class="purple">P</span>2</li>
-  <li>A→<span class="purple">P</span>8</li>
+  <li>A→<span class="blue">B</span>8</li>
   <li>N⏺<span class="blue">B</span>8</li>
   <li>N⏺<span class="yellow">Y</span>2</li>
   <li>A→<span class="yellow">Y</span>1</li>
@@ -261,7 +261,7 @@
   <li>A⏺<span class="green">G</span>11</li>
   <li>N←<span class="purple">P</span>2</li>
   <li>N←<span class="blue">B</span>2</li>
-  <li>A→<span class="blue">B</span>2</li>
+  <li>A→<span class="purple">P</span>2</li>
   <li>A←<span class="yellow">Y</span>2</li>
   <li>N⏺<span class="blue">B</span>2</li>
   <li>N⏺<span class="green">G</span>1</li>
@@ -289,7 +289,7 @@
 			["?????yBig OrangeBeantownBig Apple", "MunicipalCounty????????State", "HaddockAhi?????nPike", "RockefellerGrand Central???Guggenheim"],
 			["??bKitJoeyWhelp", "PickpocketYegg??????Biblioklept", "Coral??dPeruSnow", "MainTop????????Prime"], 
 			["HugeBigGreat????t", "GarterCorn???????????Sunbeam", "Father????eVicarCleric", "AppalachianAdirondackOlympic????y"],
-			["Teal?r????RobinTern", "SegmentLinePoint???", "DipsyGoogleFlap?a????", "Bird BoxNew Year\'s Eve???? ???Carol"],
+			["Teal?r????RobinTern", "SegmentLinePoint???", "Bird BoxNew Year\'s Eve???? ???Carol", "DipsyGoogleFlap?a????"],
 			["RabbitMonkey????rDog", "????QueenKingFull", "SunTimes????????Daily Mail", "SloopJibYawl????l"],
 			["Randi????lPennCopperfield", "TarSalt???????Jack", "????oAutoEcoGastro", "HorseSoft????????Gum"]
 			]; 
@@ -567,31 +567,31 @@
 		      	inputTable.rows[2].cells[2].classList.add('used');
 		      	inputTable.rows[2].cells[3].classList.add('used');
 			break;
-			case '4Blue':
-				solutionTable.rows[2].cells[0].innerHTML = '?a????';
-		      	solutionTable.rows[2].cells[1].innerHTML = 'Flap';
-		      	solutionTable.rows[2].cells[2].innerHTML = 'Dipsy';
-		      	solutionTable.rows[2].cells[3].innerHTML = 'Google';
-		      	solutionTable.rows[2].cells[4].innerHTML = '_____ D?????';
-		      	solutionTable.rows[2].cells[0].classList.add('blue');
-		      	solutionTable.rows[2].cells[1].classList.add('blue');
-		      	solutionTable.rows[2].cells[2].classList.add('blue');
-		      	solutionTable.rows[2].cells[3].classList.add('blue');
+			case '4Purple':
+				solutionTable.rows[3].cells[0].innerHTML = '?a????';
+		      	solutionTable.rows[3].cells[1].innerHTML = 'Flap';
+		      	solutionTable.rows[3].cells[2].innerHTML = 'Dipsy';
+		      	solutionTable.rows[3].cells[3].innerHTML = 'Google';
+		      	solutionTable.rows[3].cells[4].innerHTML = '_____ D?????';
+		      	solutionTable.rows[3].cells[0].classList.add('purple');
+		      	solutionTable.rows[3].cells[1].classList.add('purple');
+		      	solutionTable.rows[3].cells[2].classList.add('purple');
+		      	solutionTable.rows[3].cells[3].classList.add('purple');
 		      	inputTable.rows[0].cells[0].classList.add('used');
 		      	inputTable.rows[0].cells[1].classList.add('used');
 		      	inputTable.rows[3].cells[0].classList.add('used');
 		      	inputTable.rows[3].cells[2].classList.add('used');
 			break;
-			case '4Purple':
-				solutionTable.rows[3].cells[0].innerHTML = '???? ???';
-		      	solutionTable.rows[3].cells[1].innerHTML = 'Carol';
-		      	solutionTable.rows[3].cells[2].innerHTML = 'New Year\'s Eve';
-		      	solutionTable.rows[3].cells[3].innerHTML = 'Bird Box';
-		      	solutionTable.rows[3].cells[4].innerHTML = 'S???? P?????? M?????';
-		      	solutionTable.rows[3].cells[0].classList.add('purple');
-		      	solutionTable.rows[3].cells[1].classList.add('purple');
-		      	solutionTable.rows[3].cells[2].classList.add('purple');
-		      	solutionTable.rows[3].cells[3].classList.add('purple');
+			case '4Blue':
+				solutionTable.rows[2].cells[0].innerHTML = '???? ???';
+		      	solutionTable.rows[2].cells[1].innerHTML = 'Carol';
+		      	solutionTable.rows[2].cells[2].innerHTML = 'New Year\'s Eve';
+		      	solutionTable.rows[2].cells[3].innerHTML = 'Bird Box';
+		      	solutionTable.rows[2].cells[4].innerHTML = 'S???? P?????? M?????';
+		      	solutionTable.rows[2].cells[0].classList.add('blue');
+		      	solutionTable.rows[2].cells[1].classList.add('blue');
+		      	solutionTable.rows[2].cells[2].classList.add('blue');
+		      	solutionTable.rows[2].cells[3].classList.add('blue');
 		      	inputTable.rows[1].cells[1].classList.add('used');
 		      	inputTable.rows[1].cells[3].classList.add('used');
 		      	inputTable.rows[2].cells[0].classList.add('used');
@@ -692,7 +692,7 @@
 		      	solutionTable.rows[2].cells[1].innerHTML = 'Auto';
 		      	solutionTable.rows[2].cells[2].innerHTML = 'Eco';
 		      	solutionTable.rows[2].cells[3].innerHTML = 'Gastro';
-		      	solutionTable.rows[2].cells[4].innerHTML = '-o???';
+		      	solutionTable.rows[2].cells[4].innerHTML = '-l???';
 		      	solutionTable.rows[2].cells[0].classList.add('blue');
 		      	solutionTable.rows[2].cells[1].classList.add('blue');
 		      	solutionTable.rows[2].cells[2].classList.add('blue');
@@ -769,7 +769,7 @@
     </div>
   </div>
 </div>
-  <script type="text/javascript" src="/seconddaynowgohugzappy/assets/js/scripts.js"></script>
+  <script type="text/javascript" src="/firstdayonthejob/assets/js/scripts.js"></script>
   
 </body>
 </html>
