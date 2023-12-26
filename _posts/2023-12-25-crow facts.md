@@ -9,7 +9,7 @@ categories: others
 Let me tell you a story about a MIT Mystery Hunt puzzle. The year is 2014. The round is Humpty Dumpty. A new puzzle unlocks with instructions to text a phone number. I take charge and start texting, not knowing that I was about to create a lifelong meme. This is the story of Crow Facts.
 
 
-For those who are not familiar with [the puzzle](http://puzzles.mit.edu/2014/puzzle/crow_facts/), here is the brief rundown of the solution. You started texting a phone number who would respond with weird facts about crows, each of which were numbered. The phone number required you to do various tasks to get the facts, such as searching up a specific crow video on YouTube and looking up trivia about different types of crows. Once you had accomplished all of these tasks, you were left with 10 weird facts about crows. Each of the facts was actually from Lord of the Rings - you had to identify the speaker of each quote and index by the fact number.
+For those who are not familiar with [the puzzle](http://puzzles.mit.edu/2014/puzzle/crow_facts/), here is the brief rundown of the solution. You started texting a phone number who would respond with weird facts about crows, each of which were numbered. The phone number required you to do various tasks to get the facts, such as searching up a specific crow video on YouTube and looking up trivia about different types of crows. Once you had accomplished all of these tasks, you were left with 10 weird facts about crows. Each of the facts was actually from Game of Thrones - you had to identify the speaker of each quote and index by the fact number.
  
 But I’m not here to talk about the puzzle. I’m here to talk about what happened afterwards.
  
