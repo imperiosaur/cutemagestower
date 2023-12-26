@@ -55,7 +55,7 @@ If a presence moves during a turn and is being used for a power card, the power 
 	<tr><td>NW6</td><td>Sands    </td><td>RHoSaS Sacred Site</td><td>RHoSaS Uniques<br><a href="https://spiritislandwiki.com/index.php?title=Call_on_Herders_for_Aid">Call on Herders for Aid</a><br><a href="https://spiritislandwiki.com/index.php?title=Gift_of_Searing_Heat">Gift of Searing Heat</a><br><a href="https://spiritislandwiki.com/index.php?title=Stinging_Sandstorm">Stinging Sandstorm</a><br><a href="https://spiritislandwiki.com/index.php?title=Sweltering_Exhaustion">Sweltering Exhaustion</a></td></tr>
 	<tr><td>NW7</td><td>Wetlands </td><td>Blight</td>&nbsp;</td></tr>
 	<tr><td>NW8</td><td>Mountains</td><td>LotDW Sacred Site</td><td>&nbsp;</td></tr>
-	<tr><td>NW9</td><td>Mountains</td><td>Blight</td><td>&nbsp;</tr>
+	<tr><td>NW9</td><td>Mountains</td><td>Blight</td><td>&nbsp;</td></tr>
 	<tr><td>NE1</td><td>Sands    </td><td>2 Cities, Dahan</td><td>&nbsp;</td></tr>
 	<tr><td>NE2</td><td>Jungle   </td><td>City, Badlands</td><td><a href="https://spiritislandwiki.com/index.php?title=Call_to_Migrate">Call to Migrate</a></td></tr>
 	<tr><td>NE3</td><td>Jungle   </td><td>VSoTE Presence</td><td><a href="https://spiritislandwiki.com/index.php?title=Forests_of_Living_Obsidian">Forests of Living Obsidian</a></td></tr>
