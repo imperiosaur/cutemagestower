@@ -63,8 +63,8 @@ If a presence moves during a turn and is being used for a power card, the power 
 	<tr><td>NE5</td><td>Jungle   </td><td>City, VSotE Presence</td><td><a href="https://spiritislandwiki.com/index.php?title=Focus_the_Land%27s_Anguish">Focus the Land's Anguish</a></td></tr>
 	<tr><td>NE6</td><td>Mountains</td><td>Blight</td><td>&nbsp;</td></tr>
 	<tr><td>NE7</td><td>Mountains</td><td>VSotE Sacred Site, Beast</td><td>VSotE Uniques<br><a href="https://spiritislandwiki.com/index.php?title=A_Year_of_Perfect_Stillness">A Year of Perfect Stillness</a><br><a href="https://spiritislandwiki.com/index.php?title=Draw_of_the_Fruitful_Earth">Draw of the Fruitful Earth</a><br><a href="https://spiritislandwiki.com/index.php?title=Guard_the_Healing_Land">Guard the Healing Land</a><br><a href="https://spiritislandwiki.com/index.php?title=Rituals_of_Destruction">Rituals of Destruction</a></td></tr>
-	<tr><td>NE8</td><td>Sands    </td><td>RHoSaS Presence</td><td><a href="https://spiritislandwiki.com/index.php?title=Unquenchable_Flames">Unquenchable Flames</a></td></tr>
-	<tr><td>NE9</td><td>Wetlands </td><td>Blight</td><td><a href="https://spiritislandwiki.com/index.php?title=Desiccating_Winds">Desiccating Winds</a></td></tr>
+	<tr><td>NE8</td><td>Sands    </td><td>Explorer, Badlands</td><td><a href="https://spiritislandwiki.com/index.php?title=Desiccating_Winds">Desiccating Winds</a></td></tr>
+	<tr><td>NE9</td><td>Wetlands </td><td>RHoSaS Presence, Blight</td><td><a href="https://spiritislandwiki.com/index.php?title=Unquenchable_Flames">Unquenchable Flames</a></td></tr>
 	<tr><td>W1 </td><td>Jungle   </td><td>Town, Dahan</td><td>&nbsp;</td></tr>
 	<tr><td>W2 </td><td>Sands    </td><td>Town, Dahan</td><td>&nbsp;</td></tr>
 	<tr><td>W3 </td><td>Sands    </td><td>&nbsp;</td><td>&nbsp;</td></tr>
@@ -74,12 +74,12 @@ If a presence moves during a turn and is being used for a power card, the power 
 	<tr><td>W7 </td><td>Wetlands </td><td>Blight, LotDW Presence</td><td><a href="https://spiritislandwiki.com/index.php?title=Elemental_Boon">Elemental Boon</a></td></tr>
 	<tr><td>W8 </td><td>Jungle   </td><td>LotDW Sacred Site</td><td>LotDW Uniques<br><a href="https://spiritislandwiki.com/index.php?title=Gift_of_the_Untamed_Wild">Gift of the Untamed Wild</a><br><a href="https://spiritislandwiki.com/index.php?title=Perils_of_the_Deepest_Island">Perils of the Deepest Island</a><br><a href="https://spiritislandwiki.com/index.php?title=Softly_Beckon_Ever_Inward">Softly Beckon Ever Inward</a><br><a href="https://spiritislandwiki.com/index.php?title=Swallowed_by_the_Wilderness">Swallowed by the Wilderness</a></td></tr>
 	<tr><td>W9 </td><td>Sands    </td><td>2 Beasts</td><td>&nbsp;</td></tr>
-	<tr><td>W10</td><td>Mountains</td><td>RHoSaS Presence</td><td>&nbsp;</td></tr>
+	<tr><td>W10</td><td>Mountains</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 	<tr><td>E1 </td><td>Jungle   </td><td>MMMaO Presence</td><td><a href="https://spiritislandwiki.com/index.php?title=Powerstorm">Powerstorm</a></td></tr>
 	<tr><td>E2 </td><td>Wetlands </td><td>&nbsp;</td><td>&nbsp;</td></tr>
 	<tr><td>E3 </td><td>Wetlands </td><td>MMMaO Presence</td><td><a href="https://spiritislandwiki.com/index.php?title=Vigor_of_the_Breaking_Dawn">Vigor of the Breaking Dawn</a></td></tr>
 	<tr><td>E4 </td><td>Wetlands </td><td>LotDW Presence, 3 Cities, Town, 8 Explorers, Dahan</td><td><a href="https://spiritislandwiki.com/index.php?title=Hazards_Spread_Across_the_Island">Hazards Spread Across the Island</a></td></tr>
-	<tr><td>E5 </td><td>Sands    </td><td>MMMaO Presence, Beast</td><td>MMMaO Uniques<br><a href="https://spiritislandwiki.com/index.php?title=A_Dreadful_Tide_of_Scurrying_Flesh">A Dreadful Tide of Scurrying Flesh</a><br><a href="https://spiritislandwiki.com/index.php?title=Boon_of_Swarming_Bedevilment">Boon of Swarming Bedevilment</a><br><a href="https://spiritislandwiki.com/index.php?title=Ever-Multiplying_Swarm">Ever-Multiplying Swarm</a><br><a href="https://spiritislandwiki.com/index.php?title=Guide_the_Way_on_Feathered_Wings">Guide the Way on Feathered Wings</a><br><a href="https://spiritislandwiki.com/index.php?title=Pursue_with_Scratches,_Pecks,_and_Stings">Pursue with Scratches, Pecks, and Stings</a></td></tr>
+	<tr><td>E5 </td><td>Sands    </td><td>MMMaO Presence</td><td>MMMaO Uniques<br><a href="https://spiritislandwiki.com/index.php?title=A_Dreadful_Tide_of_Scurrying_Flesh">A Dreadful Tide of Scurrying Flesh</a><br><a href="https://spiritislandwiki.com/index.php?title=Boon_of_Swarming_Bedevilment">Boon of Swarming Bedevilment</a><br><a href="https://spiritislandwiki.com/index.php?title=Ever-Multiplying_Swarm">Ever-Multiplying Swarm</a><br><a href="https://spiritislandwiki.com/index.php?title=Guide_the_Way_on_Feathered_Wings">Guide the Way on Feathered Wings</a><br><a href="https://spiritislandwiki.com/index.php?title=Pursue_with_Scratches,_Pecks,_and_Stings">Pursue with Scratches, Pecks, and Stings</a></td></tr>
 	<tr><td>E6 </td><td>Mountains</td><td>Blight</td><td>&nbsp;</td></tr>
 	<tr><td>E7 </td><td>Mountains</td><td>2 Towns</td><td>&nbsp;</td></tr>
 	<tr><td>E8 </td><td>Mountains</td><td>&nbsp;</td><td>&nbsp;</td></tr>
