@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Counter-Balance</title>
+	</head>
+
+	<body>
+		
+		<div id="content"></div>
+
+		<script>
+			function learnCase(numPlayers, caseNumber) {
+				let numMinions = Math.ceil(numPlayers / 3 - 2);
+				let totalCases = (numPlayers - 1) * (numPlayers - 2);
+				if (numMinions >= 2) {totalCases *= (numPlayers - 3);}
+				if (numMinions >= 3) {totalCases *= (numPlayers - 4);}
+
+				let positions = [];
+				positions[0] = Math.floor(caseNumber / (totalCases / (numPlayers - 1)));
+
+				positions[1] = Math.floor( (caseNumber % (totalCases / (numPlayers - 1))) / (totalCases / ( (numPlayers - 1) * (numPlayers - 2) )) );
+				if(positions[1] >= positions[0]) {positions[1]++;}
+
+				if(numMinions >= 2) {
+					positions[2] = Math.floor( (caseNumber % (totalCases / ( (numPlayers - 1) * (numPlayers - 2) ))) / (totalCases / ( (numPlayers - 1) * (numPlayers - 2) * (numPlayers - 3) ) ) );
+					if(positions[2] >= Math.min(positions[0], positions[1])) {positions[2]++;}
+					if(positions[2] >= Math.max(positions[0], positions[1])) {positions[2]++;}
+				}
+
+				if(numMinions >= 3) {
+					positions[3] = Math.floor( (caseNumber % (totalCases / ( (numPlayers - 1) * (numPlayers - 2) * (numPlayers - 3)))) / (totalCases / ( (numPlayers - 1) * (numPlayers - 2) * (numPlayers - 3) * (numPlayers - 4) ) ) );
+					if(positions[3] >= Math.min(positions[0], positions[1], positions[2])) {positions[3]++;}
+					if( (positions[3] >= positions[0] && positions[3] >= positions[1]) || (positions[3] >= positions[0] && positions[3] >= positions[2]) || (positions[3] >= positions[2] && positions[3] >= positions[1]) ) {positions[3]++;}
+					if(positions[3] >= Math.max(positions[0], positions[1], positions[2])) {positions[3]++;}
+				}
+
+				return positions;
+			}
+			let outputString = "";
+
+			for (let i = 0; i < 990; i++) {
+				let positions = learnCase(12, i);
+				let tableString = "Yxxxxxxxxxxx"
+				tableString = tableString.substring(0,positions[0] + 1) + "D" + tableString.substring(positions[0] + 2);
+				tableString = tableString.substring(0,positions[1] + 1) + "M" + tableString.substring(positions[1] + 2);
+				tableString = tableString.substring(0,positions[2] + 1) + "N" + tableString.substring(positions[2] + 2);
+
+				outputString += i + " - " + tableString + " - ";
+
+				let directions = [0, 0, 0];
+				for(let j = 0; j < 3; j++) {
+					if(positions[j] <= 4) {directions[0]++;}
+					if(positions[j] == 5) {directions[1]++;}
+					if(positions[j] >= 6) {directions[2]++;}
+				}
+
+				if(directions[0] > directions[2]) {outputString += "Clockwise <br>";}
+				if(directions[0] == directions[2]) {outputString += "Ambiguous <br>";}
+				if(directions[0] < directions[2]) {outputString += "Counterclockwise <br>";}
+			}
+
+
+			document.getElementById("content").innerHTML = outputString;
+		</script>
+
+	</body>
+</html>
