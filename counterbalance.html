@@ -37,20 +37,22 @@
 			}
 			let outputString = "";
 
-			for (let i = 0; i < 990; i++) {
-				let positions = learnCase(12, i);
-				let tableString = "Yxxxxxxxxxxx"
+			for (let i = 0; i < 720; i++) {
+				let positions = learnCase(11, i);
+				let tableString = "Yxxxxxxxxxx"
 				tableString = tableString.substring(0,positions[0] + 1) + "D" + tableString.substring(positions[0] + 2);
 				tableString = tableString.substring(0,positions[1] + 1) + "M" + tableString.substring(positions[1] + 2);
 				tableString = tableString.substring(0,positions[2] + 1) + "N" + tableString.substring(positions[2] + 2);
+
+				tableString = tableString.substring(0, 1) + "(" + tableString.substring(1,6) + ")(" + tableString.substring(6) + ")";
 
 				outputString += i + " - " + tableString + " - ";
 
 				let directions = [0, 0, 0];
 				for(let j = 0; j < 3; j++) {
 					if(positions[j] <= 4) {directions[0]++;}
-					if(positions[j] == 5) {directions[1]++;}
-					if(positions[j] >= 6) {directions[2]++;}
+					// if(positions[j] == 5) {directions[1]++;}
+					if(positions[j] >= 5) {directions[2]++;}
 				}
 
 				if(directions[0] > directions[2]) {outputString += "Clockwise <br>";}
