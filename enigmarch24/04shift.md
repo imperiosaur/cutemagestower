@@ -6,7 +6,7 @@ layout: post
 {% include puzzlejs.html %}
 # Shift Everything
 
-![Door](../04shift.jpg)
+![Shift](../04shift.jpg)
 
 [Check your answer here](https://www.callingit.in/1/#vCFKFMtTdDS9O1BD-sUGV8hYQm+NswG6nRYxMk8Xr1khgM9Ia-U2hpZnQgRXZlcnl0aGluZw==-)
 

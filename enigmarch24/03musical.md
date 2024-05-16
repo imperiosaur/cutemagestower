@@ -6,7 +6,7 @@ layout: post
 {% include puzzlejs.html %}
 # Musical Ineptitude
 
-![Door](../03musical.jpg)
+![Musical](../03musical.jpg)
 
 [Check your answer here](https://www.callingit.in/1/#DpjCMG1d7dpYqdeG-+7l/o/yFyZ7mxxl7Wja2z3AQYj1wiPD6-TXVzaWNhbCBJbmVwdGl0dWRl-)
 
