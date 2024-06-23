@@ -6,7 +6,7 @@ layout: post
 {% include puzzlejs.html %}
 # False Akari
 
-![Door](../02false.jpg)
+![False](../02false.jpg)
 
 [Check your answer here](https://www.callingit.in/1/#0dqhRPsa4HoBbWkF-0IvItffxlzSPbZ2pIQY6+SmZ1+DCfVbR-RmFsc2UgQWthcmk=-)
 
