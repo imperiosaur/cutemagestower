@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Flying Saucer</title>
+	<script type="text/javascript" src="../puzzlejs/puzzle.js"></script>
+	<link rel="stylesheet" href="../puzzlejs/puzzle.css">
+	<link rel="stylesheet" href="../puzzlejs/puzzle-basic-colors.css"> 
+</head>
+
+<body>
+	<div class="header">
+		<h1>Flying Saucer</h1>
+	</div>
+	<div class="puzzlebody">
+		<div class="flavor">On no! The Xyrmbats' flying saucer has been boarded by the villainous Oombs! Can Captain Xigna keep her position in the center seat?</div>
+		<div>
+			<div>The Xyrmbats are armed with Deceptor missiles; a Deceptor missile aimed in one direction follows a looping course, ultimately hitting a target 90° from the direction of aim. (In particulary, if a Deceptor missile is <em>aimed at</em> a given target, it will never <em>hit</em> that target.) The Oombs are armed with Straightbolt missiles, which fly straight. (Thus, if a Straightbolt missile is aimed at a target, it wil always hit that target.)</div>
+			<div>
+				<img src="flyingsaucer1.png">
+			</div>
+		</div>
+		<ol>
+			<li>Every missile was aimed north, south, east, or west (but not necessarily aimed <em>at</em> anyone).</li>
+			<li>Every missile fired hit someone adjacent to the firer.</li>
+			<li>No two missiles fired by the same creature followed the same trajectory.</li>
+			<li>Every Xyrmbat who fired aimed all her missiles in the same direction.</li>
+			<li>Every Xyrmbat who fired fired a different number of missiles.</li>
+			<li>Every Oomb further east than Captain Xigna got hit exactly once.</li>
+			<li>Captain Xigna fired exactly one missile; it was left-handed.</li>
+			<li>No Oomb who was aimed at fired.</li>
+			<li>Every Oomb who was not aimed at fired exactly one more missile in a north-south direction than in an east-west direction.</li>
+			<li>Exactly four missiles were aimed north.</li>
+			<li>The difference between the number of missiles a creature fired and got hit with was never exactly two.</li>
+		</ol>
+		<img src="flyingsaucer2.png">
+	</div>
+
+</body>
+
+</html>
