@@ -1,0 +1,26 @@
+body {
+	font-family: "DM Sans", sans-serif;
+}
+
+.header {
+	border: 2px solid;
+	border-radius: 5px;
+	max-width: 1000px;
+	text-align: center;
+	margin: auto;
+}
+
+.puzzlebody {
+	border: 2px solid;
+	border-radius: 5px;
+	max-width: 1000px;
+	margin: auto;
+}
+
+.flavor {
+	font-style: italic;
+}
+
+#circlewords {
+	margin: auto;
+}

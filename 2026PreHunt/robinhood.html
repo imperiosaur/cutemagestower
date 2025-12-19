@@ -4,19 +4,28 @@
 <head>
 	<title>Robin Hood</title>
 	<script type="text/javascript" src="../puzzlejs/puzzle.js"></script>
+	<script type="text/javascript" src="../puzzlejs/copyjack.js"></script>
 	<link rel="stylesheet" href="../puzzlejs/puzzle.css">
 	<link rel="stylesheet" href="../puzzlejs/puzzle-basic-colors.css"> 
+	<link rel="stylesheet" href="../puzzlejs/copyjack.css">
+	<link rel="stylesheet" href="overall.css"> 
+	<style>
+		#circlewords {
+			display: block;
+			margin: auto;
+		}
+	</style>
 </head>
 
 <body>
 	<div class="header">
 		<h1>Robin Hood</h1>
 	</div>
-	<div class="puzzlebody">
+	<div class="puzzle puzzlebody">
 		<div class="flavor">My, they make merry.</div>
 		<div>(Your answer will be a four letter word.)</div>
-		<img src="robinhood.png">
-		<ol>
+		<div><img src="robinhood.png" id="circlewords"></div>
+		<ol id="clues">
 			<li>Which word, when spelled backwards, becomes a conjunction followed by a pronoun? (1)</li>
 			<li>...is a homophone of a word for a part of the eye? (1)</li>
 			<li>...when spelled backwards, is one of the seven dwarfs? (4)</li>
@@ -39,6 +48,8 @@
 			<li>...is a homophone of a word meaning "trash"? (1)</li>
 		</ol>
 	</div>
+
+	<p><button class="clipboard-button"></button></p>
 
 </body>
 
