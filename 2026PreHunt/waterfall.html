@@ -9,6 +9,11 @@
 	<link rel="stylesheet" href="../puzzlejs/puzzle-basic-colors.css"> 
 	<link rel="stylesheet" href="../puzzlejs/copyjack.css">
 	<link rel="stylesheet" href="overall.css"> 
+	<style>
+		.cell.regular {background:white;}
+		.cell.water {background:lightblue;}
+		.waterfall-data {display: flex; align-items: center;}
+	</style>
 </head>
 
 <body>
@@ -18,21 +23,22 @@
 	<div><br></div>
 	<div class="puzzlebody">
 		<div class="flavor">Water, water everywhere. Water, water nowhere.</div>
-		<div>
+		<div><br></div>
+		<div class="waterfall-data">
 			<div>
-				_ 💧 _ _ _ . _ 💧 💧 _ <br>
-				💧 _ _ 💧 _ _ . _ _ _ . _ 💧 _ <br>
-				💧 _ _ _ . _ 💧 . 💧 _ _ _ <br>
-				💧 💧 - 💧 _ _ <br>
-				_ _ _ _ _ . _ 💧 _ . _ 💧 💧 _ <br>
-				_ 💧 _ _ _ - _ 💧 _ _ _ 💧 _ <br>
-				💧 _ _ _ _ . 💧 💧 _ _ <br>
-				_ 💧 _ _ _ 💧 💧 _ <br>
-				_ 💧 _ 💧 _ _ . _ 💧 _ _ <br>
-				_ 💧 _ _ . _ _ . _ 💧 _ . 💧 _ _ <br>
-				💧 _ _ _ 💧 _ 💧 _ <br>
-				💧 _ _ - 💧 💧 _ <br>
-				💧 💧 _ _ . _ _ _ _ 💧 <br>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text=".....@...." data-fills="0100000110"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="......@...@..." data-fills="10010000000010"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="....@..@...." data-fills="100000101000"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="..-..." data-fills="110100"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text=".....@...@...." data-fills="00000001000110"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text=".....-......." data-fills="0100000100010"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text=".....@...." data-fills="1000001100"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="........" data-fills="01000110"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="......@...." data-fills="01010000100"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="....@..@...@..." data-fills="010000000100100"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="........" data-fills="10001010"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="...-..." data-fills="1000110"></div>
+				<div class="puzzle-entry" data-mode="linear" data-fill-classes="regular water" data-text="....@....." data-fills="1100000001"></div>
 			</div>
 			<div>
 				<h2>Wet</h2>
