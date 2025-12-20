@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dashboard</title>
+	<script type="text/javascript" src="../puzzlejs/puzzle.js"></script>
+	<script type="text/javascript" src="../puzzlejs/copyjack.js"></script>
+	<link rel="stylesheet" href="../puzzlejs/puzzle.css">
+	<link rel="stylesheet" href="../puzzlejs/puzzle-basic-colors.css"> 
+	<link rel="stylesheet" href="../puzzlejs/copyjack.css">
+	<link rel="stylesheet" href="overall.css"> 
+	<style>
+		.dashboard-row { display: flex; justify-content: center; }
+		.dashboard { border: 1px solid black; }
+		.dashboard-panel { border: 1px solid black; width: 100px; text-align: center;}
+		.bottom-underline { border-bottom: 1px solid black; }
+		.set-of-rules {column-count: 4; max-width: 500px; margin: auto;}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<h1>Dashboard</h1>
+	</div>
+	<div><br></div>
+	<div class="clipboard-container puzzlebody">
+		<div class="flavor">These modern dashboards really are a bit much.</div>
+		<div><br></div>
+		<p>In each of the seven logic puzzles below, you will assign icons to the dashboard according to specific rules. There are three types of rules:</p>
+		<table>
+			<tr>
+				<td class="emoji-rule">🚘2R</td>
+				<td class="explanation">“The column with the 2 is between (but not necessarily adjacent to) the column with the car and the column with the R. The car and the R might be switched; the important thing is that the 2 is between them.”</td>
+			</tr>
+			<tr>
+				<td class="emoji-rule">575</td>
+				<td class="explanation">“The column with the 7 is adjacent to the column with the 5, on one side or the other.”</td>
+			</tr>
+			<tr>
+				<td class="emoji-rule">⏹️…G</td>
+				<td class="explanation">“The column with the square is to the left (but not necessarily adjacent to) the column with the G.”</td>
+			</tr>
+		</table>
+		<p>All of the possible locations of the various symbols are provided for you. Cross these out as you eliminate them as possibilities, and circle a symbol when you are sure of its location. On a completed dashboard, each symbol will be used exactly once.</p>
+		<div class="set-of-dashboards">
+			<div class="dashboard-row">
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>R</td><td>U</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>R</td><td>U</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>R</td><td>U</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>R</td><td>U</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>R</td><td>U</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="emoji-rule set-of-rules">
+				3🚦2<br>
+				▶️⏹️4<br>
+				⏺️4K<br>
+				⏺️*️⃣K<br>
+				*️⃣🚑7<br>
+				K4U<br>
+				⏰2R<br>
+				5🚘K<br>
+				↕️…7<br>
+				N…7<br>
+				7…4<br>
+				⏰…4<br>
+				575
+			</div>
+			<div><br></div>
+			<div class="dashboard-row">
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>B</td><td>R</td><td>A</td></tr>
+						<tr><td>K</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>B</td><td>R</td><td>A</td></tr>
+						<tr><td>K</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>B</td><td>R</td><td>A</td></tr>
+						<tr><td>K</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>B</td><td>R</td><td>A</td></tr>
+						<tr><td>K</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>B</td><td>R</td><td>A</td></tr>
+						<tr><td>K</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>2</td><td>3</td><td>4</td></tr>
+						<tr><td>5</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="emoji-rule set-of-rules">
+				K⏹️⏺️<br>
+				↕️B⏺️<br>
+				2↕️▶️<br>
+				R57<br>
+				A2⏰<br>
+				4⏺️⏰<br>
+				⏺️E3<br>
+				⏹️💿4<br>
+				2⏹️K<br>
+				🚦🚘B<br>
+				3…B
+			</div>
+			<div><br></div>
+			<div class="dashboard-row">
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>G</td><td>E</td><td>A</td></tr>
+						<tr><td>R</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>3</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>G</td><td>E</td><td>A</td></tr>
+						<tr><td>R</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>3</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>G</td><td>E</td><td>A</td></tr>
+						<tr><td>R</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>3</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>G</td><td>E</td><td>A</td></tr>
+						<tr><td>R</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>3</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>G</td><td>E</td><td>A</td></tr>
+						<tr><td>R</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>3</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="emoji-rule set-of-rules">
+				▶️↕️🚘<br>
+				⏺️⏹️E<br>
+				1🚘S<br>
+				4G⏰<br>
+				6R🚦<br>
+				⏺️💿*️⃣<br>
+				🚑⏰⏺️<br>
+				E1↕️<br>
+				G…6<br>
+				⏹️…G<br>
+				3…S<br>
+				6…A
+			</div>
+			<div><br></div>
+			<div class="dashboard-row">
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>D</td><td>R</td><td>I</td></tr>
+						<tr><td>V</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>D</td><td>R</td><td>I</td></tr>
+						<tr><td>V</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>D</td><td>R</td><td>I</td></tr>
+						<tr><td>V</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>D</td><td>R</td><td>I</td></tr>
+						<tr><td>V</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>D</td><td>R</td><td>I</td></tr>
+						<tr><td>V</td><td>E</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="emoji-rule set-of-rules">
+				⏰*️⃣V<br>
+				E💿⏺️<br>
+				D↕️⏹️<br>
+				🚘2R<br>
+				IE⏹️<br>
+				2*️⃣4<br>
+				2🚦4<br>
+				↕️🚘💿<br>
+				2…6<br>
+				▶️…2<br>
+				1…*️⃣<br>
+				🚦4🚦<br>
+				🚘⏹️🚘
+			</div>
+			<div><br></div>
+			<div class="dashboard-row">
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>S</td><td>H</td><td>I</td></tr>
+						<tr><td>F</td><td>T</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>3</td></tr>
+						<tr><td>4</td><td>5</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>S</td><td>H</td><td>I</td></tr>
+						<tr><td>F</td><td>T</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>3</td></tr>
+						<tr><td>4</td><td>5</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>S</td><td>H</td><td>I</td></tr>
+						<tr><td>F</td><td>T</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>3</td></tr>
+						<tr><td>4</td><td>5</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>S</td><td>H</td><td>I</td></tr>
+						<tr><td>F</td><td>T</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>3</td></tr>
+						<tr><td>4</td><td>5</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>S</td><td>H</td><td>I</td></tr>
+						<tr><td>F</td><td>T</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>3</td></tr>
+						<tr><td>4</td><td>5</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="emoji-rule set-of-rules">
+				HT💿<br>
+				2🚑⏺️<br>
+				S🚑3<br>
+				F3H<br>
+				T1*️⃣<br>
+				↕️I⏰<br>
+				4🚘↕️<br>
+				T⏺️*️⃣<br>
+				⏹️*️⃣H<br>
+				🚘…T<br>
+				⏹️…T<br>
+				2…I<br>
+				T…▶️<br>
+				🚑…⏺️<br>
+				1*️⃣1<br>
+				2I2<br>
+			</div>
+			<div><br></div>
+			<div class="dashboard-row">
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>I</td><td>R</td></tr>
+						<tr><td>E</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>I</td><td>R</td></tr>
+						<tr><td>E</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>I</td><td>R</td></tr>
+						<tr><td>E</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>I</td><td>R</td></tr>
+						<tr><td>E</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>T</td><td>I</td><td>R</td></tr>
+						<tr><td>E</td><td>S</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="emoji-rule set-of-rules">
+				💿*️⃣🚑<br>
+				🚦67<br>
+				⏹️I*️⃣<br>
+				T⏺️🚦<br>
+				241<br>
+				E1💿<br>
+				I↕️R<br>
+				6SE<br>
+				R🚦I<br>
+				💿…7<br>
+				▶️…I<br>
+				⏺️…T<br>
+				↕️…*️⃣<br>
+				*️⃣⏰*️⃣
+			</div>
+			<div><br></div>
+			<div class="dashboard-row">
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>C</td><td>R</td><td>A</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>C</td><td>R</td><td>A</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>C</td><td>R</td><td>A</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>C</td><td>R</td><td>A</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+				<div class="dashboard">
+					<table class="dashboard-panel">
+						<tr><td>C</td><td>R</td><td>A</td></tr>
+						<tr><td>N</td><td>K</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>⏹️</td><td>▶️</td><td>⏺️</td></tr>
+						<tr><td>*️⃣</td><td>↕️</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>1</td><td>2</td><td>4</td></tr>
+						<tr><td>6</td><td>7</td><td></td></tr>
+					</table>
+					<table class="dashboard-panel">
+						<tr><td>🚘</td><td>🚦</td><td>🚑</td></tr>
+						<tr><td>💿</td><td>⏰</td><td></td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="emoji-rule set-of-rules">
+				N⏹️⏺️<br>
+				▶️C⏺️<br>
+				1▶️↕️<br>
+				R67<br>
+				A1⏰<br>
+				4⏺️⏰<br>
+				⏺️K2<br>
+				⏹️💿4<br>
+				1⏹️N<br>
+				🚦🚘C<br>
+				2…C
+			</div>
+		</div>
+
+	</div>
+
+	<button class="clipboard-button"></button>
+	
+
+</body>
+
+</html>
