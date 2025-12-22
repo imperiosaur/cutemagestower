@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Five by Five</title>
+	<script type="text/javascript" src="../puzzlejs/puzzle.js"></script>
+	<script type="text/javascript" src="../puzzlejs/copyjack.js"></script>
+	<link rel="stylesheet" href="../puzzlejs/puzzle.css">
+	<link rel="stylesheet" href="../puzzlejs/puzzle-basic-colors.css"> 
+	<link rel="stylesheet" href="../puzzlejs/copyjack.css">
+	<link rel="stylesheet" href="overall.css"> 
+	<style>
+		.star {border-collapse: collapse; margin: auto;}
+		.star td {width: 25px; text-align: center;}
+		.third-row {border: 1px solid black;}
+		.word-break {border-right: 1px solid black;}
+		.fourth-row {font-size: large;}
+		.extract-one {background-color: lightpink;}
+		.extract-two {background-color: lemonchiffon;}
+		.extract-three {background-color: lightgreen;}
+		.extract-four {background-color: lightblue;}
+		.extract-five {background-color: mediumorchid;}
+		.clue-list {display: flex; justify-content: space-evenly; text-align: center;}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<h1>Five by Five</h1>
+	</div>
+	<div><br></div>
+	<div class="clipboard-container puzzlebody">
+		<p>Five-pointed stars (unlike the more common round ones) always collapse in mere days. Each point decays in its own way, changing shape 4–8 times in one of 26 standardized patterns, as determined by its type; for example, a point of type K will change shape four times, to a K, an I, an L, and finally an O. In any given star, all the points are of different type (so we can number the points I–V in alphabetical order by type) and exactly one point will change shape each day; this may or may not be visible to optical telescopes depending on seeing conditions. For instance, in the following example...</p>
+		<table class="star">
+			<tr>
+				<td>E</td>
+				<td>X</td>
+				<td></td>
+				<td></td>
+				<td>H</td>
+				<td>O</td>
+				<td>O</td>
+				<td>R</td>
+				<td>A</td>
+				<td>Y</td>
+				<td></td>
+				<td></td>
+				<td>I</td>
+				<td>M</td>
+				<td></td>
+				<td></td>
+				<td>F</td>
+				<td>A</td>
+				<td>K</td>
+				<td>E</td>
+			</tr>
+			<tr>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+			</tr>
+			<tr>
+				<td class="third-row">I</td>
+				<td class="third-row">V</td>
+				<td class="third-row">I</td>
+				<td class="third-row">II</td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row">II</td>
+				<td class="third-row">V</td>
+				<td class="third-row">V</td>
+				<td class="third-row">V</td>
+				<td class="third-row">II</td>
+				<td class="third-row">III</td>
+				<td class="third-row">III</td>
+				<td class="third-row">III</td>
+				<td class="third-row">IV</td>
+				<td class="third-row">IV</td>
+				<td class="third-row">II</td>
+				<td class="third-row">III</td>
+				<td class="third-row">IV</td>
+				<td class="third-row">IV</td>
+			</tr>
+			<tr>
+				<td>E</td>
+				<td>X</td>
+				<td>E</td>
+				<td>G</td>
+				<td>E</td>
+				<td>E</td>
+				<td>G</td>
+				<td>X</td>
+				<td>X</td>
+				<td>X</td>
+				<td>G</td>
+				<td>L</td>
+				<td>L</td>
+				<td>L</td>
+				<td>M</td>
+				<td>M</td>
+				<td>G</td>
+				<td>L</td>
+				<td>M</td>
+				<td>M</td>
+			</tr>
+		</table>
+		<p>...we see which point changed on each day and whether the seeing was good; point number I (of type E), say, changed to an E, C, H, and O, but only its changes to E, H, and O were visible, while its change to C on day 3 was unseen.</p>
+		<div><br></div>
+		<hr>
+		<div><br></div>
+		<table class="star">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+			</tr>
+			<tr>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">IV</td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">III</td>
+				<td class="third-row">III</td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row extract-one"></td>
+				<td class="third-row extract-one"></td>
+				<td class="third-row">II</td>
+				<td class="third-row"></td>
+				<td class="third-row">II</td>
+				<td class="third-row extract-one"></td>
+				<td class="third-row extract-one"></td>
+				<td class="third-row">V</td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row extract-one"></td>
+				<td class="third-row extract-one"></td>
+				<td class="third-row">II</td>
+				<td class="third-row">II</td>
+				<td class="third-row">V</td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+			</tr>
+			<tr class="fourth-row">
+				<td>②</td>
+				<td>⓶</td>
+				<td></td>
+				<td>⓹</td>
+				<td>⑥</td>
+				<td></td>
+				<td></td>
+				<td>⓵</td>
+				<td>➍</td>
+				<td></td>
+				<td>③</td>
+				<td>➋</td>
+				<td></td>
+				<td>①</td>
+				<td></td>
+				<td>⓷</td>
+				<td>➊</td>
+				<td></td>
+				<td>⑤</td>
+				<td></td>
+				<td>④</td>
+				<td>⓸</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>➌</td>
+				<td></td>
+			</tr>
+		</table>
+		<div><br></div>
+		<table class="star">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="third-row extract-two"></td>
+				<td class="third-row extract-two"></td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row"></td>
+				<td class="third-row">III</td>
+				<td class="third-row">III</td>
+				<td class="third-row">V</td>
+				<td class="third-row"></td>
+				<td class="third-row">III</td>
+				<td class="third-row">III</td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row extract-two"></td>
+				<td class="third-row extract-two"></td>
+				<td class="third-row"></td>
+				<td class="third-row">I</td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row extract-two"></td>
+				<td class="third-row extract-two"></td>
+				<td class="third-row">V</td>
+				<td class="third-row">IV</td>
+				<td class="third-row">III</td>
+				<td class="third-row">V</td>
+			</tr>
+			<tr class="fourth-row">
+				<td>②</td>
+				<td>➌</td>
+				<td></td>
+				<td></td>
+				<td>➎</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>①</td>
+				<td></td>
+				<td></td>
+				<td>➋</td>
+				<td></td>
+				<td>⓵</td>
+				<td>⓹</td>
+				<td>➊</td>
+				<td></td>
+				<td>③</td>
+				<td>⓸</td>
+				<td>⓶</td>
+				<td>➍</td>
+				<td></td>
+				<td>④</td>
+				<td>⓷</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<div><br></div>
+		<table class="star">
+			<tr>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+			</tr>
+			<tr>
+				<td class="third-row">V</td>
+				<td class="third-row"></td>
+				<td class="third-row">I</td>
+				<td class="third-row extract-three"></td>
+				<td class="third-row extract-three"></td>
+				<td class="third-row">I</td>
+				<td class="third-row extract-three"></td>
+				<td class="third-row extract-three"></td>
+				<td class="third-row">I</td>
+				<td class="third-row"></td>
+				<td class="third-row">III</td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">IV</td>
+				<td class="third-row">IV</td>
+				<td class="third-row">IV</td>
+				<td class="third-row">II</td>
+				<td class="third-row"></td>
+				<td class="third-row extract-three"></td>
+				<td class="third-row extract-three"></td>
+				<td class="third-row"></td>
+				<td class="third-row">III</td>
+				<td class="third-row"></td>
+				<td class="third-row">III</td>
+				<td class="third-row">III</td>
+				<td class="third-row">III</td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row">IV</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>➋</td>
+				<td></td>
+				<td>➍</td>
+				<td>⑤</td>
+				<td></td>
+				<td>⓸</td>
+				<td>②</td>
+				<td></td>
+				<td>④</td>
+				<td></td>
+				<td>①</td>
+				<td>⓵</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>③</td>
+				<td>⓹</td>
+				<td>➊</td>
+				<td>⓶</td>
+				<td></td>
+				<td>➌</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>⓷</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<div><br></div>
+		<table class="star">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="third-row"></td>
+				<td class="third-row">II</td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">IV</td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">II</td>
+				<td class="third-row extract-four"></td>
+				<td class="third-row extract-four"></td>
+				<td class="third-row">IV</td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row extract-four"></td>
+				<td class="third-row extract-four"></td>
+				<td class="third-row">II</td>
+				<td class="third-row"></td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row extract-four"></td>
+				<td class="third-row extract-four"></td>
+			</tr>
+			<tr class="fourth-row">
+				<td>➌</td>
+				<td></td>
+				<td>➋</td>
+				<td>⓷</td>
+				<td>①</td>
+				<td></td>
+				<td>⓻</td>
+				<td>④</td>
+				<td></td>
+				<td>⓼</td>
+				<td>⓵</td>
+				<td></td>
+				<td>⑥</td>
+				<td></td>
+				<td>⓶</td>
+				<td></td>
+				<td>➊</td>
+				<td>⓹</td>
+				<td></td>
+				<td>②</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>➍</td>
+				<td>⑤</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>⓺</td>
+				<td></td>
+				<td>⓸</td>
+				<td>③</td>
+			</tr>
+		</table>
+		<div><br></div>
+		<table class="star">
+			<tr>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="word-break">&nbsp;</td>
+				<td class="word-break">&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="third-row"></td>
+				<td class="third-row">II</td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row">I</td>
+				<td class="third-row extract-five"></td>
+				<td class="third-row extract-five"></td>
+				<td class="third-row">II</td>
+				<td class="third-row">II</td>
+				<td class="third-row"></td>
+				<td class="third-row">II</td>
+				<td class="third-row">II</td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">I</td>
+				<td class="third-row extract-five"></td>
+				<td class="third-row extract-five"></td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row"></td>
+				<td class="third-row">V</td>
+				<td class="third-row">V</td>
+				<td class="third-row extract-five"></td>
+				<td class="third-row extract-five"></td>
+				<td class="third-row">I</td>
+				<td class="third-row"></td>
+			</tr>
+			<tr>
+				<td>①</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>⑤</td>
+				<td>⓵</td>
+				<td></td>
+				<td></td>
+				<td>➌</td>
+				<td></td>
+				<td></td>
+				<td>⓺</td>
+				<td>②</td>
+				<td>⓷</td>
+				<td>⓼</td>
+				<td>➊</td>
+				<td></td>
+				<td>④</td>
+				<td>⓹</td>
+				<td>⓻</td>
+				<td>③</td>
+				<td>⓸</td>
+				<td></td>
+				<td></td>
+				<td>⓶</td>
+				<td>➍</td>
+				<td></td>
+				<td>➋</td>
+			</tr>
+		</table>
+		<div><br></div>
+		<div class="clue-list">
+			<div>
+				<span class="fourth-row">①②③...</span><br><br>
+				Scarf or necktie<br>
+				Divide using scissors (2 wds.)<br>
+				Trois + cinq<br>
+				Word before Lube signifying “trice”<br>
+				Marks with shoe soles
+			</div>
+			<div>
+				<span class="fourth-row">⓵⓶⓷...</span><br><br>
+				Effervescent, like soda pop<br>
+				Start playing that number! (2 wds.)<br>
+				Top secret (hyph.)<br>
+				Miniature golf brand (hyph.)<br>
+				Piece of land or writing
+			</div>
+			<div>
+				<span class="fourth-row">➊➋➌...</span><br><br>
+				Wagon<br>
+				Island nation containing Suva<br>
+				Breathe heavily, or snit<br>
+				Take this job and shove it! (2 wds.)<br>
+				Magic dragon of song
+			</div>
+		</div>
+		<div><br></div>
+		<hr>
+		<div><br></div>
+		<table class="star">
+			<tr>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>↑</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="third-row extract-one">&nbsp;</td>
+				<td class="third-row extract-one">&nbsp;</td>
+				<td class="third-row extract-one">&nbsp;</td>
+				<td class="third-row extract-one">&nbsp;</td>
+				<td class="third-row extract-one">&nbsp;</td>
+				<td class="third-row extract-one">&nbsp;</td>
+				<td class="third-row extract-two">&nbsp;</td>
+				<td class="third-row extract-two">&nbsp;</td>
+				<td class="third-row extract-two">&nbsp;</td>
+				<td class="third-row extract-two">&nbsp;</td>
+				<td class="third-row extract-two">&nbsp;</td>
+				<td class="third-row extract-two">&nbsp;</td>
+				<td class="third-row extract-three">&nbsp;</td>
+				<td class="third-row extract-three">&nbsp;</td>
+				<td class="third-row extract-three">&nbsp;</td>
+				<td class="third-row extract-three">&nbsp;</td>
+				<td class="third-row extract-three">&nbsp;</td>
+				<td class="third-row extract-three">&nbsp;</td>
+				<td class="third-row extract-four">&nbsp;</td>
+				<td class="third-row extract-four">&nbsp;</td>
+				<td class="third-row extract-four">&nbsp;</td>
+				<td class="third-row extract-four">&nbsp;</td>
+				<td class="third-row extract-four">&nbsp;</td>
+				<td class="third-row extract-four">&nbsp;</td>
+				<td class="third-row extract-five">&nbsp;</td>
+				<td class="third-row extract-five">&nbsp;</td>
+				<td class="third-row extract-five">&nbsp;</td>
+				<td class="third-row extract-five">&nbsp;</td>
+				<td class="third-row extract-five">&nbsp;</td>
+				<td class="third-row extract-five">&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+
+	<button class="clipboard-button"></button>
+</body>
+
+</html>
