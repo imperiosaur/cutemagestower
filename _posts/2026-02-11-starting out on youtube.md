@@ -8,6 +8,7 @@ categories: others
 
 I've had a bunch of time on my hands recently, so I decided to start recording myself solving some puzzles or doing some explainers. I've been uploading every Wednesday for the past couple weeks, and I wanted to update the blog with the four videos I've done so far. The videos are after the jump.
 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bd4PNDMIBSk?si=mIgqI0w5Bxnslsx5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
