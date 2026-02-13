@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The Enemy Cup</title>
+	<script>
+		const startingDeck = new Map();
+		startingDeck.set("Agnes", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "mp", "mp", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "by", "by", "by", "by", "tga", "tga", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Carolyn", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "by", "by", "by", "by", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Daisy", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "by", "by", "by", "by", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Diana", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "htc", "htc", "htc", "htc", "htc", "htc", "by", "by", "by", "by", "by", "by", "tga", "tga", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Joe", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "by", "by", "by", "by", "by", "by", "by", "by", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Marie", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "htc", "by", "by", "tga", "tga", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Preston", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "htc", "htc", "by", "by", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Rita", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "by", "by", "by", "by", "by", "by", "tga", "tga", "tga", "tga", "tga", "tga", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Roland", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "htc", "htc", "by", "by", "by", "by", "by", "by", "by", "by", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Skids", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "htc", "htc", "by", "by", "by", "by", "by", "by", "tga", "tga", "tga", "tga", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		startingDeck.set("Wendy", ["soc", "sfh", "pc", "ttos", "dl", "mp", "mp", "mp", "mp", "mp", "mp", "mp", "mp", "htc", "htc", "htc", "htc", "htc", "htc", "by", "by", "tga", "tga", "tga", "tga", "tga", "tga", "tga", "tga", "qr", "qr", "qr", "qr", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "kutp", "gut", "gut", "smart", "smart", "strong", "strong", "fast", "fast", "unpre", "unpre", "reload", "srt"]);
+		const cardAbbv = ["soc", "sfh", "pc", "ttos", "dl", "mp", "htc", "by", "tga", "qr", "kutp", "gut", "smart", "strong", "fast", "unpre", "reload", "srt"]
+		const investigators = ["Agnes", "Carolyn", "Daisy", "Diana", "Joe", "Marie", "Preston", "Rita", "Roland", "Skids", "Wendy"];
+		const maxLevel = new Map();
+		for (const card of cardAbbv) { maxLevel.set(card, 5); }
+		maxLevel.set("kutp", 0);
+		maxLevel.set("htc", 1);
+		maxLevel.set("gut", 3);
+		maxLevel.set("smart", 3);
+		maxLevel.set("strong", 3);
+		maxLevel.set("fast", 3);
+		maxLevel.set("unpre", 3);
+		maxLevel.set("reload", 0);
+		maxLevel.set("srt", 0);
+		const cardNames = new Map();
+		cardNames.set("soc", "Seal of Chaos");
+		cardNames.set("sfh", "Search for Help");
+		cardNames.set("pc", "Padded Coat");
+		cardNames.set("ttos", "The Thrill of Success");
+		cardNames.set("dl", "Damn Lucky!");
+		cardNames.set("mp", "Mythos Protection");
+		cardNames.set("htc", "Hide the Clues");
+		cardNames.set("by", "Brace Yourself!");
+		cardNames.set("tga", "They're Getting Away!");
+		cardNames.set("qr", "Quick Recovery");
+		cardNames.set("kutp", "Keep up the Pace");
+		cardNames.set("gut", "Gutsier");
+		cardNames.set("smart", "Smarter");
+		cardNames.set("strong", "Stronger");
+		cardNames.set("fast", "Faster");
+		cardNames.set("unpre", "Unpredictable");
+		cardNames.set("reload", "Reload");
+		cardNames.set("srt", "Stop Right There!");
+		const investigatorNames = new Map();
+		investigatorNames.set("Agnes", "Agnes Baker");
+		investigatorNames.set("Carolyn", "Carolyn Fern");
+		investigatorNames.set("Daisy", "Daisy Walker");
+		investigatorNames.set("Diana", "Diana Stanley");
+		investigatorNames.set("Joe", "Joe Diamond");
+		investigatorNames.set("Marie", "Marie Lambeau");
+		investigatorNames.set("Preston", "Preston Fairmont");
+		investigatorNames.set("Rita", "Rita Young");
+		investigatorNames.set("Roland", "Roland Banks");
+		investigatorNames.set("Skids", "\"Skids\" O'Toole");
+		investigatorNames.set("Wendy", "Wendy Adams");
+
+
+
+		function getRandomInt(max) {
+  			return Math.floor(Math.random() * max);
+		}
+
+		function generate() {
+			let investigator;
+			if (document.getElementById("investigator").value == "Random") {
+				investigator = investigators[getRandomInt(11)];
+			} else {
+				investigator = document.getElementById("investigator").value;
+			}
+			console.log(investigator);
+			const deckLevels = new Array(startingDeck.get(investigator).length);
+			for (let i = 0; i < deckLevels.length; i++) { deckLevels[i] = 0; }
+			console.log(deckLevels);
+
+			let totalXP = 0;
+			while (totalXP < 50) {
+				const cardNum = getRandomInt(deckLevels.length);
+				if (deckLevels[cardNum] < maxLevel.get(startingDeck.get(investigator)[cardNum])) { 
+					deckLevels [cardNum]++;
+					totalXP++; 
+				}
+			}
+			console.log(deckLevels);
+
+			const cardRanks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+			const cardSuits = ["♠", "♥", "♦", "♣"];
+			let outputString = "<h2>" + investigatorNames.get(investigator) + "</h2>";
+
+			for(let i = 0; i < deckLevels.length; i++) {
+				if (i < 52) {
+					outputString += cardRanks[i % 13] + cardSuits[Math.floor(i / 13)] + ": ";
+				} else if (i == 52) {
+					outputString += "Black Joker: ";
+				} else if (i == 53) {
+					outputString += "Red Joker: ";
+				}
+
+				outputString += cardNames.get(startingDeck.get(investigator)[i]) + " Level " + deckLevels[i] + "<br>";
+			}
+			document.getElementById("decklist").innerHTML = outputString;
+
+		}
+
+
+
+
+
+	</script>
+</head>
+
+<body>
+	<h1>The Enemy Cup</h1>
+	<div>Use this tool to help you build Investigator decks quickly.</div>
+	<form>
+		<select id="investigator" name="investigator">
+			<option value="Random" selected>Random</option>
+			<option value="Agnes">Agnes Baker</option>
+			<option value="Carolyn">Carolyn Fern</option>
+			<option value="Daisy">Daisy Walker</option>
+			<option value="Diana">Diana Stanley</option>
+			<option value="Joe">Joe Diamond</option>
+			<option value="Marie">Marie Lambeau</option>
+			<option value="Preston">Preston Fairmont</option>
+			<option value="Rita">Rita Young</option>
+			<option value="Roland">Roland Banks</option>
+			<option value="Skids">"Skids" O'Toole</option>
+			<option value="Wendy">Wendy Adams</option>
+		</select>
+		<button type="button" onclick="generate()">Generate!</button>
+	</form>
+	<div id="decklist"></div>
+
+</body>
+
+</html>
