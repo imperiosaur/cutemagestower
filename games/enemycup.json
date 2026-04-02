@@ -1,0 +1,217 @@
+{
+	"cards": [
+		{
+			"title" : "Damn Lucky!",
+			"class" : "Survivor",
+			"type" : "Asset",
+			"text" : [
+				"<b>Revelation</b> - Place Damn Lucky! in the investigator's play area.<br><b>Forced</b> - When the investigator makes a skill test, if their skill value (including any modifier and skill cards) is lower than the test value, exhaust Damn Lucky!: They get +1 to their skill value for that test.",
+				"<b>Revelation</b> - Place Damn Lucky! in the investigator's play area.<br><b>Forced</b> - When the investigator makes a skill test, if their skill value (including any modifier and skill cards) is lower than the test value, exhaust Damn Lucky!: They get +2 to their skill value for that test.",
+				"<b>Revelation</b> - Place Damn Lucky! in the investigator's play area.<br><b>Forced</b> - When the investigator would fail a skill test, exhaust Damn Lucky!: they get +1 to their skill value for that test.",
+				"<b>Revelation</b> - Place Damn Lucky! in the investigator's play area.<br><b>Forced</b> - When the investigator would fail a skill test, exhaust Damn Lucky!: they get +1 to their skill value for that test. If the test is successful, add the topmost skill card from their discard pile into their hand.",
+				"<b>Revelation</b> - Place Damn Lucky! in the investigator's play area.<br><b>Forced</b> - When the investigator would fail a skill test, exhaust Damn Lucky!: they get +2 to their skill value for that test. If the test is successful, add the topmost skill card from their discard pile into their hand.",
+				"Permanent.<br><b>Forced</b> - When the investigator would fail a skill test, exhaust Damn Lucky!: they get +2 to their skill value for that test. If the test is successful, add the topmost skill card from their discard pile into their hand."
+			]
+		},
+		{
+			"title" : "Padded Coat",
+			"class" : "Guardian",
+			"type" : "Asset",
+			"health" : [1, 2, 3, 3, 4, 4],
+			"sanity" : [1, 2, 3, 3, 4, 4],
+			"text" : [
+				"<b>Revelation</b> - Place Padded Coat in the investigator's play area.<br>Cannot be healed.<br>Non-direct damage and horror must be assigned to Padded Coat before the investigator.<br>Padded Coat does not leave play when it's defeated by damage or horror.",
+				"<b>Revelation</b> - Place Padded Coat in the investigator's play area.<br>Cannot be healed.<br>Non-direct damage and horror must be assigned to Padded Coat before the investigator.<br>Padded Coat does not leave play when it's defeated by damage or horror.",
+				"<b>Revelation</b> - Place Padded Coat in the investigator's play area.<br>Cannot be healed.<br>Non-direct damage and horror must be assigned to Padded Coat before the investigator.<br>Padded Coat does not leave play when it's defeated by damage or horror.",
+				"<b>Revelation</b> - Place Padded Coat in the investigator's play area.<br>Non-direct damage and horror must be assigned to Padded Coat before the investigator.<br>Padded Coat does not leave play when it's defeated by damage or horror.<br><b>Forced</b> - At the end of the investigator turn, heal one damage on horror on Padded Coat, depending on which is the lowest.",
+				"<b>Revelation</b> - Place Padded Coat in the investigator's play area.<br>Non-direct damage and horror must be assigned to Padded Coat before the investigator.<br>Padded Coat does not leave play when it's defeated by damage or horror.<br><b>Forced</b> - At the end of the investigator turn, heal one damage on horror on Padded Coat, depending on which is the lowest.",
+				"Permanent.<br>Non-direct damage and horror must be assigned to Padded Coat before the investigator.<br>Padded Coat does not leave play when it's defeated by damage or horror.<br><b>Forced</b> - At the end of the investigator turn, heal one damage on horror on Padded Coat, depending on which is the lowest."
+			]
+		},
+		{
+			"title" : "Seal of Chaos",
+			"class" : "Mystic",
+			"type" : "Asset",
+			"text" : [
+				"<b>Revelation</b> - Place Seal of Chaos in the investigator's play area.<br>Seal (-1).<br><b>Forced</b> - When the investigator reveals a [autofail], discard Seal of Chaos.",
+				"<b>Revelation</b> - Place Seal of Chaos in the investigator's play area.<br>Seal (-2).<br><b>Forced</b> - When the investigator reveals a [autofail], discard Seal of Chaos.",
+				"<b>Revelation</b> - Place Seal of Chaos in the investigator's play area.<br>Seal (-3).<br><b>Forced</b> - When the investigator reveals a [autofail], discard Seal of Chaos.",
+				"<b>Revelation</b> - Place Seal of Chaos in the investigator's play area.<br>Seal ([skull], [cultist], [tablet], or [elder thing], your choice).",
+				"<b>Revelation</b> - Place Seal of Chaos in the investigator's play area.<br>Seal ([skull], [cultist], [tablet], or [elder thing], chosen at random).",
+				"Permanent.<br>Seal ([skull], [cultist], [tablet], or [elder thing], chosen at random)."
+			]
+		},
+		{
+			"title" : "Search for Help",
+			"class" : "Seeker",
+			"type" : "Asset",
+			"text" : [
+				"<b>Revelation</b> - Place Search for Help in the investigator's play area. Then, search the first 5 cards of the investigator's deck for up to 2 skill cards (if there is more than 2, choose 2 at random) and place them under Search for Help.<br><b>Forced</b> - Cards under Search for Help have to be committed to test, if able as if they were in the investigator's hand. If the skill test they were committed to succeeds, add that skill to the investigator's hand instead of discarding it.",
+				"<b>Revelation</b> - Place Search for Help in the investigator's play area. Then, search the first 10 cards of the investigator's deck for up to 2 skill cards (if there is more than 2, choose 2 at random) and place them under Search for Help.<br><b>Forced</b> - Cards under Search for Help have to be committed to test, if able as if they were in the investigator's hand. If the skill test they were committed to succeeds, add that skill to the investigator's hand instead of discarding it.",
+				"<b>Revelation</b> - Place Search for Help in the investigator's play area. Then, search the first 15 cards of the investigator's deck for up to 3 skill cards (if there is more than 3, choose 3 at random) and place them under Search for Help.<br><b>Forced</b> - Cards under Search for Help have to be committed to test, if able as if they were in the investigator's hand. If the skill test they were committed to succeeds, add that skill to the investigator's hand instead of discarding it.",
+				"<b>Revelation</b> - Place Search for Help in the investigator's play area. Then, search the first 20 cards of the investigator's deck for up to 4 skill cards (if there is more than 4, choose 4 at random) and place them under Search for Help.<br><b>Forced</b> - Cards under Search for Help have to be committed to test, if able as if they were in the investigator's hand. If the skill test they were committed to succeeds, add that skill to the investigator's hand instead of discarding it.",
+				"<b>Revelation</b> - Place Search for Help in the investigator's play area. Then, search the investigator's deck for up to 5 skill cards (if there is more than 5, choose 5 at random) and place them under Search for Help.<br><b>Forced</b> - Cards under Search for Help have to be committed to test, if able as if they were in the investigator's hand. If the skill test they were committed to succeeds, add that skill to the investigator's hand instead of discarding it.",
+				"Permanent.<br><b>Forced</b> - When the game begins, search the investigator's deck for 5 random skill cards and place them under Search for Help.<br><b>Forced</b> - Cards under Search for Help have to be committed to test, if able as if they were in the investigator's hand. If the skill test they were committed to succeeds, add that skill to the investigator's hand instead of discarding it."
+			]
+		},
+		{
+			"title" : "The Thrill of Success",
+			"class" : "Rogue",
+			"type" : "Asset",
+			"text" : [
+				"<b>Revelation</b> - Place The Thrill of Success in the investigator's play area.<br><b>Forced</b> - When the investigator succeeds at a skill test by 4 or more, exhaust The Thrill of Success: the investigator reveals an additional card this turn. Then, The Thrill of Success doesn't ready during the next upkeep phase.",
+				"<b>Revelation</b> - Place The Thrill of Success in the investigator's play area.<br><b>Forced</b> - When the investigator succeeds at a skill test by 3 or more, exhaust The Thrill of Success: the investigator reveals an additional card this turn. Then, The Thrill of Success doesn't ready during the next upkeep phase."
+				"<b>Revelation</b> - Place The Thrill of Success in the investigator's play area.<br><b>Forced</b> - When the investigator succeeds at a skill test by 2 or more, exhaust The Thrill of Success: the investigator reveals an additional card this turn. Then, The Thrill of Success doesn't ready during the next upkeep phase.",
+				"<b>Revelation</b> - Place The Thrill of Success in the investigator's play area.<br><b>Forced</b> - When the investigator succeeds at a skill test by 2 or more, exhaust The Thrill of Success: the investigator reveals an additional card this turn.",
+				"<b>Revelation</b> - Place The Thrill of Success in the investigator's play area.<br><b>Forced</b> - When the investigator succeeds at a skill test by 1 or more, exhaust The Thrill of Success: the investigator reveals an additional card this turn.",
+				"Permanent.<br><b>Forced</b> - When the investigator succeeds at a skill test by 1 or more, exhaust The Thrill of Success: the investigator reveals an additional card this turn."
+			]
+		},
+		{
+			"title" : "Brace yourself!",
+			"class" : "Guardian",
+			"type" : "Event", 
+			"text" : [
+				"<b>Revelation</b> - Calculate the [fist] of the investigator (including any modifier and eligible skill cards). If the total is equal or higher than the [fist] of a non-aloof enemy at their location, they attack that enemy. If there are multiple eligible enemies, they attack the one with less remaining health.<br>If no attack is made this way: the investigator discovers one clue at its location. If there is no clue, this card gains surge. Either way, shuffle Brace yourself! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [fist] of the investigator (including any modifier and eligible skill cards). If the total is equal or higher than the [fist] of a non-aloof enemy at their location, they attack that enemy. If there are multiple eligible enemies, they attack the one with less remaining health. This attack deals +1 damage. Any extra damage is dealt to the next enemy with less remaining health at their location.<br>If no attack is made this way: the investigator discovers one clue at its location. If there is no clue, this card gains surge. Either way, shuffle Brace yourself! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [fist] of the investigator (including any modifier and eligible skill cards). If the total is equal or higher than the [fist] of a non-aloof enemy at their location, they attack that enemy. If there are multiple eligible enemies, they attack the one with less remaining health. This attack deals +2 damage. Any extra damage is dealt to the next enemy with less remaining health at their location.<br>If no attack is made this way: the investigator discovers one clue at its location. If there is no clue, this card gains surge. Either way, shuffle Brace yourself! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [fist] of the investigator (including any modifier and eligible skill cards). If the total is equal or higher than the [fist] of a non-aloof enemy at their location, they attack that enemy. If there are multiple eligible enemies, they attack the one with less remaining health. This attack deals +3 damage. Any extra damage is dealt to the next enemy with less remaining health at their location.<br>If no attack is made this way: the investigator discovers one clue at its location. If there is no clue, this card gains surge. Either way, shuffle Brace yourself! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [fist] of the investigator (including any modifier and eligible skill cards). If the total is equal or higher than the [fist] of a non-aloof enemy at their location, they attack that enemy. If there are multiple eligible enemies, they attack the one with less remaining health. This attack deals +4 damage. Any extra damage is dealt to the next enemy with less remaining health at their location.<br>If no attack is made this way: the investigator discovers one clue at its location. If there is no clue, this card gains surge. Either way, shuffle Brace yourself! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [fist] of the investigator (including any modifier and eligible skill cards). If the total is equal or higher than the [fist] of a non-aloof enemy at their location, they attack that enemy. If there are multiple eligible enemies, they attack the one with less remaining health. This attack deals +5 damage. Any extra damage is dealt to the next enemy with less remaining health at their location.<br>If no attack is made this way: the investigator discovers one clue at its location. If there is no clue, this card gains surge. Either way, shuffle Brace yourself! back in the investigator's deck at the end of their turn."
+			]
+		},
+		{
+			"title" : "Hide the Clues",
+			"class" : "Seeker",
+			"type" : "Event", 
+			"text" : [
+				"<b>Revelation</b> - If there is a clue on the investigator's location: Add the [book] base value of the investigator and any potential modifier (including skill cards in their hands). If the total is equal or higher than their location's shroud value, they investigate that location.<br>If no investigation is made this way: the investigator moves once towards it's objective. If no move is made this way, this card gains surge. Either way, shuffle Hide the Clues back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - If there is a clue on the investigator's location: Add 1 to the [book] base value of the investigator, plus any potential modifier (including skill cards in their hands). If the total is equal or higher than their location's shroud value, they investigate that location and gets +1 [book] for that investigation. If the test is successful, they discover one additional clue.<br>If no investigation is made this way: the investigator moves once towards it's objective. If no move is made this way, this card gains surge. Either way, shuffle Hide the Clues back in the investigator's deck at the end of their turn."
+			]
+		},
+		{
+			"title" : "Keep up the Pace",
+			"class" : "Neutral",
+			"type" : "Event", 
+			"icons" : [["wild"]],
+			"text" : [
+				"<b>Revelation</b> - The investigator moves once towards their objective (discover clues, parley with an enemy, reach a location, resign, etc.). If they are already at the right location they activate a [action] or [free] on a non-treachery scenario card, if it helps them towards their objective (Parley action, Resign action, etc.).<br>If they didn't move or activate a [action] on a scenario card this way: add Keep up the Pace to their hand and it gains surge. While it's in their hand, it gains: \"<b>Forced</b> - Commit Keep up the Pace to the next eligible skill test made by an investigator at their location. Then shuffle it back into their deck.\""
+			]
+		},
+		{
+			"title" : "Mythos Protection",
+			"class" : "Mystic",
+			"type" : "Event", 
+			"text" : [
+				"<b>Revelation</b> - The investigator activates a [action] or [free] ability on an encounter card chosen at random at their location or at no location.<br>If there is no eligible encounter card: the investigator attacks the non-aloof enemy with the less remaining health at their location, using their [mind] instead of [fist]. If there is no eligible enemy or if the attack failed, Mythos Protection gains surge and is shuffled back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - The investigator activates a [action] or [free] ability on an encounter card chosen at random at their location or at no location. For each test, if any, the investigator reveals 2 tokens instead of one, chooses the one with the higher modifier, and ignores the other.<br>If there is no eligible encounter card: the investigator attacks the non-aloof enemy with the less remaining health at their location, using their [mind] instead of [fist]. This attack deals +1 damage. Any extra damage is dealt to another enemy at their location, starting with the one with less remaining health. If no attack is made or if the attack failed, Mythos Protection gains surge and is shuffled back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - The investigator activates a [action] or [free] ability on an encounter card chosen at random at their location or at no location. For each test, if any, the investigator reveals 2 tokens instead of one, chooses the one with the higher modifier, and ignores the other.<br>Additionally, the investigator attacks the non-aloof enemy with the less remaining health at their location, using their [mind] instead of [fist]. This attack deals +1 damage. Any extra damage is dealt to another enemy at their location, starting with the one with less remaining health. If no attack is made or if the attack failed, Mythos Protection gains surge and is shuffled back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - The investigator activates a [action] or [free] ability on an encounter card chosen at random at their location or at no location. For each test, if any, the investigator reveals 3 tokens instead of one, chooses the one with the higher modifier, and ignores the others.<br>Additionally, the investigator attacks the non-aloof enemy with the less remaining health at their location, using their [mind] instead of [fist]. This attack deals +2 damage. Any extra damage is dealt to another enemy at their location, starting with the one with less remaining health. If no attack is made or if the attack failed, Mythos Protection gains surge and is shuffled back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - The investigator activates 2 [action] or [free] ability on encounter cards chosen at random at their location or at no location. For each test, if any, the investigator reveals 3 tokens instead of one, chooses the one with the higher modifier, and ignores the others.<br>Additionally, the investigator attacks the non-aloof enemy with the less remaining health at their location, using their [mind] instead of [fist]. This attack deals +3 damage. Any extra damage is dealt to another enemy at their location, starting with the one with less remaining health. If no attack is made or if the attack failed, Mythos Protection gains surge and is shuffled back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - The investigator activates 2 [action] or [free] ability on encounter cards chosen at random at their location or at no location. For each test, if any, the investigator reveals 3 tokens instead of one, chooses the one with the higher modifier, and ignores the others.<br>Additionally, the investigator attacks the non-aloof enemy with the less remaining health at their location, using their [mind] instead of [fist]. This attack deals +4 damage. Any extra damage is dealt to another enemy at their location, starting with the one with less remaining health. If no attack is made or if the attack failed, Mythos Protection gains surge and is shuffled back in the investigator's deck at the end of their turn."
+			]
+		},
+		{
+			"title" : "Quick Healing",
+			"class" : "Survivor",
+			"type" : "Event", 
+			"text" : [
+				"<b>Revelation</b> - Heal 1 damage or 1 horror from the investigator, according to which is the lowest between their health and their sanity.<br>If no damage or horror was healed: the investigator activates a [action] or [free] ability on an encounter card at their location or at no location. If there are multiple encounter cards with [action] or [free] choose one at random. If there is no eligible encounter card, Quick Healing gains Surge. Either way, set the card aside and shuffle it back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - One at a time, heal 2 damage and/or horror from the investigator, according to which is the lowest between their health and sanity.<br>If no damage or horror was healed: the investigator activates a [action] or [free] ability on an encounter card at their location or at no location. If there are multiple encounter cards with [action] or [free] choose one at random. If there is no eligible encounter card, Quick Healing gains Surge. Either way, set the card aside and shuffle it back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - One at a time, heal 3 damage and/or horror from the investigator, according to which is the lowest between their health and sanity.<br>If no damage or horror was healed: the investigator activates a [action] or [free] ability on an encounter card at their location or at no location. If there are multiple encounter cards with [action] or [free] choose one at random. If there is no eligible encounter card, Quick Healing gains Surge. Either way, set the card aside and shuffle it back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - One at a time, move as many damage and/or horror possible (Max. 3) from the investigator, according to which is the lowest between their health and their sanity, to enemies at their location, as damage, starting with the one with less remaining health.<br>If no damage or horror was moved: the investigator activates a [action] or [free] ability on an encounter card at their location or at no location. If there are multiple encounter cards with [action] or [free] choose one at random. If there is no eligible encounter card, Quick Healing gains Surge. Either way, set the card aside and shuffle it back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - One at a time, move as many damage and/or horror possible (Max. 4) from the investigator, according to which is the lowest between their health and their sanity, to enemies at their location, as damage, starting with the one with less remaining health.<br>If no damage or horror was moved: the investigator activates a [action] or [free] ability on an encounter card at their location or at no location. If there are multiple encounter cards with [action] or [free] choose one at random. If there is no eligible encounter card, Quick Healing gains Surge. Either way, set the card aside and shuffle it back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - One at a time, move as many damage and/or horror possible (Max. 5) from the investigator, according to which is the lowest between their health and their sanity, to enemies at their location, as damage, starting with the one with less remaining health.<br>If no damage or horror was moved: the investigator activates a [action] or [free] ability on an encounter card at their location or at no location. If there are multiple encounter cards with [action] or [free] choose one at random. If there is no eligible encounter card, Quick Healing gains Surge. Either way, set the card aside and shuffle it back in the investigator's deck at the end of their turn."
+			]
+		},
+		{
+			"title" : "They're getting away!",
+			"class" : "Rogue",
+			"type" : "Event", 
+			"text" : [
+				"<b>Revelation</b> - Calculate the [foot] of the investigator (including any modifier and eligible skill cards in their hands). If the total is equal or higher than the [foot] of an enemy they're engaged with, they make an evasion attempt on that enemy. If there are multiple eligible enemies, they try to evade the one with the lowest [foot].<br>If there is no eligible enemy: reveal another card, that card gains surge. Shuffle They're getting away! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [foot] of the investigator (including any modifier and eligible skill cards in their hands). If the total is equal or higher than the [foot] of an enemy they're engaged with, they make an evasion attempt on that enemy. If there are multiple eligible enemies, they try to evade the one with the lowest [foot]. If the test is successful, they automatically evade 1 additional enemy at their location.<br>If there is no eligible enemy: reveal another card, that card gains surge. Shuffle They're getting away! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [foot] of the investigator (including any modifier and eligible skill cards in their hands). If the total is equal or higher than the [foot] of an enemy they're engaged with, they make an evasion attempt on that enemy. If there are multiple eligible enemies, they try to evade the one with the lowest [foot]. If the test is successful, they automatically evade 1 additional enemy at their location, then move once toward their objective.<br>If there is no eligible enemy: reveal another card, that card gains surge. Shuffle They're getting away! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [foot] of the investigator (including any modifier and eligible skill cards in their hands). If the total is equal or higher than the [foot] of an enemy they're engaged with, they make an evasion attempt on that enemy. If there are multiple eligible enemies, they try to evade the one with the lowest [foot]. If the test is successful, they automatically evade 2 additional enemies at their location. Enemies evaded by this card do not ready during the next upkeep phase.<br>If there is no eligible enemy: reveal another card, that card gains surge. Shuffle They're getting away! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [foot] of the investigator (including any modifier and eligible skill cards in their hands). If the total is equal or higher than the [foot] of an enemy they're engaged with, they make an evasion attempt on that enemy. If there are multiple eligible enemies, they try to evade the one with the lowest [foot]. If the test is successful, they automatically evade 2 additional enemies at their location, then move once toward their objective. Enemies evaded by this card do not ready during the next upkeep phase.<br>If there is no eligible enemy: reveal another card, that card gains surge. Shuffle They're getting away! back in the investigator's deck at the end of their turn.",
+				"<b>Revelation</b> - Calculate the [foot] of the investigator (including any modifier and eligible skill cards in their hands). If the total is equal or higher than the [foot] of an enemy they're engaged with, they make an evasion attempt on that enemy. If there are multiple eligible enemies, they try to evade the one with the lowest [foot]. If the test is successful, they automatically evade all enemies at their location and connecting locations. Enemies evaded by this card do not ready during the next upkeep phase.<br>If there is no eligible enemy: reveal another card, that card gains surge. Shuffle They're getting away! back in the investigator's deck at the end of their turn."
+			]
+		},
+		{
+			"title" : "Faster",
+			"class" : "Neutral",
+			"type" : "Skill", 
+			"icons" : [["foot"], ["foot", "foot"], ["foot", "foot", "foot"], ["foot", "foot", "foot", "foot"]],
+			"text" : [
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons."
+			]
+		},
+		{
+			"title" : "Gutsier",
+			"class" : "Neutral",
+			"type" : "Skill", 
+			"icons" : [["mind"], ["mind", "mind"], ["mind", "mind", "mind"], ["mind", "mind", "mind", "mind"]],
+			"text" : [
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons."
+			]
+		},
+		{
+			"title" : "Smarter",
+			"class" : "Neutral",
+			"type" : "Skill", 
+			"icons" : [["book"], ["book", "book"], ["book", "book", "book"], ["book", "book", "book", "book"]],
+			"text" : [
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons."
+			]
+		},
+		{
+			"title" : "Stronger",
+			"class" : "Neutral",
+			"type" : "Skill", 
+			"icons" : [["fist"], ["fist", "fist"], ["fist", "fist", "fist"], ["fist", "fist", "fist", "fist"]],
+			"text" : [
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons."
+			]
+		},
+		{
+			"title" : "Stronger",
+			"class" : "Neutral",
+			"type" : "Skill", 
+			"icons" : [["wild"], ["wild", "wild"], ["wild", "wild", "wild"], ["wild", "wild", "wild", "wild"]],
+			"text" : [
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons.",
+				"Surge.<br><b>Revelation</b> - Place this card in the investigator's hand.<br>Maximum 1 skill can be committed each test, starting with the skill with the most appropriate icons."
+			]
+		},
+		{
+			"title" : "Reload",
+			"class" : "Neutral",
+			"type" : "Event", 
+			"text" : [
+				"Surge.<br><b>Revelation</b> - The investigator gets +1 to each of their skill until the end of their turn and reveals 1 additional card this turn. Shuffle the investigator's discard pile into it's deck, then remove Reload from the game."
+			]
+		},
+		{
+			"title" : "Stop right there!",
+			"class" : "Neutral",
+			"type" : "Treachery", 
+			"text" : [
+				"<b>Revelation</b> - The investigator ends it's turn immediately. (Effects that trigger \"at the end of the turn\" still trigger.)"
+			]
+		},
+	]
+}

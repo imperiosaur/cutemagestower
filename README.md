@@ -10,6 +10,16 @@ Here are the things that I've written.
 
 ## Puzzles
 
+- **[DASH 12](https://playdash.org/DASH12/)** - I wrote a puzzle for DASH 12 - Puzzle #6 (This Trivia's Gone to the Birds).
+- **[Puzzled Pint](https://puzzledpint.org/)** - I wrote a set of puzzles for Puzzled Pint.
+  - **[June 2023 - Liquid Measures](https://puzzledpint.org/events/june-2023/)**
+- **[BAPHL 22](https://22.baphl.org/)** - I was part of the team that wrote BAPHL 22. I wrote a large number of location puzzles despite not being physically at the location. Here are the puzzles I wrote:
+  - **Word Wide Web ([Undergraduate](https://22.baphl.org/pdfs/101_UG_Beaver_WordWideWeb.pdf) | [Graduate](https://22.baphl.org/pdfs/101_G_Beaver_WordWideWeb.pdf) | [Solution](https://22.baphl.org/solutions/sol-word-wide-web.html))** *(Location)*
+  - **Stargazing ([Undergraduate](https://22.baphl.org/pdfs/102_UG_Python_Stargazing.pdf) | [Graduate](https://22.baphl.org/pdfs/102_G_Python_Stargazing.pdf) | [Solution](https://22.baphl.org/solutions/sol-stargazing.html))**
+  - **Indigestion ([Undergraduate](https://22.baphl.org/pdfs/102_UG_Python_Indigestion.pdf) | [Graduate](https://22.baphl.org/pdfs/102_G_Python_Indigestion.pdf) | [Solution](https://22.baphl.org/solutions/sol-indigestion.html))** *(Meta)*
+  - **Chess & Ladders ([Undergraduate](https://22.baphl.org/pdfs/103_UG_Squirrel_ChessandLadders.pdf) | [Graduate](https://22.baphl.org/pdfs/103_G_Squirrel_ChessandLadders.pdf) | [Solution](https://22.baphl.org/solutions/sol-chess-and-ladders.html))**
+  - **A Completely Normal Variety Cryptic with No Shenanigans ([Undergraduate](https://22.baphl.org/pdfs/201_UG_Sheep_Shenanigans.pdf) | [Graduate](https://22.baphl.org/pdfs/201_G_Sheep_Shenanigans.pdf) | [Solution](https://22.baphl.org/solutions/sol-variety-cryptic.html))** *(Location)*
+  - **Curved Tangrams ([Undergraduate](https://22.baphl.org/pdfs/203_UG_Turkey_CurvedTangrams.pdf) | [Graduate](https://22.baphl.org/pdfs/203_G_Turkey_CurvedTangrams.pdf) | [Solution](https://22.baphl.org/solutions/sol-curved-tangrams.html))** *(Location)*
 - **The 2022 MIT Mystery Hunt** - I was part of the team that ran the 2022 MIT Mystery Hunt. Here are the things that I wrote:
   - **[A Wrinkle in Time](http://puzzles.mit.edu/2022/puzzle/a-wrinkle-in-time/)**
   - **[Alexi Lewis](http://puzzles.mit.edu/2022/puzzle/alexei-lewis/)** *(Meta)*
@@ -26,7 +36,7 @@ Here are the things that I've written.
   - **[The Mlystery Hunt, as Told By a Thief of the Bases](http://puzzles.mit.edu/2022/puzzle/the-mlystery-hunt-as-told-by-a-thief-of-the-bases/)** with Steve Kaltenbaugh
   - **[Crow Facts 3000](http://puzzles.mit.edu/2022/puzzle/crow-facts-3000/)** with Ben Smith
   - **[Events 1 & 2](http://puzzles.mit.edu/2022/events/)**
-- **Wondercade** - This Neil Patrick Harris' newsletter. Ange and I write a bunch of things for it.
+- **Wondercade** - This is Neil Patrick Harris' newsletter. Ange and I write a bunch of things for it.
   - **[Whodunit](https://www.wondercade.com/theatre-experiences/thinking-caps-on-its-the-wondercade-whodunit-challenge)** - We basically wrote the whole article into a murder mystery. This is free to view, but you will need an account.
 - **Audio Escape Rooms** - Each of these three rooms I wrote and then ran for the hosts of Escape this Podast.
   - **[Dimensional Analysis](https://www.escapethispodcast.com/e/season-9-episode-3-dimensional-analysis-ft-jen-mcteague/)** and **[Podcast this Escape](https://www.escapethispodcast.com/e/podcast-this-escape-dimensional-analysis/)**
